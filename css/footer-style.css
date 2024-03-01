@@ -191,3 +191,43 @@
 
 /* Additional existing styles */
 /* ... */
+
+/* Existing styles for about section */
+.about {
+    /* ... your existing styles ... */
+}
+
+/* Partners Section Styles */
+.partners-section {
+    background-color: #ffffff; /* Dark background for the partners section */
+    padding: 20px 0; /* Add padding to the section */
+    text-align: center; /* Center the heading text */
+    margin-top: 10px
+}
+
+.heading {
+    color: #fff; /* White text for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+/* Grid layout for partner logos */
+.partners-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the logos */
+    gap: 20px; /* Space between logos */
+}
+
+.partner-img {
+    filter: grayscale(100%); /* Make the logos grayscale */
+    opacity: 0.8; /* Slightly transparent */
+    transition: opacity 0.3s, filter 0.3s; /* Smooth transition for hover effects */
+    max-height: 50px; /* Limit the logo size */
+    margin: 0 auto; /* Center logos within their flex item */
+}
+
+.partner-img:hover {
+    filter: grayscale(0); /* Full color on hover */
+    opacity: 1; /* Full opacity on hover */
+}
+
