@@ -34,7 +34,12 @@
 	<!-- External CSS link -->
 	<link rel="stylesheet" href="css/style.css">
 
+	<link rel="stylesheet" href="css/footer-style.css">
+
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+	<script src="https://cdn.tailwindcss.com"></script>
+
 
 
 	<!-- Ionic icons CDN -->
@@ -51,6 +56,24 @@
 	  	<ion-icon name="arrow-up-outline"></ion-icon>
 	</button>
 	<!-- Scroll to top ends -->
+
+	<!-- Top Info Strip starts -->
+<div class="top-info-strip">
+    <div class="top-info-container">
+        <div class="top-info-left">
+            <span><i class="fas fa-phone-alt"></i> 0719 151 288 / 0797 313 199</span>
+            <span><i class="fas fa-envelope"></i> info@greatscopeinsurance.com</span>
+            <span><i class="fas fa-map-marker-alt"></i> Portal Place House 4th Floor</span>
+        </div>
+        <div class="top-info-right">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-xing"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+</div>
+<!-- Top Info Strip ends -->
 
 	<!-- Navigation starts -->
 	<nav>
@@ -384,7 +407,7 @@
 				<img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/aar.webp?updatedAt=1708033134033" alt="AAR" title="Partner" class="partner-img">
 				<img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/uap_old.webp?updatedAt=1708032933915" alt="UAP Old Mutual" title="Partner" class="partner-img">
 				<img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/korient.webp?updatedAt=1708032123835" alt="Kenya Orient" title="Partner" class="partner-img">
-				<img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/trident.webp?updatedAt=1708033030070" alt="Trident Insurance" title="Partner" class="partner-img">
+				<img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/trident.webp?updatedAt=1709291818662" alt="Trident Insurance" title="Partner" class="partner-img">
             </div>
         </div>
     </div>
@@ -421,70 +444,63 @@
 	<!-- Testimonial section ends -->
 
 
-	<section class="consultancy">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="lead-form">
-						<h2>Free 1 Hour Consultancy Session</h2>
-						<form action="">
-							<div class="input-field">
-								<label for="name">Full Name</label>
-								<input type="text" id="name" placeholder="Your Name">
-							</div>
-
-							<div class="input-field">
-								<label for="email">Email Address</label>
-								<input type="email" id="email" placeholder="Your email address">
-							</div>
-
-							<button class="btn btn-blue">
-								<a href="#">Get A Quote</a>
-							</button>
-						</form>
-					</div>
-				</div>
-				<div class="col">
-					<div class="lead-form agent-card">
-						<img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/francis.webp?updatedAt=1708025159939" alt="Agent" title="Agent" width="100" height="100" class="agent-img">
-						<h3 class="agent-name">Francis Muendo AIIK</h3>
-						<p class="para-line">Managing Director</p>
-						<h6 class="agent-number">
-							<ion-icon name="call-outline"></ion-icon> 0719 151 288 / 0797 313 199
-						</h6>
-						<h6 class="agent-email">
-							<ion-icon name="mail-unread-outline"></ion-icon> greatscopeinsuranceagency@gmail.com
-						</h6>
-						<h6 class="agent-email">
-							<ion-icon name="location-outline"></ion-icon> Portal Place House 4th Floor, Muindi Mbingu Street
-						</h6>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-	<!--------------- Footer ------------------>
-	<footer>
-    <div class="footer-container">
-        <div class="footer-content">
-            <p class="para-line white">Copyright © 2024</p>
-            <div class="social-media-links">
-                <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+	<!-- Footer starts -->
+<!-- Combined Footer -->
+<footer class="bg-custom-purple text-white py-6 px-10">
+    <div class="container mx-auto">
+        <div class="footer-content grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+            <!-- Brand and About Column -->
+            <div class="brand-and-about">
+                <h1 class="text-4xl font-bold">Greatscope</h1>
+                <div class="about mt-4">
+                    <p class="footer-text">Greatscope serves as the unwavering bedrock of trust, providing steadfast commitment to safeguard what holds paramount importance across the varied realms of life, health, motor, and housing insurance.</p>
+                    <div class="contact-info mt-4 space-y-2">
+                        <p class="footer-text"><i class="fas fa-phone-alt contact-icon"></i> 0719 151 288 / 0797 313 199</p>
+                        <p class="footer-text"><i class="fas fa-envelope contact-icon"></i> greatscopeinsuranceagency@gmail.com</p>
+                        <p class="footer-text"><i class="fas fa-map-marker-alt contact-icon"></i> Portal Place House 4th Floor, Muindi Mbingu Street.</p>
+                    </div>
+                </div>
             </div>
+
+            <!-- Social Icons and Newsletter Column -->
+            <div class="social-and-newsletter">
+                <!-- Social Icons -->
+                <div class="flex justify-center md:justify-end mb-4">
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-xing"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-pinterest-p"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <!-- Newsletter -->
+                <div class="newsletter mt-4 md:mt-0">
+                    <h5 class="footer-heading">Newsletter</h5>
+                    <p class="footer-text">Subscribe to our newsletter for discounts and more.</p>
+                    <form class="newsletter-form mt-4">
+                        <input type="email" placeholder="Email address" class="newsletter-input">
+                        <button type="submit" class="newsletter-submit">→</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright Notice -->
+        <div class="border-t border-gray-700 py-2 mt-4"></div>
+        <div class="text-center text-sm mt-4">
+            &copy; 2024 Greatscope Insurance Agency. All rights reserved.
         </div>
     </div>
 </footer>
 
 
-	<!--------------- Footer ------------------>
-	
 
-
+<!-- Footer ends -->
 
 	<!-------------- Importing JS file -------------->
 	<script src="js/script.js"></script>

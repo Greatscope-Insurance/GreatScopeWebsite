@@ -1,0 +1,193 @@
+/* Combined Footer Styles */
+
+/* Base styles for the footer */
+.footer {
+    background-color: #282c64; /* Custom purple background */
+    color: #fff;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+}
+
+/* Footer headings style */
+.footer-heading {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #fbbf24; /* A goldish tone for the headings */
+}
+
+/* Footer text style */
+.footer-text {
+    color: #9ca3af; /* Lighter text for readability */
+}
+
+/* Contact info icons style */
+.contact-info i {
+    color: #9ca3af; /* Unified icon color */
+    margin-right: 0.5rem; /* Space after icons */
+}
+
+.contact-info .footer-text:not(:last-child) {
+    margin-bottom: 1rem; /* Space between contact items */
+}
+
+/* Newsletter form style */
+.newsletter-form {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ccc; /* Added border to input for better visibility */
+    margin-right: 0.5rem;
+}
+
+.newsletter-submit {
+    background-color: #db2777; /* Pinkish tone for the button */
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+}
+
+/* Responsive grid for footer content */
+@media (min-width: 768px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Style for large brand text */
+.text-4xl {
+    font-size: 2.25rem; /* Tailwind text-4xl */
+    line-height: 2.5rem;
+}
+
+/* Style for social icons */
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    color: #be185d; /* Tailwind pink-600 */
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2rem; /* Adjusted to 2rem for better spacing */
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #9f1239; /* Darken color on hover */
+}
+
+/* Border styles */
+.border-gray-700 {
+    border-color: #4B5563; /* Tailwind gray-700 */
+}
+
+/* Flexbox utilities */
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+/* Padding utilities */
+.py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+/* Margin utilities */
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ml-2 {
+    margin-left: 0.5rem;
+}
+
+/* Font weight utility */
+.font-bold {
+    font-weight: bold;
+}
+
+/* Custom styles for icons */
+.fas.fa-phone-alt,
+.fas.fa-envelope,
+.fas.fa-map-marker-alt {
+    color: #9ca3af; /* Adjusted icon color */
+}
+
+
+/* ... (rest of your CSS) ... */
+
+/* Copyright Styles */
+.text-center {
+    text-align: center;
+}
+
+.text-sm {
+    font-size: 0.875rem; /* Adjust the size as needed */
+}
+
+
+/* Top Info Strip Styles */
+.top-info-strip {
+    background-color: #B2BEB5; /* White background */
+    color: #282c64; /* Dark purple text */
+    padding: 0.5rem 0;
+}
+
+.top-info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2%; /* Adjust padding as needed */
+}
+
+.top-info-left span, .top-info-right .social-icon {
+    margin-right: 1rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+.social-icon {
+    color: #282c64; /* Dark purple icons */
+}
+
+.social-icon:hover {
+    color: #9b51e0; /* Purple hover effect */
+}
+
+/* Additional existing styles */
+/* ... */
