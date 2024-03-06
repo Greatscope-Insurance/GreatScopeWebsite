@@ -53,7 +53,7 @@
 <body class="">
 	<!-- Scroll to top starts -->
 	<button id="topBtn">
-	  	<ion-icon name="arrow-up-outline"></ion-icon>
+		<ion-icon name="arrow-up-outline"></ion-icon>
 	</button>
 	<!-- Scroll to top ends -->
 
@@ -76,43 +76,48 @@
 <!-- Top Info Strip ends -->
 
 	<!-- Navigation starts -->
-	<nav>
-		<div class="menu-container nav-wrapper">
-			<div class="brand">
-				<a href="index.html">
-					<img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/sized_logo_yZUD-_Hdz?updatedAt=1708010673725" alt="insurancy-logo">
-				</a>
-			</div>
+<nav>
+  <div class="menu-container nav-wrapper">
+    <div class="brand">
+      <a href="index.html">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/sized_logo_yZUD-_Hdz?updatedAt=1708010673725" alt="Insurance Logo">
+      </a>
+      <div class="brand-text">Greatscope</div> <!-- Text "Greatscope" added below the logo -->
+    </div>
 
-			<div class="hamberger">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
+    <!-- Hamburger Menu for Mobile -->
+    <button class="hamberger" aria-label="Open navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-			<ul class="nav-list">
-				<li class="active"><a href="index.html">Home</a></li>
-				<li><a href="about1.html">About</a></li>
-				<li>
-					<a href="insurance1.html">Our Products</a>
-					<ul class="dropdown-list">
-						<li><a href="insurance-details.html">Health Policy</a></li>
-						<li><a href="insurance-details.html">Auto Policy</a></li>
-						<li><a href="insurance-details.html">Home Policy</a></li>
-						<li><a href="insurance-details.html">Life Policy</a></li>
-						<li><a href="insurance-details.html">Travel Policy</a></li>
-					</ul>
-				</li>
-				<li><a href="news1.html">News</a></li>
-				<li><a href="contact1.html">Contacts</a></li>
-				<li>
-					<button class="btn btn-blue">
-						<a href="tel:254719151288">+254 719151288</a>
-					</button>
-				</li>
-			</ul>
-		</div>
-	</nav>
+    <ul class="nav-list">
+      <li class="active"><a href="index.html">Home</a></li>
+      <li><a href="about1.html">About</a></li>
+      <li>
+        <a href="insurance1.html">Our Products</a>
+        <ul class="dropdown-list">
+          <li><a href="insurance-details.html">Health Policy</a></li>
+          <li><a href="insurance-details.html">Auto Policy</a></li>
+          <li><a href="insurance-details.html">Home Policy</a></li>
+          <li><a href="insurance-details.html">Life Policy</a></li>
+          <li><a href="insurance-details.html">Travel Policy</a></li>
+        </ul>
+      </li>
+      <li><a href="news1.html">News</a></li>
+      <li><a href="contact1.html">Contacts</a></li>
+      <li>
+        <button class="btn btn-blue">
+          <a href="tel:254719151288">+254 719151288</a>
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
 	<!-- Navigation ends -->
 
 
@@ -442,7 +447,7 @@
                     <p class="footer-text">Greatscope serves as the unwavering bedrock of trust, providing steadfast commitment to safeguard what holds paramount importance across the varied realms of life, health, motor, and housing insurance.</p>
                     <div class="contact-info mt-4 space-y-2">
                         <p class="footer-text"><i class="fas fa-phone-alt contact-icon"></i> 0719 151 288 / 0797 313 199</p>
-                        <p class="footer-text"><i class="fas fa-envelope contact-icon"></i> greatscopeinsuranceagency@gmail.com</p>
+                        <p class="footer-text"><i class="fas fa-envelope contact-icon"></i> info@greatscopeinsurance.com</p>
                         <p class="footer-text"><i class="fas fa-map-marker-alt contact-icon"></i> Portal Place House 4th Floor, Muindi Mbingu Street.</p>
                     </div>
                 </div>
@@ -512,5 +517,18 @@
 		});
 		// ------------------------ Scroll to top button --------------------
 	</script>
+
+	<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var hamburger = document.querySelector('.hamberger');
+  var navList = document.querySelector('.nav-list');
+
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('active');
+    navList.classList.toggle('active');
+  });
+});
+</script>
+
 </body>
 </html>

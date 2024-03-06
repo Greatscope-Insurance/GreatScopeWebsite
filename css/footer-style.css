@@ -1,32 +1,173 @@
-/* Combined Footer Styles */
-
 /* Base styles for the footer */
 .footer {
     background-color: #282c64; /* Custom purple background */
     color: #fff;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+    padding: 20px 15px; /* Adjusted padding for mobile */
 }
 
 .footer-content {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    flex-direction: column; /* Stack content vertically on mobile */
     gap: 1rem;
 }
 
 /* Footer headings style */
 .footer-heading {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    color: #fbbf24; /* A goldish tone for the headings */
+    font-size: 1.25rem; /* Adjust size as necessary */
+    margin-bottom: 0.75rem; /* Reduce margin on mobile */
 }
 
 /* Footer text style */
 .footer-text {
     color: #9ca3af; /* Lighter text for readability */
+    font-size: 0.875rem; /* Adjust text size for mobile */
 }
+
+/* Contact info icons style */
+.contact-info i {
+    margin-right: 0.5rem; /* Space after icons */
+}
+
+.contact-info .footer-text:not(:last-child) {
+    margin-bottom: 0.5rem; /* Reduce space between contact items on mobile */
+}
+
+/* Newsletter form style for mobile */
+.newsletter-form {
+    flex-direction: column; /* Stack input and button vertically on mobile */
+}
+
+.newsletter-input {
+    width: 100%; /* Full width for input on mobile */
+    margin-bottom: 0.5rem; /* Space between input and button on mobile */
+    margin-right: 0; /* Remove right margin on mobile */
+}
+
+.newsletter-submit {
+    width: 100%; /* Full width for button on mobile */
+}
+
+/* Style for social icons - adjust margin and size for mobile */
+.social-icon {
+    width: 35px;
+    height: 35px;
+    margin-left: 1rem;
+}
+
+/* Adjust top info strip layout for mobile */
+/* Top Info Strip Styles for Desktop */
+.top-info-strip {
+    background-color: #B2BEB5; /* Light grey background */
+    color: #282c64; /* Dark purple text */
+    padding: 0.25rem 0;
+}
+
+.top-info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1%;
+    width: 100%;
+}
+
+.top-info-left,
+.top-info-right {
+    display: flex;
+    align-items: center;
+}
+
+.top-info-left span, 
+.top-info-right .social-icon {
+    margin-right: 1rem;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.875rem; /* Smaller font size for desktop */
+}
+
+/* Smaller logos in desktop mode */
+.top-info-right .social-icon {
+    width: 30px; /* Smaller width for icons in desktop */
+    height: 30px; /* Smaller height for icons in desktop */
+    font-size: 0.875rem; /* Adjust icon size in buttons if needed */
+}
+
+/* Ensuring last child doesn't have right margin */
+.top-info-left span:last-child,
+.top-info-right .social-icon:last-child {
+    margin-right: 0;
+}
+
+/* Adjustments for Mobile Viewing */
+/* Adjustments for Mobile Viewing */
+@media (max-width: 767px) {
+    .top-info-container {
+        flex-direction: column; /* Stack content vertically on mobile */
+        align-items: center; /* Center align items on mobile */
+        text-align: center; /* Center text on mobile */
+    }
+
+    .top-info-left {
+        flex-direction: row; /* Keep phone and email inline on mobile */
+        justify-content: center; /* Center content horizontally */
+        flex-wrap: wrap; /* Allow wrapping if necessary */
+    }
+
+    .top-info-left span {
+        margin-bottom: 0.25rem; /* Space between lines if they wrap */
+        width: auto; /* Auto width to fit content */
+    }
+
+    .top-info-left span i {
+        display: none; /* Hide icons on mobile */
+    }
+
+    .top-info-right {
+        justify-content: center; /* Center icons on mobile */
+        margin-top: 0.5rem; /* Space above the icons */
+    }
+
+    .top-info-right .social-icon {
+        width: 25px; /* Adjust icon size on mobile */
+        height: 25px; /* Adjust icon size on mobile */
+        margin-right: 0.5rem; /* Space between icons */
+    }
+
+    .top-info-right .social-icon:last-child {
+        margin-right: 0; /* Remove margin for the last icon */
+    }
+
+    /* Adjust font size for mobile */
+    .top-info-left span, .top-info-right .social-icon i {
+        font-size: 0.75rem;
+    }
+}
+
+
+
+/* Media query for tablet and desktop devices to adjust footer layout */
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row; /* Row layout for tablet and above */
+        justify-content: space-between; /* Distribute space between items */
+    }
+
+    .newsletter-form {
+        flex-direction: row; /* Align input and button in a row for tablets and above */
+        align-items: center; /* Align items vertically */
+    }
+
+    .newsletter-input {
+        flex-grow: 1; /* Allow the input to fill the available space */
+        margin-right: 1rem; /* Add right margin to input */
+        margin-bottom: 0; /* Remove bottom margin */
+    }
+
+    .newsletter-submit {
+        width: auto; /* Auto width for button on tablet and desktop */
+        padding: 10px 20px; /* Adjust padding for the button */
+    }
+}
+
 
 /* Contact info icons style */
 .contact-info i {
@@ -34,9 +175,6 @@
     margin-right: 0.5rem; /* Space after icons */
 }
 
-.contact-info .footer-text:not(:last-child) {
-    margin-bottom: 1rem; /* Space between contact items */
-}
 
 /* Newsletter form style */
 .newsletter-form {
@@ -58,12 +196,6 @@
     padding: 0.5rem 1rem;
 }
 
-/* Responsive grid for footer content */
-@media (min-width: 768px) {
-    .footer-content {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
 /* Style for large brand text */
 .text-4xl {
@@ -161,26 +293,6 @@
 }
 
 
-/* Top Info Strip Styles */
-.top-info-strip {
-    background-color: #B2BEB5; /* White background */
-    color: #282c64; /* Dark purple text */
-    padding: 0.5rem 0;
-}
-
-.top-info-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2%; /* Adjust padding as needed */
-}
-
-.top-info-left span, .top-info-right .social-icon {
-    margin-right: 1rem;
-    display: inline-flex;
-    align-items: center;
-}
-
 .social-icon {
     color: #282c64; /* Dark purple icons */
 }
@@ -193,9 +305,6 @@
 /* ... */
 
 /* Existing styles for about section */
-.about {
-    /* ... your existing styles ... */
-}
 
 /* Partners Section Styles */
 .partners-section {

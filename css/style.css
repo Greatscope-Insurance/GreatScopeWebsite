@@ -103,50 +103,45 @@ p
 
 
 /*-------------------------- Menu style -------------------------*/
-.menu-container
-{
-  width: 1152px;
+/* Base styles for the menu */
+.menu-container {
+  width: 100%; /* Adjusted for full-width on all devices */
   max-width: 90%;
   margin: 0 auto;
 }
 
-.nav-wrapper
-{
+.nav-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.nav-wrapper ul.nav-list
-{
+.nav-wrapper ul.nav-list {
   list-style-type: none;
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-.nav-wrapper ul.nav-list li 
-{
+.nav-wrapper ul.nav-list li {
   margin-left: 30px;
   padding: 20px 0;
   position: relative;
 }
 
-.nav-wrapper ul.nav-list li a
-{
+.nav-wrapper ul.nav-list li a {
   color: var(--third-color);
   text-decoration: none;
   letter-spacing: 1px;
   transition: all .5s ease-in-out;
 }
 
-.nav-wrapper ul.nav-list li a:hover, .nav-wrapper ul.nav-list li.active a
-{
+.nav-wrapper ul.nav-list li a:hover, .nav-wrapper ul.nav-list li.active a {
   color: var(--blue-color);
 }
 
-nav ul.dropdown-list
-{
+/* Dropdown list styles */
+nav ul.dropdown-list {
   list-style-type: none;
   display: block;
   background: whitesmoke;
@@ -160,160 +155,148 @@ nav ul.dropdown-list
   pointer-events: none;
 }
 
-.nav-wrapper ul.dropdown-list li
-{
+.nav-wrapper ul.dropdown-list li {
   margin-left: 0;
   padding: 5px 0;
 }
 
-.nav-wrapper ul.dropdown-list li a
-{
+.nav-wrapper ul.dropdown-list li a {
   color: var(--third-color);
 }
 
-.nav-wrapper ul.nav-list li:hover .dropdown-list
-{
+.nav-wrapper ul.nav-list li:hover .dropdown-list {
   opacity: 1;
   pointer-events: auto;
   animation: moveUp .5s ease-in-out forwards;
 }
 
-
-.nav-wrapper .nav-list li .btn a
-{
-	color: var(--fourth-color);
+/* Button styles */
+.nav-wrapper .nav-list li .btn a {
+  color: var(--fourth-color);
 }
 
-.nav-wrapper .nav-list li .btn:hover a
-{
-	color: var(--third-color);
+.nav-wrapper .nav-list li .btn:hover a {
+  color: var(--third-color);
 }
 
-@keyframes moveUp
-{
-  0%
-  {
+/* Hamburger menu styles */
+.hamberger {
+  display: none; /* Hidden on desktop */
+  position: absolute;
+  background: #333;
+  top: 23%; /* Align vertically center with the logo */
+  right: 10px; /* Adjust according to the layout */
+  transform: translateY(-50%); /* Center align vertically */
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+@media (max-width: 767px) {
+  /* Display hamburger menu on mobile */
+  .hamberger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .hamberger span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    margin: 5px 0;
+    transition: background 0.3s, transform 0.3s;
+  }
+}
+
+
+  /* Style adjustments for mobile navigation */
+  .nav-wrapper {
+    flex-direction: column;
+  }
+
+  .nav-wrapper ul.nav-list {
+    display: none; /* Hide the nav list initially */
+    flex-direction: column;
+    width: 100%;
+    padding-top: 60px; /* Space for the hamburger menu */
+  }
+
+  .nav-wrapper ul.nav-list li {
+    text-align: center;
+    margin-left: 0;
+    padding: 10px 0; /* Reduced padding */
+  }
+
+  .nav-wrapper ul.nav-list li a {
+    display: block;
+  }
+
+  .nav-wrapper ul.nav-list.active {
+    display: flex;
+  }
+
+  /* Adjust dropdown menu on mobile */
+  .nav-wrapper ul.dropdown-list {
+    display: none; /* Hide dropdown by default */
+    position: static;
+    width: 100%;
+    background: #f5f6fa;
+  }
+
+  .nav-wrapper ul.nav-list li:hover .dropdown-list,
+  .nav-wrapper ul.nav-list li:focus-within .dropdown-list {
+    display: block; /* Show dropdown on hover/focus */
+  }
+}
+
+/* Animation for dropdown */
+@keyframes moveUp {
+  0% {
     opacity: 0;
     transform: translateX(-50%) translateY(50px);
   }
-  100%
-  {
+  100% {
     opacity: 1;
     transform: translateX(-50%) translateY(20px);
   }
 }
 
-.hamberger
-{
-  display: none;
-}
-
-.mobile .hamberger
-{
-  display: flex;
-  flex-direction: column;
-  padding: 20px 0;
-  cursor: pointer;
-}
-
-.mobile .hamberger span
-{
-  background: var(--third-color);
-  width: 28px;
-  height: 2px;
-  margin-bottom: 8px;
-}
-
-.mobile ul.nav-list
-{
-  background: -webkit-linear-gradient(45deg, #f5f6fa, #dcdde1);
-  background: linear-gradient(45deg, #f5f6fa, #dcdde1);
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  padding-top: 80px;
-  opacity: 0;
-  pointer-events: none;
-  transition: All .3s ease-in-out;
-}
-
-.hamberger, .brand
-{
-  z-index: 9999;
+/* Brand text styles */
+.brand {
+  text-align: center;
 }
 
 .brand img {
-  width: 110px;
-  height: 110px;
-  display: block;
-  margin: 0 auto;
-  border: 0;
-  object-fit: contain;
+  height: 60px; /* Example size - adjust as needed */
+  width: auto; /* Maintains the aspect ratio of the image */
 }
 
 
-.mobile ul.nav-list.open
-{
-  opacity: 1;
-  pointer-events: auto;
-  z-index: 999;
-  overflow-y: auto;
+.brand-text {
+  color: #070110;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 5px;
 }
 
-
-.mobile .hamberger span
-{
-  transform-origin: left;
-  transition: all .3s ease-in-out;
+@media (max-width: 767px) {
+  .brand-text {
+    display: block;
+  }
 }
 
-.mobile ul.nav-list li a
-{
-  font-size: 20px;
+/* Modify the brand logo size for smaller screens if necessary */
+@media (max-width: 767px) {
+  .brand img {
+    width: 50px; /* Adjust based on your preference */
+    height: auto;
+  }
 }
 
-.mobile ul.dropdown-list
-{
-  position: relative;
-  background: transparent;
-  text-align: center;
-  height: 0;
-  overflow-y: hidden;
-  transition: opacity 1s ease-in-out;
-  padding-top: 0;
-}
-
-.mobile .nav-wrapper ul li:hover .dropdown-list
-{
-  height: max-content;
-  padding-top: 6px;
-}
-
-.mobile ul.nav-list li
-{
-  margin-left: 0;
-  text-align: center;
-}
-
-.mobile .nav-wrapper ul.dropdown-list li a
-{
-  color: #7f8fa6;
-}
-
-.mobile .nav-wrapper ul.dropdown-list li a:hover
-{
-	color: var(--third-color);
-}
-/*-------------------------- Menu style -------------------------*/
 
 
 /*----------- Scroll to top --------------*/
-#topBtn
-{
+#topBtn {
   position: fixed;
   bottom: 40px;
   right: 40px;
@@ -321,11 +304,12 @@ nav ul.dropdown-list
   width: 40px;
   height: 40px;
   background: var(--blue-color);
-  color: #white;
+  color: white; /* Corrected color value */
   border: none;
   cursor: pointer;
   display: none;
 }
+
 
 #topBtn ion-icon
 {
