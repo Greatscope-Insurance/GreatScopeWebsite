@@ -179,6 +179,7 @@ nav ul.dropdown-list {
   color: var(--third-color);
 }
 
+
 /* Hamburger menu styles */
 .hamberger {
   display: none; /* Hidden on desktop */
@@ -247,7 +248,10 @@ nav ul.dropdown-list {
   .nav-wrapper ul.nav-list li:focus-within .dropdown-list {
     display: block; /* Show dropdown on hover/focus */
   }
-}
+
+  .nav-wrapper .nav-list li .btn {
+	padding: 0.5rem 1rem;
+  }
 
 /* Animation for dropdown */
 @keyframes moveUp {
@@ -265,6 +269,8 @@ nav ul.dropdown-list {
 .brand {
   text-align: center;
 }
+
+
 
 .brand img {
   height: 60px; /* Example size - adjust as needed */
