@@ -50,24 +50,7 @@
 	background-size: cover;
 }
 
-.contact-info .container
-{
-	text-align: center;
-	padding: 5rem 0;
-}
 
-.contact-info .container .row
-{
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
-}
-
-.contact-info .container .row .col ion-icon
-{
-	color: var(--yellow-color);
-	font-size: 3.6rem;
-}
 
 .info-name
 {
