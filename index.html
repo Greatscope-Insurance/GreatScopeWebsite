@@ -312,29 +312,97 @@
 
 	<!-- Testimonial section starts -->
 	<section class="testimonial">
-		<div class="container">
-			<h4 class="sub-heading white">Testimonials</h4>
-			<h2 class="heading white">What Our Customers Say</h2>
-			<p class="para-line white">
-				Pickled echo park ennui crucifix neutra brooklyn, woke fanny pack godard poutine srirac dreamcatcher truffaut voluptate. Small batch irony brunch, chicharron try-hard crucifixethical ipsum church-key lyft four dollar toast kombucha mlkshk tofu.
-			</p>
-			<div class="testimonial-profile">
-				<img src="img/client.jpg" alt="Client" title="Client" class="profile-img">
-				<span>
-					<h6 class="client-name white">Ana Marie Dow</h6>
-					<p class="client-location white">Pasodena</p>
-				</span>
-			</div>
+    <div class="container">
+        <h4 class="sub-heading white">Testimonials</h4>
+        <h2 class="heading white">What Our Customers Say</h2>
 
-			<div class="stars">
-				<ion-icon name="star-outline"></ion-icon>
-				<ion-icon name="star-outline"></ion-icon>
-				<ion-icon name="star-outline"></ion-icon>
-				<ion-icon name="star-outline"></ion-icon>
-				<ion-icon name="star-outline"></ion-icon>
-			</div>
-		</div>
-	</section>
+        <div class="testimonial-item" style="display: block;">
+            <p class="para-line white">
+                Great services given expeditiously, honesty policy seems to be the order of the day.
+            </p>
+            <div class="testimonial-profile">
+                <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Testimonials/ngeli%20(1).webp?updatedAt=1710755861972" alt="Client" title="Client" class="profile-img">
+                <span>
+                    <h6 class="client-name white">Nicholas Ngeli</h6>
+                    <p class="client-location white">Nairobi</p>
+                </span>
+            </div>
+            <div class="stars">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star-outline"></ion-icon>
+            </div>
+        </div>
+
+        <div class="testimonial-item" style="display: none;">
+            <p class="para-line white">
+                Greatscope thanks for giving us the best group last expense cover after explaining the pros and cons for all in the market.
+            </p>
+            <div class="testimonial-profile">
+                <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Testimonials/mboya%20(1).webp?updatedAt=1710755862204" alt="Client" title="Client" class="profile-img">
+                <span>
+                    <h6 class="client-name white">Ruth Mboya</h6>
+                    <p class="client-location white">Nairobi</p>
+                </span>
+            </div>
+            <div class="stars">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star-half-outline"></ion-icon>
+            </div>
+        </div>
+
+		<div class="testimonial-item" style="display: none;">
+            <p class="para-line white">
+                The Insurance agency staff are professional, friendly and care about their customers.Thanks Greatscope IA for fast tracking my claim and ensuring that my compensation was processed promptly.
+            </p>
+            <div class="testimonial-profile">
+                <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Testimonials/mathias%20(1).webp?updatedAt=1710755861965" alt="Client" title="Client" class="profile-img">
+                <span>
+                    <h6 class="client-name white">Mat Hias</h6>
+                    <p class="client-location white">Nairobi</p>
+                </span>
+            </div>
+            <div class="stars">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star-half-outline"></ion-icon>
+            </div>
+        </div>
+
+		<div class="testimonial-item" style="display: none;">
+            <p class="para-line white">
+                Simply amazing, your partner in eventualities.
+            </p>
+            <div class="testimonial-profile">
+                <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Testimonials/kliss%20(1).webp?updatedAt=1710755672770" alt="Client" title="Client" class="profile-img">
+                <span>
+                    <h6 class="client-name white">Kliss Kinyungu</h6>
+                    <p class="client-location white">Nairobi</p>
+                </span>
+            </div>
+            <div class="stars">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star-half-outline"></ion-icon>
+            </div>
+        </div>
+
+        <!-- Navigation buttons -->
+        <button id="prev-btn">&lt;</button>
+		<button id="next-btn">&gt;</button>
+
+    </div>
+</section>
+
 	<!-- Testimonial section ends -->
 
 
@@ -432,6 +500,28 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+
+<script>
+    let currentTestimonialIndex = 0;
+    const testimonials = document.querySelectorAll('.testimonial-item');
+
+    function showTestimonial(index) {
+        testimonials.forEach((testimonial, idx) => {
+            testimonial.style.display = idx === index ? 'block' : 'none';
+        });
+    }
+
+    document.getElementById('prev-btn').addEventListener('click', () => {
+        currentTestimonialIndex = (currentTestimonialIndex - 1 + testimonials.length) % testimonials.length;
+        showTestimonial(currentTestimonialIndex);
+    });
+
+    document.getElementById('next-btn').addEventListener('click', () => {
+        currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
+        showTestimonial(currentTestimonialIndex);
+    });
+</script>
+
 
 
 </body>

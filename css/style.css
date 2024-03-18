@@ -640,6 +640,40 @@ nav ul.dropdown-list {
 {
 	color: var(--yellow-color);
 }
+
+#prev-btn,
+#next-btn {
+    font-size: 24px; /* Larger arrow symbols */
+    display: inline-block;
+    width: 40px; /* Fixed width for better alignment */
+    height: 40px; /* Fixed height for a square aspect ratio */
+    line-height: 40px; /* Center the arrow vertically */
+    text-align: center; /* Center the arrow horizontally */
+    background-color: #007bff; /* Initial background color */
+    color: white; /* Text color */
+    border-radius: 50%; /* Circular buttons */
+    padding: 0; /* Remove padding to prevent size increase */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Smooth transitions for hover effects */
+    border: none; /* Remove default border */
+}
+
+#prev-btn:hover,
+#next-btn:hover {
+    background-color: #0056b3; /* Darker background on hover */
+    color: #ffffff; /* Change text color on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* More pronounced shadow for a deeper 3D effect */
+    transform: scale(1.1); /* Scale up the button slightly */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s; /* Ensure the scaling is smooth */
+}
+
+
+#prev-btn:focus,
+#next-btn:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Custom focus style to improve accessibility */
+}
+
 /*----------------- Testimonial section styling --------------*/
 
 
@@ -1079,3 +1113,5 @@ footer
     transition-duration: 0s;
   }
 }
+
+
