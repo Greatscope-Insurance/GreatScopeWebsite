@@ -35,6 +35,7 @@
 	<link rel="stylesheet" href="css/style.css">
 
 	<link rel="stylesheet" href="css/footer-style.css">
+	<link rel="stylesheet" href="css/hero.css">
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
@@ -46,6 +47,10 @@
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 
 	<!-- Jquery CDN link -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -56,8 +61,6 @@
 		<ion-icon name="arrow-up-outline"></ion-icon>
 	</button>
 	<!-- Scroll to top ends -->
-
-	
 
 	<!-- Navigation starts -->
 <nav>
@@ -103,28 +106,66 @@
 
 
 	<!-- Hero section starts -->
-	<section class="hero">
-		<div class="hero-container">
-			<div class="row">
-				<div class="col hero-content">
-					<h2 class="hero-heading white">
-						Consult, Insure, Relax
-					</h2>
-					<p class="para-line white">
-						Experience unparalleled peace of mind with Greatscope Insurance Agency, your premier partner in navigating the complexities of insurance. 
-					</p>
-					<div class="inner-row">
-						<div class="inner-col">
-							<button class="btn btn-full-w btn-yellow">
-								<a href="#">Buy Insurance</a>
-							</button>
-						</div>
-					</div>
-				</div>
-				<div class="col hero-blank-col"></div>
-			</div>
-		</div>
-	</section>
+	<section class="events-page">
+    <div id="section1" class="event">
+      <div class="pinWrapper">
+        <div class="text">
+          <h2>Living</h2>
+          <p>Explore our range of stylish and comfortable living room furniture.</p>
+        </div>
+        <div class="image" id="loaderVideo">
+          <video autoplay loop muted playsinline>
+            <source src="https://www.yudiz.com/codepen/studio-r/bg-video.mp4" type="video/mp4">
+          </video>
+        </div>
+        <!-- Video -->
+      </div>
+      <div class="scrollBtn">
+        <h6>scroll</h6>
+        <span></span>
+      </div>
+    </div>
+    <!-- Section 01 -->
+    <div id="section2" class="event">
+      <div class="pinWrapper">
+        <div class="text">
+          <h2>Kitchen</h2>
+          <p>Check out our modern and functional kitchen furniture and accessories.</p>
+        </div>
+        <div class="image"></div>
+      </div>
+    </div>
+    <!-- Section 02 -->
+    <div id="section3" class="event">
+      <div class="pinWrapper">
+        <div class="text">
+          <h2>Bedroom</h2>
+          <p>Discover our collection of bedroom furniture to create your dream space.</p>
+        </div>
+        <div class="image"></div>
+      </div>
+    </div>
+    <!-- Section 03 -->
+    <div id="section4" class="event">
+      <div class="pinWrapper">
+        <div class="text">
+          <h2>Office</h2>
+          <p>Find the perfect office furniture to make your workspace comfortable and productive.</p>
+        </div>
+        <div class="image"></div>
+      </div>
+    </div>
+    <!-- Section 04 -->
+  </section>
+
+  <!-- Loader -->
+  <div id="preloader">
+    <div class="text-wrapper">
+      <h1 id="first-text">Studio R</h1>
+      <h3 id="second-text">Creative Agency</h3>
+    </div>
+  </div>
+
 	<!-- Hero section ends -->
 
 	<!-- Services section starts -->
@@ -521,6 +562,38 @@ document.addEventListener('DOMContentLoaded', function() {
         showTestimonial(currentTestimonialIndex);
     });
 </script>
+
+<script>
+	document.addEventListener('DOMContentLoaded', (event) => {
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.slider-img');
+    const imageCount = images.length;
+
+    // Function to change image
+    const changeImage = () => {
+        // Hide all images
+        images.forEach((img) => {
+            img.style.display = 'none';
+        });
+
+        // Show the next image
+        images[currentIndex].style.display = 'block';
+
+        // Update the index to the next image
+        currentIndex = (currentIndex + 1) % imageCount;
+    };
+
+    // Show the first image initially
+    changeImage();
+
+    // Change the image every 3 seconds (3000 milliseconds)
+    setInterval(changeImage, 3000);
+});
+
+</script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js'></script>
+<script src='https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js'></script><script  src="./hero.js"></script>
 
 
 

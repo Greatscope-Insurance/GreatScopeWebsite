@@ -401,46 +401,29 @@ nav ul.dropdown-list {
 
 
 
-/*----------------- Hero section styling ----------------*/
-.hero
-{
-	background: linear-gradient(rgba(150, 60, 221, 0.4), rgba(22, 104, 184, 0.9)), url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/nairobi.webp?updatedAt=1708016426611");
-	background-position: center top;
-	background-repeat: no-repeat;
-	background-size: cover;
+/*----------------- Hero section styling ----------------*/ 
+
+
+/* Styles for the image slider */
+.image-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;  /* Make the slider take the full height and width of the hero container */
+    z-index: 1;  /* Place the slider behind the content but above the hero background */
 }
 
-.hero .hero-container
-{	
-	width: 100%;
-	height: 90vh;
-	display: flex;
-	justify-content: flex-start;
-	align-items: flex-end;
+.slider-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Ensure images cover the container without distortion */
+    display: none;  /* Hide images by default */
 }
 
-.hero-container .row > .col
-{
-	display: flex;
-	flex-direction: column;
-	gap: 1.4rem;
-}
-
-.hero-content
-{
-	padding: 0 2rem 3.6rem 2rem;
-}
-
-.hero-heading
-{
-	font-size: 2.3rem;
-	line-height: 1.1;
-}
-
-.inner-row .inner-col
-{
-	margin: 1rem 0;
-}
 /*----------------- Hero section styling ----------------*/
 
 
