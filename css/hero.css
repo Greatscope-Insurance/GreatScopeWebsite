@@ -104,10 +104,10 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 #section1 {
-  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/Life%20&%20Pension%20(Medium%20Banner%20(US)%20(Landscape)).png?updatedAt=1714212590629");
+  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/ii.jpg?updatedAt=1714204935748");
 }
 #section2 {
-  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/ii.jpg?updatedAt=1714204935748");
+  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/pexels-minan1398-1369280.jpg?updatedAt=1714239937377");
 }
 #section3 {
   background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/pexels-antonytrivet-13348192.jpg?updatedAt=1714215011355");
@@ -157,7 +157,7 @@ body::-webkit-scrollbar-thumb:hover {
   background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/Life%20&%20Pension.png?updatedAt=1714213016747");
 }*/
 #section2 .image {
-  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/health.webp?updatedAt=1714205713350");
+  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/life.webp?updatedAt=1714238404742");
 }
 #section3 .image {
   background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/414986337_333266762904240_8015226237024371635_n.jpg?updatedAt=1714205966555");
@@ -451,3 +451,5 @@ body::-webkit-scrollbar-thumb:hover {
     -webkit-transform: translate(0%, -25%);
   }
 }
+
+/*My CSS*/
