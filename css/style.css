@@ -401,46 +401,29 @@ nav ul.dropdown-list {
 
 
 
-/*----------------- Hero section styling ----------------*/
-.hero
-{
-	background: linear-gradient(rgba(150, 60, 221, 0.4), rgba(22, 104, 184, 0.9)), url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/nairobi.webp?updatedAt=1708016426611");
-	background-position: center top;
-	background-repeat: no-repeat;
-	background-size: cover;
+/*----------------- Hero section styling ----------------*/ 
+
+
+/* Styles for the image slider */
+.image-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;  /* Make the slider take the full height and width of the hero container */
+    z-index: 1;  /* Place the slider behind the content but above the hero background */
 }
 
-.hero .hero-container
-{	
-	width: 100%;
-	height: 90vh;
-	display: flex;
-	justify-content: flex-start;
-	align-items: flex-end;
+.slider-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Ensure images cover the container without distortion */
+    display: none;  /* Hide images by default */
 }
 
-.hero-container .row > .col
-{
-	display: flex;
-	flex-direction: column;
-	gap: 1.4rem;
-}
-
-.hero-content
-{
-	padding: 0 2rem 3.6rem 2rem;
-}
-
-.hero-heading
-{
-	font-size: 2.3rem;
-	line-height: 1.1;
-}
-
-.inner-row .inner-col
-{
-	margin: 1rem 0;
-}
 /*----------------- Hero section styling ----------------*/
 
 
@@ -523,46 +506,6 @@ nav ul.dropdown-list {
 	background: #f3f8ff;
 }
 /*----------------- Why Us section styling ---------------*/
-
-
-
-/*----------------- Services section styling ---------------*/
-.service-img
-{
-	border-radius: 5px;
-	margin: 0 0 2rem 0;
-}
-
-.our-services .services
-{
-	margin: 2rem 0;
-}
-
-.services .service
-{
-	border: none;
-	border-radius: 10px;
-	margin: 1.5rem 0;
-	padding: 1.8rem;
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-}
-
-.services .service:hover
-{
-	box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-}
-
-.service ion-icon
-{
-	color: var(--yellow-color);
-	font-size: 2.6rem;
-}
-
-.service .service-heading
-{
-	font-weight: 600;
-}
-/*----------------- Services section styling ---------------*/
 
 
 
@@ -680,6 +623,40 @@ nav ul.dropdown-list {
 {
 	color: var(--yellow-color);
 }
+
+#prev-btn,
+#next-btn {
+    font-size: 24px; /* Larger arrow symbols */
+    display: inline-block;
+    width: 40px; /* Fixed width for better alignment */
+    height: 40px; /* Fixed height for a square aspect ratio */
+    line-height: 40px; /* Center the arrow vertically */
+    text-align: center; /* Center the arrow horizontally */
+    background-color: #007bff; /* Initial background color */
+    color: white; /* Text color */
+    border-radius: 50%; /* Circular buttons */
+    padding: 0; /* Remove padding to prevent size increase */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Smooth transitions for hover effects */
+    border: none; /* Remove default border */
+}
+
+#prev-btn:hover,
+#next-btn:hover {
+    background-color: #0056b3; /* Darker background on hover */
+    color: #ffffff; /* Change text color on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* More pronounced shadow for a deeper 3D effect */
+    transform: scale(1.1); /* Scale up the button slightly */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s; /* Ensure the scaling is smooth */
+}
+
+
+#prev-btn:focus,
+#next-btn:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Custom focus style to improve accessibility */
+}
+
 /*----------------- Testimonial section styling --------------*/
 
 
@@ -933,3 +910,191 @@ footer
 	}
 	/*-------------- Testimonial section styling ---------------*/
 }
+
+/*-------------- Cards section styling ---------------*/
+
+@import url("https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap");
+:root {
+  --d: 700ms;
+  --e: cubic-bezier(0.19, 1, 0.22, 1);
+  --font-sans: "Rubik", sans-serif;
+  --font-serif: "Cardo", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.page-content {
+  display: flex;
+  grid-gap: 1rem;
+  padding: 1rem;
+  max-width: 1024px;
+  margin: 0 auto;
+  font-family: var(--font-sans);
+}
+@media (min-width: 600px) {
+  .page-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 800px) {
+  .page-content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  color: whitesmoke;
+  background-color: whitesmoke;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+}
+@media only screen and (max-width: 600px) {
+  .page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%; /* Adjust this as needed */
+    margin-bottom: 20px; /* Adds space between the cards */
+  }
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  background-size: cover;
+  background-position: 0 0;
+  transition: transform calc(var(--d) * 1.5) var(--e);
+  pointer-events: none;
+}
+.card:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  pointer-events: none;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.32) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.54) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.79) 100%);
+  transform: translateY(-50%);
+  transition: transform calc(var(--d) * 2) var(--e);
+}
+.card:nth-child(1):before {
+  background-image: url(https://source.unsplash.com/t1XLQvDqt_4);
+}
+.card:nth-child(2):before {
+  background-image: url(https://source.unsplash.com/zXpwZN7rnZY);
+}
+.card:nth-child(3):before {
+  background-image: url(https://source.unsplash.com/M0AWNxnLaMw);
+}
+
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  transition: transform var(--d) var(--e);
+  z-index: 1;
+}
+.content > * + * {
+  margin-top: 1rem;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.copy {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.card-btn {
+  cursor: pointer;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.65rem;
+  font-weight: bold;
+  letter-spacing: 0.025rem;
+  text-transform: uppercase;
+  color: white;
+  background-color: black;
+  border: none;
+}
+.card-btn:hover {
+  background-color: #0d0d0d;
+}
+.card-btn:focus {
+  outline: 1px dashed yellow;
+  outline-offset: 3px;
+}
+
+@media (hover: hover) and (min-width: 600px) {
+  .card:after {
+    transform: translateY(0);
+  }
+
+  .content {
+    transform: translateY(calc(100% - 4.5rem));
+  }
+  .content > *:not(.title) {
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+  }
+
+  .card:hover,
+.card:focus-within {
+    align-items: center;
+  }
+  .card:hover:before,
+.card:focus-within:before {
+    transform: translateY(-4%);
+  }
+  .card:hover:after,
+.card:focus-within:after {
+    transform: translateY(-50%);
+  }
+  .card:hover .content,
+.card:focus-within .content {
+    transform: translateY(0);
+  }
+  .card:hover .content > *:not(.title),
+.card:focus-within .content > *:not(.title) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: calc(var(--d) / 8);
+  }
+
+  .card:focus-within:before, .card:focus-within:after,
+.card:focus-within .content,
+.card:focus-within .content > *:not(.title) {
+    transition-duration: 0s;
+  }
+}
+
+
