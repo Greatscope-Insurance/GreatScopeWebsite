@@ -424,15 +424,15 @@ body {
 }
 .example-slider .fnc-slide-1 .fnc-slide__inner,
 .example-slider .fnc-slide-1 .fnc-slide__mask-inner {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/blackwidow.jpg");
+  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/national-cancer-institute-KMvoHcB-w5g-unsplash.jpg?updatedAt=1714309512996");
 }
 .example-slider .fnc-slide-2 .fnc-slide__inner,
 .example-slider .fnc-slide-2 .fnc-slide__mask-inner {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/captainamerica.jpg");
+  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/fam.jpg?updatedAt=1714311514783");
 }
 .example-slider .fnc-slide-3 .fnc-slide__inner,
 .example-slider .fnc-slide-3 .fnc-slide__mask-inner {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/ironman-alt.jpg");
+  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/pexels-rdne-8123905.jpg?updatedAt=1714313727765");
 }
 .example-slider .fnc-slide-3 .fnc-slide__inner:before {
   content: "";
@@ -445,7 +445,7 @@ body {
 }
 .example-slider .fnc-slide-4 .fnc-slide__inner,
 .example-slider .fnc-slide-4 .fnc-slide__mask-inner {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/thor.jpg");
+  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/pexels-omar-ramadan-1739260-5705531%202.jpg?updatedAt=1714315051859");
 }
 .example-slider .fnc-slide-4 .fnc-slide__inner:before {
   content: "";
