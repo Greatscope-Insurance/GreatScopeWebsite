@@ -799,23 +799,7 @@ footer
 
 
 	/*-------------- Hero section styling ------------------*/
-	.hero-container .row > .hero-content
-	{
-		width: 140%;
-	}
-
-	.hero-heading
-	{
-		font-size: 4rem;
-	}
-
-	.hero
-	{
-		background: linear-gradient(rgba(150, 60, 221, 0.2), rgba(13, 14, 56, 0.9)), url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/nairobi.webp?updatedAt=1708016689090");
-		background-position: center top;
-		background-repeat: no-repeat;
-		background-size: cover;
-	}
+	
 	/*-------------- Hero section styling ------------------*/
 
 

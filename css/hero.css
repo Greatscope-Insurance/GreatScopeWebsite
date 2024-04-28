@@ -424,15 +424,15 @@ body {
 }
 .example-slider .fnc-slide-1 .fnc-slide__inner,
 .example-slider .fnc-slide-1 .fnc-slide__mask-inner {
-  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/national-cancer-institute-KMvoHcB-w5g-unsplash.jpg?updatedAt=1714309512996");
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/blackwidow.jpg");
 }
 .example-slider .fnc-slide-2 .fnc-slide__inner,
 .example-slider .fnc-slide-2 .fnc-slide__mask-inner {
-  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/fam.jpg?updatedAt=1714311514783");
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/captainamerica.jpg");
 }
 .example-slider .fnc-slide-3 .fnc-slide__inner,
 .example-slider .fnc-slide-3 .fnc-slide__mask-inner {
-  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/pexels-rdne-8123905.jpg?updatedAt=1714313727765");
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/ironman-alt.jpg");
 }
 .example-slider .fnc-slide-3 .fnc-slide__inner:before {
   content: "";
@@ -445,7 +445,7 @@ body {
 }
 .example-slider .fnc-slide-4 .fnc-slide__inner,
 .example-slider .fnc-slide-4 .fnc-slide__mask-inner {
-  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/pexels-omar-ramadan-1739260-5705531%202.jpg?updatedAt=1714315051859");
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/thor.jpg");
 }
 .example-slider .fnc-slide-4 .fnc-slide__inner:before {
   content: "";
@@ -618,50 +618,4 @@ body {
 .colorful-switch__checkbox:checked ~ .colorful-switch__label .colorful-switch__off:after {
   transition-timing-function: ease;
   transform: rotate(-45deg) scaleX(0) translateZ(0);
-}
-
-
-/* Mine CSS*/
-@media only screen and (max-width: 768px) {
-  .fnc-slider__slides {
-    height: auto; /* Adjusting height for smaller screens */
-  }
-  .fnc-slide__mask {
-    right: 0; /* Adjusting position of mask */
-    top: 0;
-    width: 100%; /* Making mask full width */
-    height: 50%; /* Adjusting height of mask */
-    margin-right: 0; /* Removing negative margin */
-    transform-origin: 50% 0;
-  }
-  .fnc-slide__mask-inner {
-    left: 0; /* Adjusting position of mask inner */
-    top: 0;
-    width: 100%; /* Making mask inner full width */
-    height: 100%; /* Making mask inner full height */
-    margin-left: 0; /* Removing negative margin */
-    margin-top: 0;
-    transform-origin: 50% 16.5vh;
-  }
-  .fnc-slide__content {
-    left: 50%; /* Centering content horizontally */
-    top: 50%; /* Centering content vertically */
-    transform: translate(-50%, -50%); /* Centering content */
-  }
-  .fnc-slide__action-btn {
-    margin-left: 0; /* Adjusting button margin */
-  }
-  .fnc-nav {
-    bottom: 20px; /* Adjusting nav position */
-    right: 50%; /* Centering nav horizontally */
-    transform: translateX(50%); /* Centering nav horizontally */
-  }
-  .demo-cont__credits {
-    width: 100%; /* Making credits section full width */
-    padding: 20px; /* Adjusting padding */
-  }
-  .example-slider {
-    width: 100%; /* Making slider full width */
-    max-width: none; /* Removing max-width */
-  }
 }
