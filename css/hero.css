@@ -619,3 +619,49 @@ body {
   transition-timing-function: ease;
   transform: rotate(-45deg) scaleX(0) translateZ(0);
 }
+
+
+/* Mine CSS*/
+@media only screen and (max-width: 768px) {
+  .fnc-slider__slides {
+    height: auto; /* Adjusting height for smaller screens */
+  }
+  .fnc-slide__mask {
+    right: 0; /* Adjusting position of mask */
+    top: 0;
+    width: 100%; /* Making mask full width */
+    height: 50%; /* Adjusting height of mask */
+    margin-right: 0; /* Removing negative margin */
+    transform-origin: 50% 0;
+  }
+  .fnc-slide__mask-inner {
+    left: 0; /* Adjusting position of mask inner */
+    top: 0;
+    width: 100%; /* Making mask inner full width */
+    height: 100%; /* Making mask inner full height */
+    margin-left: 0; /* Removing negative margin */
+    margin-top: 0;
+    transform-origin: 50% 16.5vh;
+  }
+  .fnc-slide__content {
+    left: 50%; /* Centering content horizontally */
+    top: 50%; /* Centering content vertically */
+    transform: translate(-50%, -50%); /* Centering content */
+  }
+  .fnc-slide__action-btn {
+    margin-left: 0; /* Adjusting button margin */
+  }
+  .fnc-nav {
+    bottom: 20px; /* Adjusting nav position */
+    right: 50%; /* Centering nav horizontally */
+    transform: translateX(50%); /* Centering nav horizontally */
+  }
+  .demo-cont__credits {
+    width: 100%; /* Making credits section full width */
+    padding: 20px; /* Adjusting padding */
+  }
+  .example-slider {
+    width: 100%; /* Making slider full width */
+    max-width: none; /* Removing max-width */
+  }
+}
