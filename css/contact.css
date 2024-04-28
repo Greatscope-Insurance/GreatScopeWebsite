@@ -42,27 +42,34 @@
 
 
 /*------------------------------ Contact Info ---------------------------*/
-.contact-info
-{
-	background: linear-gradient(rgba(10, 17, 79, 0.9), rgba(10, 17, 79, 0.9)), url("../img/hero-bg.jpg");
-	background-position: center top;
-	background-repeat: no-repeat;
-	background-size: cover;
+/* 
+  imports:
+    https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css
+*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
-
-.info-name
-{
-	font-size: 1.7rem;
-	font-weight: 700;
+*:focus,
+*:active {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.info-detail
-{
-	font-size: 1.1rem;
-	font-weight: 400;
+html,
+body {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+
+  background: linear-gradient(315deg, #ffffff, #d7e1ec);
 }
+
 /*------------------------------ Contact Info ---------------------------*/
 
 
