@@ -189,21 +189,13 @@ nav ul.dropdown-list {
 
 /* Hamburger menu styles (hidden on desktop, shown on mobile) */
 .hamberger {
-  display: none; /* hide the hamburger menu initially */
-  position: fixed; /* position it fixed at the top right corner */
-  top: 0;
-  right: 0;
+  display: none;
+  position: absolute;
   background: #333;
+  top: 12%;
+  right: 10px;
+  transform: translateY(-50%);
   z-index: 1000;
-  padding: 1rem;
-}
-
-.hamberger span {
-  display: block;
-  width: 2rem;
-  height: 2px;
-  background: #fff;
-  margin-bottom: 0.25rem;
 }
 
 .brand img {
@@ -239,19 +231,12 @@ nav ul.dropdown-list {
   }
 
   /* Mobile navigation styles */
- .nav-wrapper ul.nav-list {
-  display: none; /* hide the navigation list initially */
-  flex-direction: column;
-  width: 100%;
-  padding-top: 60px;
-  position: fixed; /* position it fixed at the top of the page */
-  top: 0;
-  left: 0;
-  background: #fff;
-  z-index: 999;
-  transform: translateY(-100%); /* move it off the screen initially */
-  transition: transform 0.3s ease-out; /* add a transition effect */
-}
+  .nav-wrapper ul.nav-list {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 60px;
+  }
 
   .nav-wrapper ul.nav-list li {
     text-align: center;
@@ -264,8 +249,8 @@ nav ul.dropdown-list {
   }
 
   .nav-wrapper ul.nav-list.active {
-  transform: translateY(0); /* move it back to the top of the page when active */
-}
+    display: flex;
+  }
 
   .nav-wrapper ul.dropdown-list {
     position: static;
@@ -293,8 +278,6 @@ nav ul.dropdown-list {
     transform: translateY(0);
   }
 }
-
-
 
 
 /*----------- Scroll to top --------------*/
