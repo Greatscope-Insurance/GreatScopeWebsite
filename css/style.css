@@ -215,11 +215,23 @@ nav ul.dropdown-list {
 
 
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .hamberger {
-    display: flex;
+  display: flex;
 	flex-direction: column; /* Ensures the spans are stacked vertically */
 	cursor: pointer;
+  top: 35px;
+  right: 20px;
+  transform: translateY(-50%);
+  background-color: grey;
+  cursor: pointer;
+  border:none;
+  padding: 0;
+  z-index: 100;
+  }
+
+.hamberger:hover {
+    opacity: 0.8; /* Reduce opacity slightly on hover */
   }
 
   .hamberger span {
@@ -228,6 +240,20 @@ nav ul.dropdown-list {
     background: #fff;
     margin: 5px 0;
     transition: background 0.3s, transform 0.3s;
+    display: block;
+  }
+
+  /* Style the hamburger lines on hover (optional) */
+  .hamberger:hover span:nth-child(1) {
+    transform: translateY(10px); /* Move top line up on hover */
+  }
+  
+  .hamberger:hover span:nth-child(2) {
+    opacity: 0; /* Fade out middle line on hover */
+  }
+  
+  .hamberger:hover span:nth-child(3) {
+    transform: translateY(-10px); /* Move bottom line down on hover */
   }
 
   /* Mobile navigation styles */
