@@ -1,7 +1,7 @@
 /*--------------------- Google fonts ------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
+@import url("https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap");
 /* --------------------- CSS Global variables ------------*/
 :root
 {
@@ -278,8 +278,6 @@ nav ul.dropdown-list {
     transform: translateY(0);
   }
 }
-
-
 
 
 /*----------- Scroll to top --------------*/
@@ -801,23 +799,7 @@ footer
 
 
 	/*-------------- Hero section styling ------------------*/
-	.hero-container .row > .hero-content
-	{
-		width: 140%;
-	}
-
-	.hero-heading
-	{
-		font-size: 4rem;
-	}
-
-	.hero
-	{
-		background: linear-gradient(rgba(150, 60, 221, 0.2), rgba(13, 14, 56, 0.9)), url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/nairobi.webp?updatedAt=1708016689090");
-		background-position: center top;
-		background-repeat: no-repeat;
-		background-size: cover;
-	}
+	
 	/*-------------- Hero section styling ------------------*/
 
 
@@ -913,7 +895,6 @@ footer
 
 /*-------------- Cards section styling ---------------*/
 
-@import url("https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap");
 :root {
   --d: 700ms;
   --e: cubic-bezier(0.19, 1, 0.22, 1);

@@ -424,15 +424,15 @@ body {
 }
 .example-slider .fnc-slide-1 .fnc-slide__inner,
 .example-slider .fnc-slide-1 .fnc-slide__mask-inner {
-  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/national-cancer-institute-KMvoHcB-w5g-unsplash.jpg?updatedAt=1714309512996");
+  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/spital.jpg?updatedAt=1714377748259");
 }
 .example-slider .fnc-slide-2 .fnc-slide__inner,
 .example-slider .fnc-slide-2 .fnc-slide__mask-inner {
-  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/fam.jpg?updatedAt=1714311514783");
+  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/fam.jpg?updatedAt=1714377202906");
 }
 .example-slider .fnc-slide-3 .fnc-slide__inner,
 .example-slider .fnc-slide-3 .fnc-slide__mask-inner {
-  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/pexels-rdne-8123905.jpg?updatedAt=1714313727765");
+  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/old_man.jpg?updatedAt=1714376829761");
 }
 .example-slider .fnc-slide-3 .fnc-slide__inner:before {
   content: "";
@@ -445,7 +445,7 @@ body {
 }
 .example-slider .fnc-slide-4 .fnc-slide__inner,
 .example-slider .fnc-slide-4 .fnc-slide__mask-inner {
-  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/pexels-omar-ramadan-1739260-5705531%202.jpg?updatedAt=1714315051859");
+  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/audi.jpg?updatedAt=1714376582240");
 }
 .example-slider .fnc-slide-4 .fnc-slide__inner:before {
   content: "";
@@ -618,4 +618,43 @@ body {
 .colorful-switch__checkbox:checked ~ .colorful-switch__label .colorful-switch__off:after {
   transition-timing-function: ease;
   transform: rotate(-45deg) scaleX(0) translateZ(0);
+}
+
+
+/*My CSS - Media Queries*/
+@media (max-width: 768px) {
+.example-slider .fnc-slide-4 .fnc-slide__inner,
+.example-slider .fnc-slide-4 .fnc-slide__mask-inner {
+  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/car_mobile.jpg?updatedAt=1714379841625");
+  }
+.example-slider .fnc-slide-1 .fnc-slide__inner,
+.example-slider .fnc-slide-1 .fnc-slide__mask-inner {
+  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/doc%20(1).jpg?updatedAt=1714380766716");
+  }
+.example-slider .fnc-slide-2 .fnc-slide__inner,
+.example-slider .fnc-slide-2 .fnc-slide__mask-inner {
+  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/family_mob?updatedAt=1714381052990");
+  }
+.example-slider .fnc-slide-3 .fnc-slide__inner,
+.example-slider .fnc-slide-3 .fnc-slide__mask-inner {
+  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/old_man_mob?updatedAt=1714381308045");
+  }
+.fnc-slide__heading-line {
+    font-size: 35px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+    word-spacing: 10px;
+  }
+  
+}
+
+@media (max-width: 768px) {
+  .fnc-slide__action-btn {
+    position: absolute;
+    left: -25%;
+    transform: translateX(-50%) translateY(-50%);
+    bottom: -50px;
+  }
 }
