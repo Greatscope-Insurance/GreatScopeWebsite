@@ -424,15 +424,15 @@ body {
 }
 .example-slider .fnc-slide-1 .fnc-slide__inner,
 .example-slider .fnc-slide-1 .fnc-slide__mask-inner {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/blackwidow.jpg");
+  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/spital.jpg?updatedAt=1714377748259");
 }
 .example-slider .fnc-slide-2 .fnc-slide__inner,
 .example-slider .fnc-slide-2 .fnc-slide__mask-inner {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/captainamerica.jpg");
+  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/fam.jpg?updatedAt=1714377202906");
 }
 .example-slider .fnc-slide-3 .fnc-slide__inner,
 .example-slider .fnc-slide-3 .fnc-slide__mask-inner {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/ironman-alt.jpg");
+  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/old_man.jpg?updatedAt=1714376829761");
 }
 .example-slider .fnc-slide-3 .fnc-slide__inner:before {
   content: "";
@@ -445,7 +445,7 @@ body {
 }
 .example-slider .fnc-slide-4 .fnc-slide__inner,
 .example-slider .fnc-slide-4 .fnc-slide__mask-inner {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/thor.jpg");
+  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/audi.jpg?updatedAt=1714376582240");
 }
 .example-slider .fnc-slide-4 .fnc-slide__inner:before {
   content: "";
