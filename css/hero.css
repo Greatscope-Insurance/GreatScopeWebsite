@@ -657,4 +657,19 @@ body {
     transform: translateX(-50%) translateY(-50%);
     bottom: -50px;
   }
+
+  .fnc-nav__controls {
+  display: flex; /* Makes the container a flexbox */
+  justify-content: center; /* Centers the buttons horizontally within the container */
+}
+.fnc-nav__control {
+    font-size: 13px; /* Adjust font size for smaller screens */
+    width: 90%;
+  }
+
+}
+@media (max-width: 480px) {
+  .fnc-nav__control {
+    font-size: 12px; /* Further adjust font size for very small screens */
+  }
 }
