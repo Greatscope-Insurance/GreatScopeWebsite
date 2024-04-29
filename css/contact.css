@@ -1,4 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 /*------------------ Breadcrumb styling --------------------*/
+
 .breadcrumbs
 {
 	background: linear-gradient(rgba(150, 60, 221, 0.1), rgba(17, 17, 69, 0.8)), url('../img/contact-bc.png');
@@ -46,7 +48,7 @@
   imports:
     https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css
 */
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 
 * {
   margin: 0;
@@ -72,9 +74,6 @@ body {
 
 /*------------------------------ Contact Info ---------------------------*/
 
-
-
-
 /*---------------------------------- Branches ---------------------------*/
 .branch-img
 {
@@ -91,17 +90,6 @@ body {
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 }
 /*---------------------------------- Branches ---------------------------*/
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*-------------------------------------------------------------------------------------*/
@@ -156,10 +144,11 @@ body {
 		font-size: 1.6rem;
 	}
 
-
 	/*-------------------------- Branches styling -----------------------*/
 	.branch-card 
 	{
 		padding: 4rem;
 	}
 }
+
+
