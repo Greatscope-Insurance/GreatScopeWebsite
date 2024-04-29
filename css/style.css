@@ -211,6 +211,22 @@ nav ul.dropdown-list {
     width: 60px; /* Smaller width for mobile screens */
     height: auto; /* Maintain aspect ratio */
   }
+
+  .brand-text {
+    display: none;
+  }
+  .brand {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    z-index: 1000;
+  }
+
+  .brand a {
+    display: block;
+    width: 100%;
+  }
 }
 
 
