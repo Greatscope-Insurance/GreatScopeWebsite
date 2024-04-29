@@ -619,3 +619,42 @@ body {
   transition-timing-function: ease;
   transform: rotate(-45deg) scaleX(0) translateZ(0);
 }
+
+
+/*My CSS - Media Queries*/
+@media (max-width: 768px) {
+.example-slider .fnc-slide-4 .fnc-slide__inner,
+.example-slider .fnc-slide-4 .fnc-slide__mask-inner {
+  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/car_mobile.jpg?updatedAt=1714379841625");
+  }
+.example-slider .fnc-slide-1 .fnc-slide__inner,
+.example-slider .fnc-slide-1 .fnc-slide__mask-inner {
+  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/doc%20(1).jpg?updatedAt=1714380766716");
+  }
+.example-slider .fnc-slide-2 .fnc-slide__inner,
+.example-slider .fnc-slide-2 .fnc-slide__mask-inner {
+  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/family_mob?updatedAt=1714381052990");
+  }
+.example-slider .fnc-slide-3 .fnc-slide__inner,
+.example-slider .fnc-slide-3 .fnc-slide__mask-inner {
+  background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/old_man_mob?updatedAt=1714381308045");
+  }
+.fnc-slide__heading-line {
+    font-size: 35px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+    word-spacing: 10px;
+  }
+  
+}
+
+@media (max-width: 768px) {
+  .fnc-slide__action-btn {
+    position: absolute;
+    left: -25%;
+    transform: translateX(-50%) translateY(-50%);
+    bottom: -50px;
+  }
+}
