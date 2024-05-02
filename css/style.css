@@ -208,8 +208,13 @@ nav ul.dropdown-list {
 /* Adjust the logo size for smaller screens */
 @media (max-width: 767px) {
   .brand img {
-    width: 60px; /* Smaller width for mobile screens */
+    position: fixed;
+    width: 70px; /* Smaller width for mobile screens */
     height: auto; /* Maintain aspect ratio */
+    top: 0;
+    left: 0;
+    z-index: 999; /* Ensure the image is on top of other elements */
+    padding: 10px; /* Add some padding for spacing */
   }
 
   .brand-text {
@@ -236,7 +241,7 @@ nav ul.dropdown-list {
   display: flex;
 	flex-direction: column; /* Ensures the spans are stacked vertically */
 	cursor: pointer;
-  top: 35px;
+  top: 30px;
   right: 20px;
   transform: translateY(-50%);
   background-color: grey;

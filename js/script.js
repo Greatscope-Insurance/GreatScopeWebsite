@@ -42,3 +42,14 @@
 		  }
 		});
 		// ------------------------ Responsive menu ----------------
+
+window.addEventListener('scroll', function() {
+  const brandLogo = document.getElementById('brandLogo');
+  const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (scrollPosition > 0) {
+    brandLogo.style.display = 'none'; // Hide the brand logo
+  } else {
+    brandLogo.style.display = 'block'; // Show the brand logo
+  }
+});
