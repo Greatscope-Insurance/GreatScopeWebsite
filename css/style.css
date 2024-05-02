@@ -209,7 +209,7 @@ nav ul.dropdown-list {
 @media (max-width: 767px) {
   .brand img {
     position: fixed;
-    width: 60px; /* Smaller width for mobile screens */
+    width: 70px; /* Smaller width for mobile screens */
     height: auto; /* Maintain aspect ratio */
     top: 0;
     left: 0;
@@ -241,7 +241,7 @@ nav ul.dropdown-list {
   display: flex;
 	flex-direction: column; /* Ensures the spans are stacked vertically */
 	cursor: pointer;
-  top: 35px;
+  top: 30px;
   right: 20px;
   transform: translateY(-50%);
   background-color: grey;
