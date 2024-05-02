@@ -1,7 +1,7 @@
 /*------------------ Breadcrumb styling --------------------*/
 .breadcrumbs
 {
-	background: linear-gradient(rgba(150, 60, 221, 0.1), rgba(17, 17, 69, 0.8)), url('../img/about-bread.png');
+	background: linear-gradient(rgba(150, 60, 221, 0.1), rgba(17, 17, 69, 0.8)), url('https://ik.imagekit.io/5zp8ovb7c/Greatscope/nairobi?updatedAt=1714639747659');
 	background-position: center top;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -66,7 +66,7 @@
 /*----------------------------- Key Numbers ------------------------------*/
 .key-numbers
 {
-	background: linear-gradient(rgba(10, 17, 79, 0.9), rgba(10, 17, 79, 0.9)), url("../img/hero-bg.jpg");
+	background: linear-gradient(rgba(10, 17, 79, 0.9), rgba(10, 17, 79, 0.9)), url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/services.webp?updatedAt=1708026305068");
 	background-position: center top;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -170,7 +170,7 @@
 /*--------------------------------- About CTA -------------------------------------*/
 .about-cta
 {
-	background: linear-gradient(rgba(10, 17, 79, 0.9), rgba(10, 17, 79, 0.9)), url("../img/hero-bg.jpg");
+	background: linear-gradient(rgba(10, 17, 79, 0.9), rgba(10, 17, 79, 0.9)), url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/nairobi?updatedAt=1714639747659");
 	background-position: center top;
 	background-repeat: no-repeat;
 	background-size: cover;
