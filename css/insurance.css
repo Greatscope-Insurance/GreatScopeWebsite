@@ -25,82 +25,95 @@
 
 
 /*------------------ Insurance service card styling ---------------*/
-.services
-{
-	margin-top: 2.6rem;
+@media (min-width: 768px) {
+	.services {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+	}
 }
 
-.service-card
-{
+.service-card {
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 	border: none;
 	border-radius: 10px;
 	margin: 2rem 0;
 }
 
-.service-card .service-img
-{
+.service-card .service-img {
 	height: 180px;
 	width: 100%;
 	margin: 0;
 	padding: 0;
 }
 
-.service-card .card-home
-{	
-	background: url("../img/home-insurance.png");
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.service-card .card-auto
-{	
+.service-card .card-home {
 	background: url("../img/auto-insurance.png");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
-.service-card .card-vacation
-{	
+.service-name{
+	font-size: 1.2rem;
+	font-weight: 700;
+	color: var(--third-color);
+	text-align: center;
+	margin-bottom: 0;
+}
+
+.para-line{
+	font-size: 1rem;
+	font-weight: 500;
+	color: var(--third-color);
+	text-align: center;
+	line-height: 1.5;
+}
+
+
+
+.service-card .card-auto {
+	background: url("../img/auto-insurance.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.service-card .card-vacation {
 	background: url("../img/vacation-insurance.png");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
-.service-card .card-belonging
-{	
+.service-card .card-belonging {
 	background: url("../img/belongings-insurance.png");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
-.service-card .card-childcare
-{	
+.service-card .card-childcare {
 	background: url("../img/childcare-insurance.png");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
-.service-card .card-health
-{	
+.service-card .card-health {
 	background: url("../img/health-insurance.png");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
-.service-card .service-details
-{
+.service-card .service-details {
 	padding: 1.5rem;
 	display: flex;
 	flex-direction: column;
 	gap: 1.1rem;
 }
+
 /*------------------ Insurance service card styling ---------------*/
 
 
