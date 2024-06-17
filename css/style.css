@@ -982,9 +982,27 @@ footer
   width: 100%;
   text-align: center;
   color: whitesmoke;
-  background-color: whitesmoke;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
 }
+
+.card-health {
+  background-image: url('https://ik.imagekit.io/5zp8ovb7c/Greatscope/Cards/healthcard.png?updatedAt=1718611146296');
+  background-size: cover;
+  background-position: center;
+}
+
+.card-life-pension {
+  background-image: url('https://ik.imagekit.io/5zp8ovb7c/Greatscope/Cards/pension.png?updatedAt=1718611907488');
+  background-size: cover;
+  background-position: center;
+}
+
+.card-general-insurance {
+  background-image: url('https://ik.imagekit.io/5zp8ovb7c/Greatscope/Cards/geninsurance.png?updatedAt=1718612163595');
+  background-size: cover;
+  background-position: center;
+}
+
 @media only screen and (max-width: 600px) {
   .page-content {
     display: flex;
