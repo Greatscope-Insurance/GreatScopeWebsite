@@ -42,7 +42,7 @@
 }
 
 .service-card .service-img {
-	height: 240px;
+	height: 340px;
 	width: 100%;
 	margin: 0;
 	padding: 0;
@@ -74,6 +74,10 @@
 	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/accident.png?updatedAt=1718626399692");
 }
 
+.service-card .card-last-ex {
+	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/services.webp?updatedAt=1708026305068");
+}
+
 .service-card .card-group {
 	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/More%20Insurances/group%20life.jpg?updatedAt=1726070227300");
 }
@@ -95,7 +99,7 @@
 }
 
 .service-card .card-education {
-	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/education.png?updatedAt=1718629217051");
+	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/More%20Insurances/education%20endowmenr.jpg?updatedAt=1726070223441");
 }
 
 .service-card .card-travel {
@@ -120,6 +124,10 @@
 
 .service-card .card-marine {
 	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/More%20Insurances/marine.jpg?updatedAt=1726070227223");
+}
+
+.service-card .card-fidelity {
+	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/More%20Insurances/fidelity%20guarantee.jpg?updatedAt=1726070223608");
 }
 
 .service-name,
