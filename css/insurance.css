@@ -36,13 +36,14 @@
 	border: none;
 	border-radius: 10px;
 	margin: 2rem 0;
+	object-fit: cover;
 	flex: 0 1 300px;
 	/* This means the card can grow and shrink, but its base size is 300px */
 	margin-bottom: 0;
 }
 
 .service-card .service-img {
-	height: 340px;
+	height: 180px;
 	width: 100%;
 	margin: 0;
 	padding: 0;
@@ -67,10 +68,14 @@
 }
 
 .service-card .card-medical {
-	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/More%20Insurances/medical%20insurance.jpg?updatedAt=1726070228264");
+	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/med.png?updatedAt=1718626244254");
 }
 
-.service-card .card-accident {
+.service-card .card-cor-medical {
+	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/health2.png?updatedAt=1726141123790");
+}
+
+.service-card .card-personal-accident {
 	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/accident.png?updatedAt=1718626399692");
 }
 
@@ -79,27 +84,31 @@
 }
 
 .service-card .card-group {
-	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/More%20Insurances/group%20life.jpg?updatedAt=1726070227300");
+	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/group.png?updatedAt=1718628372431");
 }
 
 .service-card .card-credit {
-	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/More%20Insurances/credit.jpg?updatedAt=1726070223485");
+	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/credit.png?updatedAt=1718628372572");
 }
 
 .service-card .card-wholelife {
-	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/services.webp?updatedAt=1708026305068");
+	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/group.png?updatedAt=1726145876280");
+}
+
+.service-card .card-burglary {
+	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/burglary.png?updatedAt=1726148072400");
 }
 
 .service-card .card-motor {
-	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/motor%20private.jpg?updatedAt=1726068966567");
+	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/motor.png?updatedAt=1718628964258");
 }
 
 .service-card .card-goods {
-	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/More%20Insurances/goods%20on%20transit.jpg?updatedAt=1726070226860");
+	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/travel.png?updatedAt=1718628964339");
 }
 
 .service-card .card-education {
-	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/More%20Insurances/education%20endowmenr.jpg?updatedAt=1726070223441");
+	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/education.png?updatedAt=1726145321101");
 }
 
 .service-card .card-travel {
@@ -107,27 +116,47 @@
 }
 
 .service-card .card-fire {
-	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/fire%20and%20perils.jpg?updatedAt=1726068966500");
+	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/fire.png?updatedAt=1718629935428");
 }
 
 .service-card .card-domestic {
-	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/More%20Insurances/domestic%20package.jpg?updatedAt=1726070223725");
+	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/domestic.png?updatedAt=1718629935518");
 }
 
 .service-card .card-contractors {
-	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/contractors.jpg?updatedAt=1726068966559");
+	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/contractors.png?updatedAt=1726146878102");
 }
 
 .service-card .card-wiba {
-	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/More%20Insurances/wiba.jpg?updatedAt=1726070228595");
+	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/wiba.png?updatedAt=1718630849864");
+}
+
+.service-card .card-g-personal-accident {
+	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/grouppersonal.png?updatedAt=1726148334224");
 }
 
 .service-card .card-marine {
-	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/More%20Insurances/marine.jpg?updatedAt=1726070227223");
+	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/marine.png?updatedAt=1718630904931");
 }
 
 .service-card .card-fidelity {
-	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/More%20Insurances/fidelity%20guarantee.jpg?updatedAt=1726070223608");
+	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/Untitled%20(300%20x%20200%20px)%20(5)%20(1).png?updatedAt=1726149481152");
+}
+
+.service-card .card-pension {
+	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/pension.png?updatedAt=1726151062353");
+}
+
+.service-card .card-retirement {
+	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/retirement.png?updatedAt=1726151387505");
+
+}
+
+.service-card .card-public-liability {
+	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/Untitled%20(300%20x%20200%20px)%20(8)%20(1).png?updatedAt=1726153484441");
+
+}.service-card .card-product-liability {
+	background: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/insurances/publicliability.png?updatedAt=1726151941069");
 }
 
 .service-name,
