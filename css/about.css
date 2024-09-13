@@ -323,73 +323,92 @@ body
 	/*------------------------------------ About CTA ----------------------------*/
 }
 
+
+
 /*------------------------------------- Our Leadership ----------------------------*/
 
 .leadership {
-    padding: 4rem 0;
+    padding: 2rem 0;
     background-color: #f8f9fa;
+	margin-bottom: 0;
 }
 
 .leader-profile {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 
 .leader-info {
     text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .leader-name {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: bold;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
 }
 
 .leader-title {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #666;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
 }
 
 .leader-image {
-	width: 400px;
-	height: 400px;
+	width: 100%;
+	max-width: 300px;
+	height: auto;
 	overflow: hidden;
-	margin-bottom: 1.5rem;
-	border-radius: 20px;
-	/* This will round the corners */
+	margin-bottom: 1rem;
+	border-radius: 15px;
 }
-
 
 .leader-img {
 	width: 100%;
-	height: 100%;
-	object-fit: contain;
+	height: auto;
+	object-fit: cover;
+	object-position: top;
 }
 
 .heading {
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
+    text-align: center;
+    margin: 0 auto 1.5rem;
 }
-
 
 @media screen and (min-width: 768px) {
-	.leader-profile {
-		flex-direction: row;
-		align-items: center;
-		text-align: left;
-	}
+    .leader-profile {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        text-align: left;
+    }
 
-	.leader-image {
-		margin-right: 3rem;
-		margin-bottom: 0;
-	}
+    .leader-image {
+        margin-right: 2rem;
+        margin-bottom: 0;
+    }
 
-	.leader-info {
-		flex: 1;
-	}
+    .leader-info {
+        flex: 1;
+        text-align: left;
+    }
 }
 
+@media screen and (min-width: 1024px) {
+    .leadership {
+        padding: 3rem 0;
+    }
+
+    .leader-image {
+        width: 350px;
+        height: 350px;
+    }
+
+    .leader-info {
+        max-width: 700px;
+    }
+}
