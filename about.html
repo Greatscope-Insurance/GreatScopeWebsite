@@ -118,12 +118,20 @@
 
 			<ul class="nav-list">
 				<li class="active"><a href="index.html"><strong>Home</strong></a></li>
-				<li><a href="about.html"><strong>About Us</strong></a></li>
+				<li>
+					<a href="about.html"><strong>About</strong></a>
+					<ul class="dropdown-list">
+						<li><a href="about.html#leadership">Leadership</a></li>
+						<li><a href="about.html#values">Company Values</a></li>
+						<li><a href="about.html#key-numbers">Key Numbers</a></li>
+					</ul>
+				</li>
 				<li>
 					<a href="insurance.html"><strong>Our Products</strong></a>
 					<ul class="dropdown-list">
 						<li><a href="insurance.html#health-insurance">Health Insurance</a></li>
-						<li><a href="insurance.html#life-insurance">Life & Pension</a></li>
+						<li><a href="insurance.html#life-insurance">Life</a></li>
+						<li><a href="insurance.html#pension-insurance">Pension</a></li>
 						<li><a href="insurance.html#general-insurance">General Insurance</a></li>
 					</ul>
 				</li>
@@ -149,7 +157,35 @@
 	</section>
 	<!-------------------- Breadcrumb section ------------------->
 
-
+<!-------------------- Leadership section -------------------->
+<section class="leadership" id="leadership">
+	<div class="container">
+		<h2 class="heading">
+			Greatscope Management
+		</h2>
+		<div class="leader-profile">
+			<div class="leader-image">
+				<img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/francis.webp?updatedAt=1708025159939" alt="Francis Muendo"
+					class="leader-img">
+			</div>
+			<div class="leader-info">
+				<h3 class="leader-name">Francis Muendo AIIK</h3>
+				<h4 class="leader-title">Managing Director</h4>
+				<p class="para-line">
+					Francis holds a bachelor's degree in <strong>Actuarial Science</strong> from <strong>JKUAT</strong> and a
+					<strong>Diploma
+						in Insurance</strong> from the College of Insurance.
+				</p>
+				<p class="para-line">
+					With over 8 years of experience in the insurance industry, Francis has worked for various insurance companies,
+					specializing in Insurance Underwriting, Claims Management, and Marketing. He also serves as an <strong>Executive
+						Council Member at the Insurance Institute of Kenya.</strong>
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+<!-------------------- Future protection -------------------->
 
 	<!-------------------- Future protection -------------------->
 	<section class="future">
@@ -180,7 +216,7 @@
 	<!-- ----------------- Company Values --------------------------- -->
 	<section class="values">
 		<div class="container">
-			<h2 class="heading">
+			<h2 class="heading" id="values">
 				Company Values
 			</h2>
 
@@ -221,12 +257,10 @@
 	</section>
 	<!-- ----------------- Company Values --------------------------- -->
 
-
-
 	<!-- ------------------------------ Key numbers ------------------------- -->
 	<section class="key-numbers">
 		<div class="container">
-			<h2 class="heading white">
+			<h2 class="heading white" id="key-numbers">
 				Our Key Numbers
 			</h2>
 			<p class="para-line white">

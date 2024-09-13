@@ -322,3 +322,74 @@ body
 	}
 	/*------------------------------------ About CTA ----------------------------*/
 }
+
+/*------------------------------------- Our Leadership ----------------------------*/
+
+.leadership {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+}
+
+.leader-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.leader-info {
+    text-align: center;
+}
+
+.leader-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.leader-title {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.leader-image {
+	width: 400px;
+	height: 400px;
+	overflow: hidden;
+	margin-bottom: 1.5rem;
+	border-radius: 20px;
+	/* This will round the corners */
+}
+
+
+.leader-img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.heading {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+@media screen and (min-width: 768px) {
+	.leader-profile {
+		flex-direction: row;
+		align-items: center;
+		text-align: left;
+	}
+
+	.leader-image {
+		margin-right: 3rem;
+		margin-bottom: 0;
+	}
+
+	.leader-info {
+		flex: 1;
+	}
+}
+
