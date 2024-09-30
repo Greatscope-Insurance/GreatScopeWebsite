@@ -29,7 +29,6 @@ html {
 
 body {
     font-family: "Open Sans", Helvetica, Arial, sans-serif;
-    overflow-y: hidden;
 }
 
 .container {
@@ -109,13 +108,13 @@ p {
 
 /* Styles for nav-list */
 .nav-wrapper ul.nav-list {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh; /* Add this to set the height to the full viewport height */
-    background-color: #fff; /* Add a background color to ensure visibility */
-    z-index: 1000; /* Ensure it stays on top of other elements */
+    list-style-type: none;
+    display: flex; /* Ensures horizontal layout */
+    align-items: center; /* Vertically center items */
+    gap: 16px;
+    padding: 0;
+    margin: 0;
+    justify-content: center; /* Center items horizontally */
 }
 
 /* Styles for list items */
@@ -191,8 +190,8 @@ nav ul.dropdown-list {
 }
 
 .brand img {
-    width: 90px; /* Adjust width as needed */
-    height: auto; /* Maintains the aspect ratio */
+    width: 100px; /* Adjust width as needed */
+    height: 100px; /* Maintains the aspect ratio */
     float: left;
     margin-right: 20px;
 }
@@ -201,7 +200,7 @@ nav ul.dropdown-list {
 @media (max-width: 767px) {
     .brand img {
         position: fixed;
-        width: 70px; /* Smaller width for mobile screens */
+        width: 90px; /* Smaller width for mobile screens */
         height: auto; /* Maintain aspect ratio */
         top: 0;
         left: 0;
