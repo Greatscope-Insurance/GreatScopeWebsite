@@ -89,6 +89,23 @@
 </head>
 
 <body class="">
+
+    <!-- Fydo Contact Form Widget HTML -->
+    <div id="multi-tab" onclick="toggleContactWidget()"><span><i class="bi bi-chat-left-text"></i></span></div>
+    <div id="contact-widget" style="display: none;">
+    <h4>Send us a message</h4>
+    <p>Name</p><input id="contact-name" placeholder="" type="text" name="name">
+    <p>Email</p><input id="contact-email" placeholder="" type="email" name="email" pattern=".+@.+\..+" required>
+    <p>Phone Number</p>
+    <p>Message</p><textarea id="contact-message" placeholder=""></textarea>
+    <input type="hidden" name="api_key" value="87b03d81a3a268a28d6e277b3762906b">
+    <!-- Replace YOUR_API_KEY_HERE with your key -->
+    <input type="hidden" name="actual_referer" id="actual_referer" value="">
+    <button onclick="submitContactWithComments()">Send Message</button>
+    <div id="contact-response"></div><br>
+    <div id="contact-powered">Powered by <a href="https://fydo.co.uk" target="_blank" >Fydo</a></div></div>
+    <script src="https://fydo.co.uk/contact-widget-loader-remote.js"></script>
+
   <!-- Scroll to top starts -->
   <button id="topBtn">
     <ion-icon name="arrow-up-outline"></ion-icon>
@@ -422,7 +439,7 @@
   <!--
 <section class="overline">
 		<div class="container">
-			
+
 			<h2 class="heading white">
 				Our Core Values
 			</h2>
