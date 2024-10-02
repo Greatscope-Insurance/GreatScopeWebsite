@@ -96,12 +96,12 @@
     <h4>Send us a message</h4>
     <p>Name</p><input id="contact-name" placeholder="" type="text" name="name">
     <p>Email</p><input id="contact-email" placeholder="" type="email" name="email" pattern=".+@.+\..+" required>
-    <p>Phone Number</p>
+    <p>Phone Number</p><input id="contact-phone" placeholder="" type="tel" name="phone" required>
     <p>Message</p><textarea id="contact-message" placeholder=""></textarea>
     <input type="hidden" name="api_key" value="87b03d81a3a268a28d6e277b3762906b">
     <!-- Replace YOUR_API_KEY_HERE with your key -->
     <input type="hidden" name="actual_referer" id="actual_referer" value="">
-    <button onclick="submitContactWithComments()">Send Message</button>
+    <button onclick="submitContactWithComments()">Get a Quote</button>
     <div id="contact-response"></div><br>
     <div id="contact-powered">Powered by <a href="https://fydo.co.uk" target="_blank" >Fydo</a></div></div>
     <script src="https://fydo.co.uk/contact-widget-loader-remote.js"></script>
@@ -406,7 +406,7 @@
             </div>
           </div>
         </div>
-        <div class="col why-us-lead-form">
+        <!--<div class="col why-us-lead-form">
           <div class="lead-form">
             <form action="">
               <div class="input-field">
@@ -429,7 +429,7 @@
               </button>
             </form>
           </div>
-        </div>
+        </div>!-->
       </div>
     </div>
   </section>
