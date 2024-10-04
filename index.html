@@ -405,9 +405,9 @@
             </div>
           </div>
         </div>
-        <!--<div class="col why-us-lead-form">
+        <div class="col why-us-lead-form">
           <div class="lead-form">
-            <form action="">
+            <form id="quote-form" name="get-quote-form" method="POST" netlify>
               <div class="input-field">
                 <label for="name">Full Name</label>
                 <input type="text" id="name" placeholder="Your name" required>
@@ -428,7 +428,7 @@
               </button>
             </form>
           </div>
-        </div>!-->
+        </div>
       </div>
     </div>
   </section>
@@ -641,7 +641,7 @@
           <div class="newsletter mt-4 md:mt-0">
             <h5 class="footer-heading">Newsletter</h5>
             <p class="footer-text">Subscribe to our newsletter for discounts and more.</p>
-            <form class="newsletter-form mt-4">
+            <form id="subscribe" name="newsletter-index" method="POST" class="newsletter-form mt-4" netlify>
               <input type="email" placeholder="Email address" class="newsletter-input">
               <button type="submit" class="newsletter-submit">→</button>
             </form>
