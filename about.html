@@ -123,6 +123,7 @@
 					<a href="about.html"><strong>About</strong></a>
 					<ul class="dropdown-list">
 						<li><a href="about.html#leadership">Leadership</a></li>
+						<li><a href="about.html#mission-vision">Mission & Vision</a></li>
 						<li><a href="about.html#values">Company Values</a></li>
 						<li><a href="about.html#key-numbers">Key Numbers</a></li>
 					</ul>
@@ -198,7 +199,7 @@
 		</div>
 	</div>
 </section>
-<!-------------------- Future protection -------------------->
+<!-------------------- Leadership section ends -------------------->
 
 	<!-------------------- Future protection -------------------->
 	<section class="future">
@@ -225,11 +226,45 @@
 	</section>
 	<!-------------------- Future protection -------------------->
 
+	<!-------------------- Mission & Vision section -------------------->
+	<section class="mission-vision" id="mission-vision">
+		<div class="container">
+			<h2 class="heading">
+				Our Mission & Vision
+			</h2>
+			
+			<div class="mission-vision-content">
+				<div class="vision-section">
+					<div class="vision-icon">
+						<ion-icon name="telescope-outline"></ion-icon>
+					</div>
+					<div class="vision-content">
+						<h3 class="sub-heading">Our Vision</h3>
+						<p class="para-line">
+							To become the most sought after insurance consultancy and brokerage firm in East Africa.
+						</p>
+					</div>
+				</div>
+				
+				<div class="mission-section">
+					<div class="mission-icon">
+						<ion-icon name="compass-outline"></ion-icon>
+					</div>
+					<div class="mission-content">
+						<h3 class="sub-heading">Our Mission</h3>
+						<p class="para-line">
+							To maintain the highest standards of integrity and professionalism in our relationship with our clients. To provide tailor made insurance solutions in a changing insurance market.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-------------------- Mission & Vision section ends -------------------->
 
 	<!-- ----------------- Company Values --------------------------- -->
 	<section class="values">
 		<div class="container">
-			<h2 class="heading" id="values">
 			<h2 class="heading" id="values">
 				Company Values
 			</h2>
@@ -274,7 +309,6 @@
 	<!-- ------------------------------ Key numbers ------------------------- -->
 	<section class="key-numbers">
 		<div class="container">
-			<h2 class="heading white" id="key-numbers">
 			<h2 class="heading white" id="key-numbers">
 				Our Key Numbers
 			</h2>
@@ -524,6 +558,83 @@
 			});
 		});
 	</script>
+
+	<style>
+		/* Mission & Vision Section Styles */
+		.mission-vision {
+			padding: 80px 0;
+			background-color: #f8f9fa;
+		}
+
+		.mission-vision-content {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 60px;
+			margin-top: 40px;
+		}
+
+		.vision-section, .mission-section {
+			display: flex;
+			align-items: flex-start;
+			gap: 20px;
+			padding: 30px;
+			background: white;
+			border-radius: 12px;
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+		}
+
+		.vision-section:hover, .mission-section:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+		}
+
+		.vision-icon, .mission-icon {
+			flex-shrink: 0;
+			width: 60px;
+			height: 60px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			color: white;
+			font-size: 24px;
+		}
+
+		.vision-content, .mission-content {
+			flex: 1;
+		}
+
+		.sub-heading {
+			font-size: 24px;
+			font-weight: 600;
+			color: #333;
+			margin-bottom: 15px;
+		}
+
+		/* Responsive Design */
+		@media (max-width: 768px) {
+			.mission-vision-content {
+				grid-template-columns: 1fr;
+				gap: 30px;
+			}
+
+			.vision-section, .mission-section {
+				padding: 20px;
+			}
+
+			.vision-icon, .mission-icon {
+				width: 50px;
+				height: 50px;
+				font-size: 20px;
+			}
+
+			.sub-heading {
+				font-size: 20px;
+			}
+		}
+	</style>
 </body>
 
 </html>
