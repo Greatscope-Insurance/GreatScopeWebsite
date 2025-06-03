@@ -15,17 +15,14 @@
   <!-- External Libraries -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   
-  <!-- Local CSS (ensure footer-style.css is minimal or not needed for the new footer) -->
+  <!-- Local CSS -->
   <link rel="stylesheet" href="css/style.css">
-  <!-- <link rel="stylesheet" href="css/footer-style.css"> --> <!-- If new footer is all Tailwind, this might not be needed for it -->
   <link rel="stylesheet" href="css/hero.css">
   <link rel="stylesheet" href="css/about.css">
   
@@ -55,8 +52,8 @@
             poppins: ['Poppins', 'sans-serif'],
           },
           colors: {
-            'custom-purple': '#5D3A9A', // The purple from your index.html footer
-            'brand-purple': '#6D28D9', // A general purple for the site
+            'custom-purple': '#5D3A9A',
+            'brand-purple': '#6D28D9',
             'brand-blue': '#2563EB',
           }
         }
@@ -73,29 +70,33 @@
   
   <div id="contact-widget" class="fixed bottom-24 right-6 z-50 bg-white rounded-2xl shadow-2xl p-6 w-80 transform translate-y-10 opacity-0 transition-all duration-300" style="display: none;">
     <h4 class="text-xl font-bold text-gray-800 mb-4">Send us a message</h4>
-    <div class="space-y-4">
+    <form name="contact-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="space-y-4">
+      <input type="hidden" name="form-name" value="contact-form">
+      <p class="hidden">
+        <label>Don’t fill this out: <input name="bot-field"></label>
+      </p>
       <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-        <input id="contact-name" type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-purple focus:border-transparent">
+        <label for="contact-name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+        <input id="contact-name" name="name" type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-purple focus:border-transparent" required>
       </div>
       <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-        <input id="contact-email" type="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-purple focus:border-transparent" required>
+        <label for="contact-email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+        <input id="contact-email" name="email" type="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-purple focus:border-transparent" required>
       </div>
       <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-        <textarea id="contact-message" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-purple focus:border-transparent"></textarea>
+        <label for="contact-message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+        <textarea id="contact-message" name="message" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-purple focus:border-transparent" required></textarea>
       </div>
-      <button onclick="submitContactWithComments()" class="w-full bg-gradient-to-r from-brand-purple to-brand-blue text-white py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300">
+      <button type="button" onclick="submitContactWithComments()" class="w-full bg-gradient-to-r from-brand-purple to-brand-blue text-white py-3 rounded-lg font-semibold hover:from-brand-purple/80 hover:to-brand-blue/80 transition-all duration-300">
         Get a Quote
       </button>
-    </div>
+    </form>
     <div id="contact-response" class="mt-4"></div>
   </div>
 
   <!-- Scroll to Top -->
   <button id="topBtn" class="fixed bottom-6 left-6 z-50 bg-gray-900 text-white p-3 rounded-full shadow-2xl opacity-0 transform translate-y-10 transition-all duration-300 hover:bg-gray-800 hover:scale-110">
-    <ion-icon name="arrow-up-outline" class="text-xl"></ion-icon> <!-- Can be replaced with Font Awesome if preferred -->
+    <i class="fas fa-arrow-up text-xl"></i>
   </button>
 
   <!-- Navigation -->
@@ -115,7 +116,7 @@
           <div class="ml-10 flex items-baseline space-x-6">
             <a href="index.html" class="text-gray-600 hover:text-brand-purple px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
             <div class="relative group">
-              <a href="about.html" class="text-brand-purple hover:text-purple-700 px-3 py-2 rounded-md text-sm font-medium transition-colors font-semibold">About</a>
+              <a href="about.html" class="text-brand-purple hover:text-brand-purple/80 px-3 py-2 rounded-md text-sm font-medium transition-colors font-semibold">About</a>
               <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <div class="py-1">
                   <a href="#leadership" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-brand-purple">Leadership</a>
@@ -141,7 +142,7 @@
         </div>
 
         <!-- Social Icons (Desktop) -->
-        <div class="hidden md:flex items-center space-x-4">
+        <div class="hidden md:flex the items-center space-x-4">
           <a href="https://twitter.com/frankaizKenya" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-brand-purple transition-colors">
             <i class="fab fa-twitter text-lg"></i>
           </a>
@@ -158,7 +159,7 @@
 
         <!-- Mobile menu button -->
         <div class="md:hidden">
-          <button class="mobile-menu-btn text-gray-600 hover:text-brand-purple p-2">
+          <button class="mobile-menu-btn text-gray-600 hover:text-brand-purple p-2" aria-label="Toggle mobile menu">
             <span class="sr-only">Open main menu</span>
             <i class="fas fa-bars text-xl"></i>
           </button>
@@ -189,13 +190,13 @@
     <div class="absolute inset-0 bg-black/40"></div>
     <!-- Subtle animated shapes -->
     <div class="absolute inset-0">
-      <div class="absolute top-1/4 left-1/4 w-48 h-48 md:w-72 md:h-72 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-60 h-60 md:w-96 md:h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1.5s;"></div>
+      <div class="absolute top-1/4 left-1/4 w-48 h-48 md:w-72 md:h-72 bg-brand-purple/10 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-60 h-60 md:w-96 md:h-96 bg-brand-blue/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1.5s;"></div>
     </div>
     
     <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 font-poppins leading-tight">
-        About <span class="bg-gradient-to-r from-purple-300 to-blue-300 bg-clip-text text-transparent">Greatscope</span>
+        About <span class="bg-gradient-to-r from-brand-purple to-brand-blue bg-clip-text text-transparent">Greatscope</span>
       </h1>
       <p class="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
         Your trusted partner in comprehensive insurance solutions across East Africa. Discover our commitment to excellence and client satisfaction.
@@ -339,32 +340,13 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {[
-          { icon: 'fas fa-eye', title: 'Transparency', desc: 'We value open and honest communication in all our interactions and business practices.', color: 'purple' },
-          { icon: 'fas fa-shield-halved', title: 'Integrity', desc: 'We uphold the highest standards of honesty and ethical conduct in all our dealings.', color: 'indigo' },
-          { icon: 'fas fa-heart', title: 'Customer Focus', desc: 'We strive to provide exceptional service and exceed our customers\' expectations.', color: 'blue' },
-          { icon: 'fas fa-lightbulb', title: 'Innovation', desc: 'We continuously innovate to improve our products and services for better client experiences.', color: 'sky' }
-        ].map(value => (
-          <div key={value.title} class="group bg-white rounded-xl p-6 md:p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-            <div class={`w-14 h-14 bg-gradient-to-br from-${value.color}-500 to-${value.color}-600 rounded-lg flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300`}>
-              <i class={`${value.icon} text-2xl text-white`}></i>
-            </div>
-            <h4 class="text-xl font-bold text-gray-900 mb-2 font-poppins">{value.title}</h4>
-            <p class="text-gray-600 leading-relaxed text-sm">
-              {value.desc}
-            </p>
-          </div>
-        ))}
-      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="values-grid"></div>
     </div>
   </section>
 
   <!-- Key Numbers -->
   <section id="key-numbers" class="py-16 md:py-24 bg-gradient-to-br from-gray-800 via-gray-900 to-black text-white relative overflow-hidden">
-    <div class="absolute inset-0 opacity-10">
-      {/* Add a subtle background pattern or texture if desired */}
-    </div>
+    <div class="absolute inset-0 opacity-10"></div>
     
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12 md:mb-16">
@@ -377,23 +359,7 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {[
-          { value: '12+', label: 'Insurance Partners', colorFrom: 'purple-400', colorTo: 'blue-400' },
-          { value: '99.7%', label: 'Customer Satisfaction', colorFrom: 'blue-400', colorTo: 'sky-400' },
-          { value: '7', label: 'National Awards', colorFrom: 'sky-400', colorTo: 'teal-400' },
-          { value: '234+', label: 'Clients Covered', colorFrom: 'teal-400', colorTo: 'purple-400' }
-        ].map(item => (
-          <div key={item.label} class="text-center group">
-            <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 md:p-8 group-hover:bg-white/10 transition-all duration-300">
-              <div class={`text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-${item.colorFrom} to-${item.colorTo} bg-clip-text text-transparent font-poppins`}>
-                {item.value}
-              </div>
-              <p class="text-base md:text-lg text-gray-300">{item.label}</p>
-            </div>
-          </div>
-        ))}
-      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="key-numbers-grid"></div>
     </div>
   </section>
 
@@ -408,14 +374,14 @@
           Partner with Greatscope Insurance Agency for expert advice and comprehensive coverage tailored to your needs.
         </p>
         <a href="contact.html" 
-           class="inline-block bg-white text-brand-purple font-semibold py-3 px-8 rounded-lg text-lg hover:bg-gray-100 hover:text-purple-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
+           class="inline-block bg-white text-brand-purple font-semibold py-3 px-8 rounded-lg text-lg hover:bg-gray-100 hover:text-brand-purple/80 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
           Get a Free Quote Today
         </a>
       </div>
     </div>
   </section>
 
-  <!-- UPDATED Footer -->
+  <!-- Footer -->
   <footer class="bg-custom-purple text-white py-10 px-6 md:px-10">
     <div class="container mx-auto max-w-7xl">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
@@ -456,7 +422,11 @@
           <div>
             <h5 class="text-lg font-semibold mb-2 text-purple-100 font-poppins">Newsletter</h5>
             <p class="text-sm text-purple-200 mb-3">Subscribe for discounts and updates.</p>
-            <form name="newsletter-about" method="POST" class="flex" netlify>
+            <form name="newsletter-about" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="flex">
+              <input type="hidden" name="form-name" value="newsletter-about">
+              <p class="hidden">
+                <label>Don’t fill this out: <input name="bot-field"></label>
+              </p>
               <input type="email" name="email" placeholder="Email address" class="w-full p-2.5 rounded-l-md border-0 bg-purple-600/70 text-white placeholder-purple-300 focus:ring-2 focus:ring-purple-400 focus:outline-none text-sm" required>
               <button type="submit" class="bg-purple-400 hover:bg-purple-300 text-custom-purple font-bold p-2.5 rounded-r-md transition-colors duration-300 text-lg">➔</button>
             </form>
@@ -466,7 +436,7 @@
       <!-- Copyright Notice -->
       <div class="border-t border-purple-500/50 pt-6 mt-8 text-center">
         <p class="text-xs text-purple-300">
-          © <span id="currentYearFooter"></span> Greatscope Insurance Agency. All rights reserved.
+          © 2025 Greatscope Insurance Agency. All rights reserved.
         </p>
       </div>
     </div>
@@ -502,20 +472,19 @@
     // Scroll to Top button
     const topBtn = document.getElementById('topBtn');
     if (topBtn) {
-        window.onscroll = function() {
-          if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            topBtn.style.opacity = "1";
-            topBtn.style.transform = "translateY(0)";
-          } else {
-            topBtn.style.opacity = "0";
-            topBtn.style.transform = "translateY(10px)";
-          }
-        };
-        topBtn.addEventListener('click', () => {
-          window.scrollTo({top: 0, behavior: 'smooth'});
-        });
+      window.onscroll = function() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+          topBtn.style.opacity = "1";
+          topBtn.style.transform = "translateY(0)";
+        } else {
+          topBtn.style.opacity = "0";
+          topBtn.style.transform = "translateY(10px)";
+        }
+      };
+      topBtn.addEventListener('click', () => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+      });
     }
-
 
     // Contact Widget
     const contactWidget = document.getElementById('contact-widget');
@@ -542,39 +511,39 @@
     }
 
     function submitContactWithComments() {
-        const name = document.getElementById('contact-name').value;
-        const email = document.getElementById('contact-email').value;
-        const message = document.getElementById('contact-message').value;
-        const responseDiv = document.getElementById('contact-response');
+      const name = document.getElementById('contact-name').value;
+      const email = document.getElementById('contact-email').value;
+      const message = document.getElementById('contact-message').value;
+      const responseDiv = document.getElementById('contact-response');
 
-        if (!name || !email || !message) {
-            responseDiv.innerHTML = '<p class="text-red-500 text-sm">Please fill in all fields.</p>';
-            return;
-        }
-        if (!validateEmail(email)) {
-            responseDiv.innerHTML = '<p class="text-red-500 text-sm">Please enter a valid email address.</p>';
-            return;
-        }
+      if (!name || !email || !message) {
+        responseDiv.innerHTML = '<p class="text-red-500 text-sm">Please fill in all fields.</p>';
+        return;
+      }
+      if (!validateEmail(email)) {
+        responseDiv.innerHTML = '<p class="text-red-500 text-sm">Please enter a valid email address.</p>';
+        return;
+      }
 
-        responseDiv.innerHTML = '<p class="text-yellow-600 text-sm">Sending...</p>';
-        // Simulate API call
+      responseDiv.innerHTML = '<p class="text-yellow-600 text-sm">Sending...</p>';
+      // Simulate API call
+      setTimeout(() => {
+        console.log("Form submitted:", { name, email, message });
+        responseDiv.innerHTML = '<p class="text-green-500 text-sm">Thank you! Your message has been sent.</p>';
+        document.getElementById('contact-name').value = '';
+        document.getElementById('contact-email').value = '';
+        document.getElementById('contact-message').value = '';
+        
         setTimeout(() => {
-            console.log("Form submitted:", { name, email, message });
-            responseDiv.innerHTML = '<p class="text-green-500 text-sm">Thank you! Your message has been sent.</p>';
-            document.getElementById('contact-name').value = '';
-            document.getElementById('contact-email').value = '';
-            document.getElementById('contact-message').value = '';
-            
-            setTimeout(() => {
-              toggleContactWidget(); 
-              responseDiv.innerHTML = ''; 
-            }, 2000);
-        }, 1500);
+          toggleContactWidget(); 
+          responseDiv.innerHTML = ''; 
+        }, 2000);
+      }, 1500);
     }
 
     function validateEmail(email) {
-        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(String(email).toLowerCase());
+      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
     }
     
     // Smooth scroll for internal links
@@ -585,13 +554,13 @@
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
           const navHeight = document.querySelector('nav').offsetHeight;
-          const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight - 20; // 20px offset
+          const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
           
           window.scrollTo({
             top: targetPosition,
             behavior: 'smooth'
           });
-           // Close mobile menu if open
+          // Close mobile menu if open
           if (!mobileMenu.classList.contains('hidden')) {
             mobileMenu.classList.add('hidden');
             mobileMenuIcon.classList.remove('fa-times');
@@ -601,23 +570,17 @@
       });
     });
 
-    // Set current year in footer
-    const currentYearFooter = document.getElementById('currentYearFooter');
-    if (currentYearFooter) {
-        currentYearFooter.textContent = new Date().getFullYear();
-    }
-
-    // Convert JSX-like arrays to actual elements for Values and Key Numbers sections (for demo purposes)
+    // Render dynamic content for Values and Key Numbers sections
     function renderDynamicContent() {
-      const valuesSection = document.querySelector('#values .grid');
-      if (valuesSection && valuesSection.children[0] && valuesSection.children[0].tagName === 'SPAN') { // Check if it's the placeholder
+      const valuesSection = document.querySelector('#values-grid');
+      if (valuesSection) {
         const valuesData = [
           { icon: 'fas fa-eye', title: 'Transparency', desc: 'We value open and honest communication in all our interactions and business practices.', color: 'brand-purple' },
           { icon: 'fas fa-shield-halved', title: 'Integrity', desc: 'We uphold the highest standards of honesty and ethical conduct in all our dealings.', color: 'indigo' },
           { icon: 'fas fa-heart', title: 'Customer Focus', desc: 'We strive to provide exceptional service and exceed our customers\' expectations.', color: 'brand-blue' },
           { icon: 'fas fa-lightbulb', title: 'Innovation', desc: 'We continuously innovate to improve our products and services for better client experiences.', color: 'sky' }
         ];
-        valuesSection.innerHTML = ''; // Clear placeholder
+        valuesSection.innerHTML = '';
         valuesData.forEach(value => {
           const div = document.createElement('div');
           div.className = "group bg-white rounded-xl p-6 md:p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300";
@@ -632,15 +595,15 @@
         });
       }
 
-      const keyNumbersSection = document.querySelector('#key-numbers .grid');
-      if (keyNumbersSection && keyNumbersSection.children[0] && keyNumbersSection.children[0].tagName === 'SPAN') { // Check if it's the placeholder
+      const keyNumbersSection = document.querySelector('#key-numbers-grid');
+      if (keyNumbersSection) {
         const keyNumbersData = [
-          { value: '12+', label: 'Insurance Partners', colorFrom: 'purple-400', colorTo: 'blue-400' },
-          { value: '99.7%', label: 'Customer Satisfaction', colorFrom: 'blue-400', colorTo: 'sky-400' },
+          { value: '12+', label: 'Insurance Partners', colorFrom: 'brand-purple', colorTo: 'brand-blue' },
+          { value: '99.7%', label: 'Customer Satisfaction', colorFrom: 'brand-blue', colorTo: 'sky-400' },
           { value: '7', label: 'National Awards', colorFrom: 'sky-400', colorTo: 'teal-400' },
-          { value: '234+', label: 'Clients Covered', colorFrom: 'teal-400', colorTo: 'purple-400' }
+          { value: '234+', label: 'Clients Covered', colorFrom: 'teal-400', colorTo: 'brand-purple' }
         ];
-        keyNumbersSection.innerHTML = ''; // Clear placeholder
+        keyNumbersSection.innerHTML = '';
         keyNumbersData.forEach(item => {
           const div = document.createElement('div');
           div.className = "text-center group";
