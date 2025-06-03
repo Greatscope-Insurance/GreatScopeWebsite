@@ -4,38 +4,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Title Tag -->
   <title>Greatscope Insurance Agency | Consult, Insure, Relax</title>
-  <!-- Meta Description for SEO -->
   <meta name="description" content="Greatscope Insurance Agency offers tailored insurance in East Africa: auto, home, health, and business. Expert consultations for your needs.">
-  <!-- Keywords for SEO -->
   <meta name="keywords" content="insurance, Greatscope Insurance Agency, motor insurance Kenya, health insurance East Africa, insurance consultancy, insurance brokerage, tailored insurance solutions, insurance professionals">
-  <!-- Author Meta Tag -->
   <meta name="author" content="Morris Mulitu | Web Developer">
+  
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://ik.imagekit.io/5zp8ovb7c/Greatscope/sized_logo_yZUD-_Hdz?updatedAt=1708010673725">
   
-  <!-- External Font Awesome CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  
-  <!-- Tailwind CSS Script -->
+  <!-- External Libraries -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   
-  <!-- Local CSS Files -->
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Local CSS -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/footer-style.css">
   <link rel="stylesheet" href="css/hero.css">
   <link rel="stylesheet" href="css/about.css">
   
-  <!-- Ionic Icons CDN (if needed) -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  
-  <!-- Google Fonts (if needed) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-  
-  <!-- Structured Data for SEO -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -48,593 +42,405 @@
         "addressLocality": "Nairobi",
         "addressCountry": "Kenya"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "-1.2840471635762207",
-        "longitude": "36.82040522642048"
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "08:00",
-        "closes": "17:00"
-      },
       "telephone": "+254 719 151 288",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+254 719 151 288",
-        "contactType": "hire an insurance professional"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/company/greatscope-insurance-agency/",
-        "https://www.instagram.com/greatscopeinsurance/",
-        "https://web.facebook.com/Greatscopeinsurance",
-        "https://twitter.com/frankaizKenya"
-      ],
       "description": "Explore Greatscope Insurance Agency for comprehensive insurance solutions in East Africa."
     }
   </script>
 </head>
 
-<body>
-    <!-- Fydo Contact Form Widget HTML -->
-    <div id="multi-tab" onclick="toggleContactWidget()"><span><i class="bi bi-chat-left-text"></i></span></div>
-    <div id="contact-widget" style="display: none;">
-    <h4>Send us a message</h4>
-    <p>Name</p><input id="contact-name" placeholder="" type="text" name="name">
-    <p>Email</p><input id="contact-email" placeholder="" type="email" name="email" pattern=".+@.+\..+" required>
-    <p>Message</p><textarea id="contact-message" placeholder=""></textarea>
-    <input type="hidden" name="api_key" value="56683f0f9f208053be3c0c65206303fe">
-    <!-- Replace YOUR_API_KEY_HERE with your key -->
-    <input type="hidden" name="actual_referer" id="actual_referer" value="">
-    <button onclick="submitContactWithComments()">Get a Quote</button>
-    <div id="contact-response"></div><br>
-    <div id="contact-powered">Powered by <a href="https://fydo.co.uk" target="_blank" >Fydo</a></div></div>
-    <script src="https://fydo.co.uk/contact-widget-loader-remote.js"></script>
-	<!-- Scroll to top starts -->
-	<button id="topBtn">
-		<ion-icon name="arrow-up-outline"></ion-icon>
-	</button>
-	<!-- Scroll to top ends -->
+<body class="font-inter antialiased">
+  <!-- Contact Widget -->
+  <div id="multi-tab" onclick="toggleContactWidget()" class="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-purple-600 to-blue-600 text-white p-4 rounded-full shadow-2xl cursor-pointer hover:scale-110 transition-all duration-300">
+    <i class="fas fa-comments text-xl"></i>
+  </div>
+  
+  <div id="contact-widget" class="fixed bottom-24 right-6 z-50 bg-white rounded-2xl shadow-2xl p-6 w-80 transform translate-y-10 opacity-0 transition-all duration-300" style="display: none;">
+    <h4 class="text-xl font-bold text-gray-800 mb-4">Send us a message</h4>
+    <div class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+        <input id="contact-name" type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+        <input id="contact-email" type="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" required>
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+        <textarea id="contact-message" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"></textarea>
+      </div>
+      <button onclick="submitContactWithComments()" class="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300">
+        Get a Quote
+      </button>
+    </div>
+    <div id="contact-response" class="mt-4"></div>
+  </div>
 
-	<!-- Navigation starts -->
-<nav role="navigation" aria-label="Main Navigation">
+  <!-- Scroll to Top -->
+  <button id="topBtn" class="fixed bottom-6 left-6 z-50 bg-gray-900 text-white p-3 rounded-full shadow-2xl opacity-0 transform translate-y-10 transition-all duration-300 hover:bg-gray-800 hover:scale-110">
+    <ion-icon name="arrow-up-outline" class="text-xl"></ion-icon>
+  </button>
 
-		<div class="menu-container nav-wrapper">
-			<div class="brand" id="brandLogo">
-				<a href="index.html">
-					<img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/greatscope_logo-removebg-preview.png?updatedAt=1727717017528"
-						alt="Insurance Logo">
-				</a>
-				<!--<div class="brand-text"><strong>Greatscope</strong></div>
-				 Text "Greatscope" added below the logo -->
-			</div>
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-200 z-40 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="index.html" class="flex items-center space-x-3">
+            <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/greatscope_logo-removebg-preview.png?updatedAt=1727717017528" 
+                 alt="Greatscope Logo" class="h-10 w-auto">
+            <span class="text-xl font-bold text-gray-900">Greatscope</span>
+          </a>
+        </div>
 
-			<!-- Hamburger Menu for Mobile -->
-			<button class="hamberger" aria-label="Open navigation menu">
-				<span></span>
-				<span></span>
-				<span></span>
-			</button>
-
-			<ul class="nav-list">
-				<li class="active"><a href="index.html"><strong>Home</strong></a></li>
-				<li>
-					<a href="about.html"><strong>About</strong></a>
-					<ul class="dropdown-list">
-						<li><a href="about.html#leadership">Leadership</a></li>
-						<li><a href="about.html#mission-vision">Mission & Vision</a></li>
-						<li><a href="about.html#values">Company Values</a></li>
-						<li><a href="about.html#key-numbers">Key Numbers</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="insurance.html"><strong>Our Products</strong></a>
-					<ul class="dropdown-list">
-						<li><a href="insurance.html#health-insurance">Health Insurance</a></li>
-						<li><a href="insurance.html#life-insurance">Life Insurance</a></li>
-						<li><a href="insurance.html#pension-insurance">Pensions</a></li>
-						<li><a href="insurance.html#general-insurance">General Insurance</a></li>
-					</ul>
-				</li>
-				<li><a href="contact.html"><strong>Contact Us</strong></a></li>
-				<li>
-				<div class="flex justify-center md:justify-end mb-4">
-            <a href="https://twitter.com/frankaizKenya" class="social-icon">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="https://web.facebook.com/Greatscopeinsurance" class="social-icon">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" class="social-icon">
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://www.instagram.com/greatscopeinsurance/" class="social-icon">
-              <i class="fab fa-instagram"></i>
-            </a>
+        <!-- Desktop Menu -->
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+            <a href="index.html" class="text-gray-600 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+            <div class="relative group">
+              <a href="about.html" class="text-purple-600 hover:text-purple-700 px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+              <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                <div class="py-1">
+                  <a href="#leadership" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50">Leadership</a>
+                  <a href="#mission-vision" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50">Mission & Vision</a>
+                  <a href="#values" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50">Company Values</a>
+                  <a href="#key-numbers" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50">Key Numbers</a>
+                </div>
+              </div>
+            </div>
+            <div class="relative group">
+              <a href="insurance.html" class="text-gray-600 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Our Products</a>
+              <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                <div class="py-1">
+                  <a href="insurance.html#health-insurance" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50">Health Insurance</a>
+                  <a href="insurance.html#life-insurance" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50">Life Insurance</a>
+                  <a href="insurance.html#pension-insurance" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50">Pensions</a>
+                  <a href="insurance.html#general-insurance" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50">General Insurance</a>
+                </div>
+              </div>
+            </div>
+            <a href="contact.html" class="text-gray-600 hover:text-purple-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
           </div>
-				</li>
-			</ul>
-		</div>
-	</nav>
-	<!-- Navigation ends -->
+        </div>
 
+        <!-- Social Icons -->
+        <div class="hidden md:flex items-center space-x-4">
+          <a href="https://twitter.com/frankaizKenya" class="text-gray-400 hover:text-purple-600 transition-colors">
+            <i class="fab fa-twitter text-lg"></i>
+          </a>
+          <a href="https://web.facebook.com/Greatscopeinsurance" class="text-gray-400 hover:text-purple-600 transition-colors">
+            <i class="fab fa-facebook-f text-lg"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" class="text-gray-400 hover:text-purple-600 transition-colors">
+            <i class="fab fa-linkedin text-lg"></i>
+          </a>
+          <a href="https://www.instagram.com/greatscopeinsurance/" class="text-gray-400 hover:text-purple-600 transition-colors">
+            <i class="fab fa-instagram text-lg"></i>
+          </a>
+        </div>
 
-	<!-------------------- Breadcrumb section ------------------->
-	<section class="breadcrumbs">
-		<div class="breadcrumb-container">
-			<h2 class="hero-heading white">
-				About Us
-			</h2>
-		</div>
-	</section>
-	<!-------------------- Breadcrumb section ------------------->
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button class="mobile-menu-btn text-gray-600 hover:text-purple-600 p-2">
+            <span class="sr-only">Open main menu</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
 
-<!-------------------- Leadership section -------------------->
-<section class="leadership" id="leadership">
-	<div class="container">
-		<h2 class="heading">
-			Greatscope Management
-		</h2>
-		<div class="leader-profile">
-			<div class="leader-image">
-				<img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/francis.webp?updatedAt=1708025159939" alt="Francis Muendo"
-					class="leader-img">
-			</div>
-			<div class="leader-info">
-				<h3 class="leader-name">Francis Muendo AIIK</h3>
-				<h4 class="leader-title">Managing Director</h4>
-				<p class="para-line">
-					Francis holds a bachelor's degree in <strong>Actuarial Science</strong> from <strong>Jomo Kenyatta University of Agriculture and Technology</strong> and a
-					<strong>Diploma
-						in Insurance</strong> from the College of Insurance.
-				</p>
-				<p class="para-line">
-					With over <strong>8 years</strong> of experience in the insurance industry, Francis has worked for various insurance
-					companies, specializing in Insurance Underwriting, Claims Management, and Marketing. He has demonstrated exceptional leadership
-					skills and a deep understanding of the insurance landscape. Francis also serves as an <strong>Executive
-						Council Member at the Insurance Institute of Kenya,</strong> where he contributes to shaping industry policies and standards.
-				</p>
-			</div>
-		</div>
-	</div>
-</section>
-<!-------------------- Leadership section ends -------------------->
+    <!-- Mobile menu -->
+    <div class="mobile-menu md:hidden hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+        <a href="index.html" class="block px-3 py-2 text-gray-600 hover:text-purple-600">Home</a>
+        <a href="about.html" class="block px-3 py-2 text-purple-600">About</a>
+        <a href="insurance.html" class="block px-3 py-2 text-gray-600 hover:text-purple-600">Our Products</a>
+        <a href="contact.html" class="block px-3 py-2 text-gray-600 hover:text-purple-600">Contact</a>
+        <div class="flex space-x-4 px-3 py-2">
+          <a href="https://twitter.com/frankaizKenya" class="text-gray-400 hover:text-purple-600">
+            <i class="fab fa-twitter text-lg"></i>
+          </a>
+          <a href="https://web.facebook.com/Greatscopeinsurance" class="text-gray-400 hover:text-purple-600">
+            <i class="fab fa-facebook-f text-lg"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" class="text-gray-400 hover:text-purple-600">
+            <i class="fab fa-linkedin text-lg"></i>
+          </a>
+          <a href="https://www.instagram.com/greatscopeinsurance/" class="text-gray-400 hover:text-purple-600">
+            <i class="fab fa-instagram text-lg"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-	<!-------------------- Future protection -------------------->
-	<section class="future">
-		<div class="container">
-			<h2 class="heading">
-				Who we are
-			</h2>
-			<p class="para-line">
-				Greatscope Insurance Agency is an insurance consultancy and brokerage firm that provides a wide range of
-				insurance services to our clients.
-			</p>
-			<p class="para-line">
-				Our services include <strong>Motor insurance, Fire and Perils insurance, Domestic package
-					insurance,
-					Contractors all risks, WIBA and ECL, Personal accident, Marine insurance, Group life insurance,
-					Travel
-					insurance, Goods in transit, Medical insurance, Credit life insurance, and Whole life
-					insurance.</strong>
-			</p>
-			<p class="para-line">
-				We are committed to providing our clients with the highest quality of service.
-			</p>
-		</div>
-	</section>
-	<!-------------------- Future protection -------------------->
+  <!-- Hero Section -->
+  <section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900"></div>
+    <div class="absolute inset-0 bg-black/30"></div>
+    <div class="absolute inset-0">
+      <div class="absolute top-20 left-20 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-20 right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+    </div>
+    
+    <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
+        About Greatscope
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-200 max-w-2xl mx-auto">
+        Your trusted partner in comprehensive insurance solutions across East Africa
+      </p>
+    </div>
+  </section>
 
-	<!-------------------- Mission & Vision section -------------------->
-	<section class="mission-vision" id="mission-vision">
-		<div class="container">
-			<h2 class="heading">
-				Our Mission & Vision
-			</h2>
-			
-			<div class="mission-vision-content">
-				<div class="vision-section">
-					<div class="vision-icon">
-						<ion-icon name="telescope-outline"></ion-icon>
-					</div>
-					<div class="vision-content">
-						<h3 class="sub-heading">Our Vision</h3>
-						<p class="para-line">
-							To become the most sought after insurance consultancy and brokerage firm in East Africa.
-						</p>
-					</div>
-				</div>
-				
-				<div class="mission-section">
-					<div class="mission-icon">
-						<ion-icon name="compass-outline"></ion-icon>
-					</div>
-					<div class="mission-content">
-						<h3 class="sub-heading">Our Mission</h3>
-						<p class="para-line">
-							To maintain the highest standards of integrity and professionalism in our relationship with our clients. To provide tailor made insurance solutions in a changing insurance market.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-------------------- Mission & Vision section ends -------------------->
+  <!-- Leadership Section -->
+  <section id="leadership" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Leadership Excellence
+        </h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto"></div>
+      </div>
 
-	<!-- ----------------- Company Values --------------------------- -->
-	<section class="values">
-		<div class="container">
-			<h2 class="heading" id="values">
-				Company Values
-			</h2>
+      <div class="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 md:p-12 shadow-2xl">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="relative">
+            <div class="absolute -inset-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl blur opacity-20"></div>
+            <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/francis.webp?updatedAt=1708025159939" 
+                 alt="Francis Muendo" 
+                 class="relative rounded-2xl w-full h-96 object-cover shadow-xl">
+          </div>
+          
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-3xl font-bold text-gray-900 mb-2">Francis Muendo AIIK</h3>
+              <p class="text-xl text-purple-600 font-semibold mb-4">Managing Director</p>
+            </div>
+            
+            <div class="space-y-4 text-gray-700">
+              <p class="text-lg leading-relaxed">
+                Francis holds a bachelor's degree in <span class="font-semibold text-gray-900">Actuarial Science</span> from 
+                <span class="font-semibold text-gray-900">Jomo Kenyatta University of Agriculture and Technology</span> and a 
+                <span class="font-semibold text-gray-900">Diploma in Insurance</span> from the College of Insurance.
+              </p>
+              
+              <p class="text-lg leading-relaxed">
+                With over <span class="font-semibold text-gray-900">8 years</span> of experience in the insurance industry, 
+                Francis has worked for various insurance companies, specializing in Insurance Underwriting, Claims Management, 
+                and Marketing. He serves as an <span class="font-semibold text-gray-900">Executive Council Member at the 
+                Insurance Institute of Kenya</span>, contributing to shaping industry policies and standards.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-			<div class="company-values">
-				<div class="value">
-					<ion-icon name="contrast-outline"></ion-icon>
-					<h4 class="value-heading">Transparency</h4>
-					<p class="para-line">
-						We value open and honest communication.
-					</p>
-				</div>
+  <!-- About Us Section -->
+  <section class="py-20 bg-gradient-to-br from-purple-50 to-blue-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Who We Are
+        </h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto mb-8"></div>
+      </div>
 
-				<div class="value">
-					<ion-icon name="trophy-outline"></ion-icon>
-					<h4 class="value-heading">Integrity</h4>
-					<p class="para-line">
-						We value honesty and transparency in all our dealings.
-					</p>
-				</div>
-				<div class="value">
-					<ion-icon name="heart-circle-outline"></ion-icon>
-					<h4 class="value-heading">Customer Focus</h4>
-					<p class="para-line">
-						We strive to provide excellent service and meet the needs of our customers.
-					</p>
-				</div>
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-3xl p-8 md:p-12 shadow-2xl">
+          <div class="space-y-6 text-gray-700 text-lg leading-relaxed">
+            <p>
+              Greatscope Insurance Agency is a premier insurance consultancy and brokerage firm that provides 
+              comprehensive insurance services to our valued clients across East Africa.
+            </p>
+            
+            <p>
+              Our extensive services portfolio includes <span class="font-semibold text-gray-900">Motor Insurance, 
+              Fire and Perils Insurance, Domestic Package Insurance, Contractors All Risks, WIBA and ECL, 
+              Personal Accident, Marine Insurance, Group Life Insurance, Travel Insurance, Goods in Transit, 
+              Medical Insurance, Credit Life Insurance, and Whole Life Insurance.</span>
+            </p>
+            
+            <p>
+              We are committed to providing our clients with the highest quality of service, backed by 
+              expertise, integrity, and unwavering dedication to your protection needs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-				<div class="value">
-					<ion-icon name="bulb-outline"></ion-icon>
-					<h4 class="value-heading">Innovation</h4>
-					<p class="para-line">
-						We are constantly innovating to improve our products and services.
-					</p>
-				</div>
+  <!-- Mission & Vision Section -->
+  <section id="mission-vision" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Our Purpose & Vision
+        </h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto"></div>
+      </div>
 
-			</div>
-		</div>
-	</section>
-	<!-- ----------------- Company Values --------------------------- -->
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Vision -->
+        <div class="group relative overflow-hidden bg-gradient-to-br from-purple-600 to-blue-600 rounded-3xl p-8 md:p-10 text-white transform hover:scale-105 transition-all duration-500">
+          <div class="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-20 translate-x-20"></div>
+          <div class="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full translate-y-16 -translate-x-16"></div>
+          
+          <div class="relative z-10">
+            <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-500">
+              <ion-icon name="telescope-outline" class="text-3xl"></ion-icon>
+            </div>
+            
+            <h3 class="text-2xl md:text-3xl font-bold mb-6">Our Vision</h3>
+            <p class="text-lg md:text-xl leading-relaxed opacity-90">
+              To become the most sought after insurance consultancy and brokerage firm in East Africa.
+            </p>
+          </div>
+        </div>
 
-	<!-- ------------------------------ Key numbers ------------------------- -->
-	<section class="key-numbers">
-		<div class="container">
-			<h2 class="heading white" id="key-numbers">
-				Our Key Numbers
-			</h2>
-			<p class="para-line white">
-				Below we highlight some key metrics and figures about our company's partners, customer satisfaction,
-				awards, and our esteemed clients.
-			</p>
+        <!-- Mission -->
+        <div class="group relative overflow-hidden bg-gradient-to-br from-indigo-600 to-purple-600 rounded-3xl p-8 md:p-10 text-white transform hover:scale-105 transition-all duration-500">
+          <div class="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-20 translate-x-20"></div>
+          <div class="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full translate-y-16 -translate-x-16"></div>
+          
+          <div class="relative z-10">
+            <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-500">
+              <ion-icon name="compass-outline" class="text-3xl"></ion-icon>
+            </div>
+            
+            <h3 class="text-2xl md:text-3xl font-bold mb-6">Our Mission</h3>
+            <p class="text-lg md:text-xl leading-relaxed opacity-90">
+              To maintain the highest standards of integrity and professionalism in our relationship with our clients. 
+              To provide tailor made insurance solutions in a changing insurance market.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-			<div class="row key-num-row">
+  <!-- Company Values -->
+  <section id="values" class="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Our Core Values
+        </h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto mb-8"></div>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          The principles that guide everything we do and define who we are as a company
+        </p>
+      </div>
 
-				<div class="col key-num-2-col">
-					<div class="key-number">
-						<h2 class="heading">12+</h2>
-						<p class="para-line">Insurance Partners</p>
-					</div>
-					<div class="key-number">
-						<h2 class="heading">99.7%</h2>
-						<p class="para-line">Customer Satisfaction</p>
-					</div>
-				</div>
-				<div class="col">
-					<div class="key-number">
-						<h2 class="heading">7</h2>
-						<p class="para-line">National Awards</p>
-					</div>
-					<div class="key-number">
-						<h2 class="heading">234</h2>
-						<p class="para-line">Clients Covered</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- ------------------------------ Key numbers ------------------------- -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+          <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <ion-icon name="eye-outline" class="text-2xl text-white"></ion-icon>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 mb-4">Transparency</h4>
+          <p class="text-gray-600 leading-relaxed">
+            We value open and honest communication in all our interactions and business practices.
+          </p>
+        </div>
 
-	<!-- -------------------------- Highlights ------------------------------ -->
-	<!--
-<section class="company-highlights">
-		<div class="container">
-			<div class="highlight">
-				<ion-icon name="prism-outline"></ion-icon>
-				<h3 class="highlight-heading">Leading Partners</h3>
-				<p class="para-line">
-					Bushwick trust fund echo park, edison bulb succulents blog slow messenger.
-				</p>
-			</div>
-			<div class="highlight">
-				<ion-icon name="radio-outline"></ion-icon>
-				<h3 class="highlight-heading">Global Presence</h3>
-				<p class="para-line">
-					Bushwick trust fund echo park, edison bulb succulents blog slow messenger.
-				</p>
-			</div>
-			<div class="highlight">
-				<ion-icon name="thumbs-up-outline"></ion-icon>
-				<h3 class="highlight-heading">24x7 Support</h3>
-				<p class="para-line">
-					Bushwick trust fund echo park, edison bulb succulents blog slow messenger.
-				</p>
-			</div>
-			<div class="highlight">
-				<ion-icon name="wallet-outline"></ion-icon>
-				<h3 class="highlight-heading">Financial Advising </h3>
-				<p class="para-line">
-					Bushwick trust fund echo park, edison bulb succulents blog slow messenger.
-				</p>
-			</div>
-			<div class="highlight">
-				<ion-icon name="shield-checkmark-outline"></ion-icon>
-				<h3 class="highlight-heading">Online Assistant</h3>
-				<p class="para-line">
-					Bushwick trust fund echo park, edison bulb succulents blog slow messenger.
-				</p>
-			</div>
-			<div class="highlight">
-				<ion-icon name="people-outline"></ion-icon>
-				<h3 class="highlight-heading">Best Agents</h3>
-				<p class="para-line">
-					Bushwick trust fund echo park, edison bulb succulents blog slow messenger.
-				</p>
-			</div>
-		</div>
-	</section>
--->
+        <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+          <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <ion-icon name="shield-checkmark-outline" class="text-2xl text-white"></ion-icon>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 mb-4">Integrity</h4>
+          <p class="text-gray-600 leading-relaxed">
+            We uphold the highest standards of honesty and ethical conduct in all our dealings.
+          </p>
+        </div>
 
-	<!-- --------------------------- Our team -------------------------------- -->
-	<!--
-	<section class="our-team">
-		<div class="container">
-			<h4 class="sub-heading">Agency Pillars</h4>
-			<h2 class="heading">
-				Our Team
-			</h2>
+        <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+          <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <ion-icon name="heart-outline" class="text-2xl text-white"></ion-icon>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 mb-4">Customer Focus</h4>
+          <p class="text-gray-600 leading-relaxed">
+            We strive to provide exceptional service and exceed our customers' expectations.
+          </p>
+        </div>
 
-			<div class="team-members">
-				<div class="team-member">
-					<img src="img/member-1.png" title="Team Member" alt="Team Member" class="member-img">
-					<div class="member-content">
-						<p class="member-designation">Insurance Manager - Cofounder</p>
-						<h3 class="member-name">Elise George</h3>
-						<p class="para-line">
-							Vice knausgaard echo park micrsing jianbing asymmetrical non swag air.
-						</p>
-					</div>
-				</div>
-				<div class="team-member">
-					<img src="img/member-2.png" title="Team Member" alt="Team Member" class="member-img">
-					<div class="member-content">
-						<p class="member-designation">Insurance officer</p>
-						<h3 class="member-name">Jane Perkins</h3>
-						<p class="para-line">
-							Tousled tilde williamsburg nisi banjo direct trade slow-carb copper mug.
-						</p>
-					</div>
-				</div>
-				<div class="team-member">
-					<img src="img/member-3.png" title="Team Member" alt="Team Member" class="member-img">
-					<div class="member-content">
-						<p class="member-designation">Policy Manager - Cofounder</p>
-						<h3 class="member-name">Sharon Morgan</h3>
-						<p class="para-line">
-							Narw tbh flannel. Hot chi gohutogen off vapo hipsum lorem desimiun pot.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	-->
-	<!-- --------------------------- Our team -------------------------------- -->
+        <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+          <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <ion-icon name="bulb-outline" class="text-2xl text-white"></ion-icon>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 mb-4">Innovation</h4>
+          <p class="text-gray-600 leading-relaxed">
+            We continuously innovate to improve our products and services for better client experiences.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	<!-- ---------------------------- About CTA --------------------------- -->
-	<section class="about-cta">
-		<div class="container">
-			<div class="row">
-				<div class="col cta-content-col">
-					<h2 class="heading white">
-						Talk to our Team
-					</h2>
-					<p class="para-line white">
-						Our friendly and knowledgeable agents are available to answer your questions and help you find
-						the right insurance for your needs. Call now to get personalized advice.
-					</p>
-				</div>
-				<div class="col cta-btn-col">
-					<button class="btn btn-yellow">
-						<a href="tel:254719151288">
-							Call Now
-						</a>
-					</button>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- ---------------------------- About CTA --------------------------- -->
+  <!-- Key Numbers -->
+  <section id="key-numbers" class="py-20 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute top-0 left-0 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">
+          Our Achievements
+        </h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-purple-400 to-blue-400 mx-auto mb-8"></div>
+        <p class="text-xl text-gray-200 max-w-3xl mx-auto">
+          Key metrics highlighting our company's partnerships, customer satisfaction, awards, and client coverage
+        </p>
+      </div>
 
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="text-center group">
+          <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 mb-4 group-hover:bg-white/20 transition-all duration-300">
+            <div class="text-4xl md:text-6xl font-bold mb-2 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+              12+
+            </div>
+            <p class="text-lg text-gray-200">Insurance Partners</p>
+          </div>
+        </div>
 
-	<!-- Footer starts -->
-	<!-- Combined Footer -->
-	<footer class="bg-custom-purple text-white py-6 px-10">
-		<div class="container mx-auto">
-			<div class="footer-content grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
-				<!-- Brand and About Column -->
-				<div class="brand-and-about">
-					<h1 class="text-4xl font-bold">Greatscope</h1>
-					<div class="about mt-4">
-						<p class="footer-text">Greatscope serves as the unwavering bedrock of trust, providing steadfast
-							commitment to safeguard what holds paramount importance across the varied realms of life,
-							health, motor, and housing insurance.</p>
-						<div class="contact-info mt-4 space-y-2">
-							<p class="footer-text"><i class="fas fa-phone-alt contact-icon"></i> 0719 151 288 / 0797 313
-								199</p>
-							<p class="footer-text"><i class="fas fa-envelope contact-icon"></i>
-								info@greatscopeinsurance.com</p>
-							<p class="footer-text"><i class="fas fa-map-marker-alt contact-icon"></i> Portal Place House
-								4th Floor, Muindi Mbingu Street.</p>
-						</div>
-					</div>
-				</div>
+        <div class="text-center group">
+          <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 mb-4 group-hover:bg-white/20 transition-all duration-300">
+            <div class="text-4xl md:text-6xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              99.7%
+            </div>
+            <p class="text-lg text-gray-200">Customer Satisfaction</p>
+          </div>
+        </div>
 
-				<!-- Social Icons and Newsletter Column -->
-				<div class="social-and-newsletter">
-					<!-- Social Icons -->
-					<div class="flex justify-center md:justify-end mb-4">
-						<a href="https://twitter.com/frankaizKenya" class="social-icon">
-							<i class="fab fa-twitter"></i>
-						</a>
-						<a href="https://web.facebook.com/Greatscopeinsurance" class="social-icon">
-							<i class="fab fa-facebook-f"></i>
-						</a>
-						<a href="https://www.linkedin.com/company/greatscope-insurance-agency/" class="social-icon">
-							<i class="fab fa-linkedin"></i>
-						</a>
-						<a href="https://www.instagram.com/greatscopeinsurance/" class="social-icon">
-							<i class="fab fa-instagram"></i>
-						</a>
-					</div>
-					<!-- Newsletter -->
-					<div class="newsletter mt-4 md:mt-0">
-						<h5 class="footer-heading">Newsletter</h5>
-						<p class="footer-text">Subscribe to our newsletter for discounts and more.</p>
-						<form id="subscribe" name="newsletter-about" method="POST" class="newsletter-form mt-4" netlify>
-							<input type="email" placeholder="Email address" class="newsletter-input">
-							<button type="submit" class="newsletter-submit">→</button>
-						</form>
-					</div>
-				</div>
-			</div>
-			<!-- Copyright Notice -->
-			<div class="border-t border-gray-700 py-2 mt-4"></div>
-			<div class="text-center text-sm mt-4">
-				&copy; 2024 Greatscope Insurance Agency. All rights reserved.
-			</div>
-		</div>
-	</footer>
-	<!-- Footer ends -->
+        <div class="text-center group">
+          <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 mb-4 group-hover:bg-white/20 transition-all duration-300">
+            <div class="text-4xl md:text-6xl font-bold mb-2 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+              7
+            </div>
+            <p class="text-lg text-gray-200">National Awards</p>
+          </div>
+        </div>
 
-	<!-------------- Importing JS file -------------->
+        <div class="text-center group">
+          <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 mb-4 group-hover:bg-white/20 transition-all duration-300">
+            <div class="text-4xl md:text-6xl font-bold mb-2 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              234
+            </div>
+            <p class="text-lg text-gray-200">Clients Covered</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	<!------------------------ Scroll to top button -------------------->
-	<script>
-		$(document).ready(function () {
-			$(window).scroll(function () {
-				if ($(this).scrollTop() > 40) {
-					$('#topBtn').fadeIn();
-				} else {
-					$('#topBtn').fadeOut();
-				}
-			});
-
-			$("#topBtn").click(function () {
-				$('html, body').animate({
-					scrollTop: 0
-				}, 800);
-			});
-		});
-	</script>
-
-	<script>
-		document.addEventListener('DOMContentLoaded', function () {
-			var hamburger = document.querySelector('.hamberger');
-			var navList = document.querySelector('.nav-list');
-
-			hamburger.addEventListener('click', function () {
-				hamburger.classList.toggle('active');
-				navList.classList.toggle('active');
-			});
-		});
-	</script>
-
-	<style>
-		/* Mission & Vision Section Styles */
-		.mission-vision {
-			padding: 80px 0;
-			background-color: #f8f9fa;
-		}
-
-		.mission-vision-content {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 60px;
-			margin-top: 40px;
-		}
-
-		.vision-section, .mission-section {
-			display: flex;
-			align-items: flex-start;
-			gap: 20px;
-			padding: 30px;
-			background: white;
-			border-radius: 12px;
-			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-			transition: transform 0.3s ease, box-shadow 0.3s ease;
-		}
-
-		.vision-section:hover, .mission-section:hover {
-			transform: translateY(-5px);
-			box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-		}
-
-		.vision-icon, .mission-icon {
-			flex-shrink: 0;
-			width: 60px;
-			height: 60px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			border-radius: 50%;
-			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-			color: white;
-			font-size: 24px;
-		}
-
-		.vision-content, .mission-content {
-			flex: 1;
-		}
-
-		.sub-heading {
-			font-size: 24px;
-			font-weight: 600;
-			color: #333;
-			margin-bottom: 15px;
-		}
-
-		/* Responsive Design */
-		@media (max-width: 768px) {
-			.mission-vision-content {
-				grid-template-columns: 1fr;
-				gap: 30px;
-			}
-
-			.vision-section, .mission-section {
-				padding: 20px;
-			}
-
-			.vision-icon, .mission-icon {
-				width: 50px;
-				height: 50px;
-				font-size: 20px;
-			}
-
-			.sub-heading {
-				font-size: 20px;
-			}
-		}
-	</style>
-</body>
-
-</html>
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-purple-600 to-blue-600 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class
