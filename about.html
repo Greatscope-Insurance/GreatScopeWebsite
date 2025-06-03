@@ -25,7 +25,7 @@
   
   <!-- Local CSS -->
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/footer-style.css">
+  <link rel="stylesheet" href="css/footer-style.css"> <!-- Make sure this file defines .bg-custom-purple and other footer specific styles if not covered by Tailwind -->
   <link rel="stylesheet" href="css/hero.css">
   <link rel="stylesheet" href="css/about.css">
   
@@ -44,6 +44,17 @@
       },
       "telephone": "+254 719 151 288",
       "description": "Explore Greatscope Insurance Agency for comprehensive insurance solutions in East Africa."
+    }
+  </script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'custom-purple': '#5D3A9A', // Example: Define your custom purple or ensure it's in css/footer-style.css
+          }
+        }
+      }
     }
   </script>
 </head>
@@ -457,90 +468,63 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-        <!-- Company Info -->
-        <div>
-          <div class="flex items-center mb-6">
-            <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/greatscope_logo-removebg-preview.png?updatedAt=1727717017528" 
-                 alt="Greatscope Logo White" class="h-10 mr-3">
-            <span class="text-2xl font-bold text-white">Greatscope</span>
+  <!-- Footer starts -->
+  <!-- Combined Footer -->
+  <footer class="bg-custom-purple text-white py-6 px-10">
+    <div class="container mx-auto">
+      <div class="footer-content grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+        <!-- Brand and About Column -->
+        <div class="brand-and-about">
+          <h1 class="text-4xl font-bold">Greatscope</h1>
+          <div class="about mt-4">
+            <p class="footer-text">Greatscope serves as the unwavering bedrock of trust, providing steadfast commitment
+              to safeguard what holds paramount importance across the varied realms of life, health, motor, and housing
+              insurance.</p>
+            <div class="contact-info mt-4 space-y-2">
+              <p class="footer-text"><i class="fas fa-phone-alt contact-icon mr-2"></i> 0719 151 288 / 0797 313 199</p>
+              <p class="footer-text"><i class="fas fa-envelope contact-icon mr-2"></i> info@greatscopeinsurance.com</p>
+              <p class="footer-text"><i class="fas fa-map-marker-alt contact-icon mr-2"></i> Portal Place House 4th Floor,
+                Muindi Mbingu Street.</p>
+            </div>
           </div>
-          <p class="mb-4 text-gray-400 leading-relaxed">
-            Your trusted partner for comprehensive insurance solutions in East Africa. Consult, Insure, Relax.
-          </p>
-          <div class="flex space-x-4 mt-6">
-            <a href="https://twitter.com/frankaizKenya" class="text-gray-400 hover:text-purple-400 transition-colors">
+        </div>
+
+        <!-- Social Icons and Newsletter Column -->
+        <div class="social-and-newsletter">
+          <!-- Social Icons -->
+          <div class="flex justify-center md:justify-end mb-4">
+            <a href="https://twitter.com/frankaizKenya" class="social-icon mx-2 hover:text-gray-300">
               <i class="fab fa-twitter text-xl"></i>
             </a>
-            <a href="https://web.facebook.com/Greatscopeinsurance" class="text-gray-400 hover:text-purple-400 transition-colors">
+            <a href="https://web.facebook.com/Greatscopeinsurance" class="social-icon mx-2 hover:text-gray-300">
               <i class="fab fa-facebook-f text-xl"></i>
             </a>
-            <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" class="text-gray-400 hover:text-purple-400 transition-colors">
+            <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" class="social-icon mx-2 hover:text-gray-300">
               <i class="fab fa-linkedin text-xl"></i>
             </a>
-            <a href="https://www.instagram.com/greatscopeinsurance/" class="text-gray-400 hover:text-purple-400 transition-colors">
+            <a href="https://www.instagram.com/greatscopeinsurance/" class="social-icon mx-2 hover:text-gray-300">
               <i class="fab fa-instagram text-xl"></i>
             </a>
           </div>
-        </div>
-
-        <!-- Quick Links -->
-        <div>
-          <h5 class="text-xl font-semibold text-white mb-6">Quick Links</h5>
-          <ul class="space-y-3">
-            <li><a href="index.html" class="hover:text-purple-400 transition-colors">Home</a></li>
-            <li><a href="about.html" class="hover:text-purple-400 transition-colors">About Us</a></li>
-            <li><a href="insurance.html" class="hover:text-purple-400 transition-colors">Our Products</a></li>
-            <li><a href="contact.html" class="hover:text-purple-400 transition-colors">Contact Us</a></li>
-            <li><a href="blog.html" class="hover:text-purple-400 transition-colors">Blog</a></li>
-          </ul>
-        </div>
-
-        <!-- Services -->
-        <div>
-          <h5 class="text-xl font-semibold text-white mb-6">Our Services</h5>
-          <ul class="space-y-3">
-            <li><a href="insurance.html#health-insurance" class="hover:text-purple-400 transition-colors">Health Insurance</a></li>
-            <li><a href="insurance.html#life-insurance" class="hover:text-purple-400 transition-colors">Life Insurance</a></li>
-            <li><a href="insurance.html#pension-insurance" class="hover:text-purple-400 transition-colors">Pension Plans</a></li>
-            <li><a href="insurance.html#general-insurance" class="hover:text-purple-400 transition-colors">General Insurance</a></li>
-            <li><a href="claims.html" class="hover:text-purple-400 transition-colors">Claims Assistance</a></li>
-          </ul>
-        </div>
-
-        <!-- Contact Info -->
-        <div>
-          <h5 class="text-xl font-semibold text-white mb-6">Get In Touch</h5>
-          <ul class="space-y-4 text-gray-400">
-            <li class="flex items-start">
-              <ion-icon name="location-outline" class="text-purple-400 text-xl mr-3 mt-1"></ion-icon>
-              <span>Portal Place House, 4th Floor, Muindi Mbingu Street, Nairobi, Kenya</span>
-            </li>
-            <li class="flex items-center">
-              <ion-icon name="call-outline" class="text-purple-400 text-xl mr-3"></ion-icon>
-              <a href="tel:+254719151288" class="hover:text-purple-400 transition-colors">+254 719 151 288</a>
-            </li>
-            <li class="flex items-center">
-              <ion-icon name="mail-outline" class="text-purple-400 text-xl mr-3"></ion-icon>
-              <a href="mailto:info@greatscope.co.ke" class="hover:text-purple-400 transition-colors">info@greatscope.co.ke</a>
-            </li>
-          </ul>
+          <!-- Newsletter -->
+          <div class="newsletter mt-4 md:mt-0">
+            <h5 class="footer-heading text-lg font-semibold">Newsletter</h5>
+            <p class="footer-text mt-1">Subscribe to our newsletter for discounts and more.</p>
+            <form id="subscribe" name="newsletter-index" method="POST" class="newsletter-form mt-4 flex" netlify>
+              <input type="email" name="email" placeholder="Email address" class="newsletter-input w-full p-2 rounded-l-md border border-gray-600 bg-gray-700 text-white focus:outline-none focus:border-purple-400" required>
+              <button type="submit" class="newsletter-submit bg-purple-600 hover:bg-purple-700 text-white p-2 rounded-r-md transition-colors duration-300">➔</button>
+            </form>
+          </div>
         </div>
       </div>
-
-      <div class="mt-16 border-t border-gray-700 pt-8 text-center">
-        <p class="text-gray-500">
-          © <span id="currentYear"></span> Greatscope Insurance Agency. All Rights Reserved.
-        </p>
-        <p class="text-sm text-gray-600 mt-2">
-          Website by <a href="https://www.morrismulitu.com" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:underline">Morris Mulitu</a>
-        </p>
+      <!-- Copyright Notice -->
+      <div class="border-t border-gray-700 py-2 mt-4"></div>
+      <div class="text-center text-sm mt-4">
+        © <span id="currentYearFooter"></span> Greatscope Insurance Agency. All rights reserved.
       </div>
     </div>
   </footer>
+  <!-- Footer ends -->
   
   <script>
     // Mobile menu toggle
@@ -556,10 +540,9 @@
     window.addEventListener('scroll', () => {
       if (window.scrollY > 50) {
         nav.classList.add('shadow-md', 'bg-white/95');
-        nav.classList.remove('bg-white/95'); // If it starts with a different background
+        nav.classList.remove('bg-white/95'); 
       } else {
         nav.classList.remove('shadow-md');
-        // nav.classList.add('bg-white/95'); // Restore initial background if needed
       }
     });
 
@@ -590,12 +573,12 @@
         setTimeout(() => {
           contactWidget.style.opacity = '1';
           contactWidget.style.transform = 'translateY(0)';
-          multiTab.innerHTML = '<i class="fas fa-times text-xl"></i>'; // Change to close icon
+          multiTab.innerHTML = '<i class="fas fa-times text-xl"></i>'; 
         }, 10);
       } else {
         contactWidget.style.opacity = '0';
         contactWidget.style.transform = 'translateY(10px)';
-        multiTab.innerHTML = '<i class="fas fa-comments text-xl"></i>'; // Change back to message icon
+        multiTab.innerHTML = '<i class="fas fa-comments text-xl"></i>'; 
         setTimeout(() => {
           contactWidget.style.display = 'none';
         }, 300);
@@ -621,7 +604,6 @@
 
         // Simulate API call
         setTimeout(() => {
-            // Replace with actual API endpoint
             console.log("Form submitted:", { name, email, message });
             responseDiv.innerHTML = '<p class="text-green-500 text-sm">Thank you! Your message has been sent.</p>';
             document.getElementById('contact-name').value = '';
@@ -629,8 +611,8 @@
             document.getElementById('contact-message').value = '';
             
             setTimeout(() => {
-              toggleContactWidget(); // Close widget after successful submission
-              responseDiv.innerHTML = ''; // Clear message
+              toggleContactWidget(); 
+              responseDiv.innerHTML = ''; 
             }, 2000);
         }, 1500);
     }
@@ -655,7 +637,14 @@
     });
 
     // Set current year in footer
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    // The new footer has "© 2024 Greatscope..."
+    // If you want it dynamic like the old one, uncomment the line below
+    // and ensure your new footer has <span id="currentYearFooter"></span> or similar.
+    const currentYearFooter = document.getElementById('currentYearFooter');
+    if (currentYearFooter) {
+        currentYearFooter.textContent = new Date().getFullYear();
+    }
+
 
   </script>
 </body>
