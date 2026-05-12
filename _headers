@@ -1,0 +1,7 @@
+/robots.txt
+  Access-Control-Allow-Origin: *
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+
