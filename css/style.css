@@ -1287,33 +1287,40 @@ footer {
     margin: 1.5rem auto;
 }
 
-/* =============== HERO MOBILE REFINEMENTS =============== */
+/* =============== HERO MOBILE: HIDE FLIP SPAN TEXT =============== */
 @media (max-width: 820px) {
-    .fnc-slide__action-btn {
-        font-size: 14px !important;
-        padding: 14px 32px !important;
-        letter-spacing: 0.05em !important;
-        border-radius: 50px !important;
-        box-shadow: 0 4px 20px rgba(228, 198, 128, 0.3) !important;
-    }
-    .fnc-slide__heading-line {
-        text-shadow: 0 2px 20px rgba(0,0,0,0.3) !important;
-    }
-    .fnc-slide__content {
-        padding-bottom: 120px !important;
-    }
-    .fnc-slide__inner::after {
-        background: linear-gradient(to top, rgba(30,27,46,0.95) 0%, rgba(30,27,46,0.4) 60%, transparent 100%) !important;
+    .fnc-slide__action-btn span {
+        display: none !important;
     }
 }
 
-@media (max-width: 480px) {
-    .fnc-slide__action-btn {
-        font-size: 13px !important;
-        padding: 12px 28px !important;
-    }
-    .fnc-slide__content {
-        padding-bottom: 110px !important;
+/* =============== PARTNER LOGOS =============== */
+.partners-scroll {
+    overflow: hidden;
+    width: 100%;
+}
+.partners-track {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.partner-logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    filter: none;
+    opacity: 1;
+    transition: transform 0.3s ease;
+}
+.partner-logo:hover {
+    transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+    .partner-logo {
+        height: 48px;
     }
 }
 
