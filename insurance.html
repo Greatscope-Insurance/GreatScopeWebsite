@@ -162,10 +162,10 @@
   <!-- Products -->
   <section class="py-20 md:py-28">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
+      <div class="text-center mb-16 reveal">
         <span class="text-brand-gold font-semibold text-sm uppercase tracking-[0.2em]">Consult, Insure, Relax</span>
-        <h2 class="text-4xl md:text-7xl font-display text-brand-dark mt-3">How we can help you?</h2>
-        <div class="w-16 h-0.5 bg-brand-gold mx-auto mt-6"></div>
+        <h2 class="text-4xl md:text-7xl font-display text-brand-dark mt-3 gold-accent-border">How we can help you?</h2>
+        <div class="gold-divider"></div>
       </div>
 
       <!-- Health Insurance -->
@@ -180,8 +180,8 @@
             </div>
           </div>
         </div>
-        <div class="grid md:grid-cols-2 gap-6 md:gap-8">
-          <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
+        <div class="grid md:grid-cols-2 gap-6 md:gap-8 reveal reveal-delay-1">
+          <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group gold-card">
             <div class="relative h-56 overflow-hidden">
               <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=80" alt="Family medical insurance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
@@ -218,8 +218,8 @@
             </div>
           </div>
         </div>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
+        <div class="grid md:grid-cols-3 gap-6 reveal reveal-delay-1">
+          <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group gold-card">
             <div class="relative aspect-[1/1] overflow-hidden">
               <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&q=80" alt="Group last expense" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
               <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -289,8 +289,8 @@
             </div>
           </div>
         </div>
-        <div class="grid md:grid-cols-2 gap-6 md:gap-8">
-          <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
+        <div class="grid md:grid-cols-2 gap-6 md:gap-8 reveal reveal-delay-1">
+          <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group gold-card">
             <div class="relative h-56 overflow-hidden">
               <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80" alt="Individual Pension" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
@@ -563,15 +563,7 @@
             <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-white/10 text-white/50 hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-linkedin"></i></a>
             <a href="https://www.instagram.com/greatscopeinsurance/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-10 h-10 rounded-full bg-white/10 text-white/50 hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-instagram"></i></a>
           </div>
-          <div>
-            <h5 class="text-base font-semibold mb-3 text-white/80">Newsletter</h5>
-            <p class="text-sm text-white/40 mb-4">Subscribe for exclusive updates.</p>
-            <form name="newsletter-insurance" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="flex">
-              <input type="hidden" name="form-name" value="newsletter-insurance">
-              <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
-              <input type="email" name="email" placeholder="Email address" class="w-full p-3 rounded-l-md border-0 bg-white/10 text-white placeholder-white/30 focus:ring-2 focus:ring-brand-gold focus:outline-none text-base md:text-sm" required>
-            </form>
-          </div>
+
         </div>
       </div>
       <div class="border-t border-white/10 pt-6 mt-10 text-center">
@@ -619,6 +611,10 @@
     if (t) { window.addEventListener('scroll', () => { t.style.opacity = (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) ? '1' : '0'; t.style.transform = (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) ? 'translateY(0)' : 'translateY(10px)'; }); t.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' })); }
     document.querySelectorAll(".faq").forEach(function(e) { const a = e.querySelector(".answer"), i = e.querySelector(".fa-chevron-down"); e.addEventListener("click", function() { const o = a.style.maxHeight && a.style.maxHeight !== "0px"; a.style.maxHeight = o ? "0px" : a.scrollHeight + "px"; i.style.transform = o ? "rotate(0deg)" : "rotate(180deg)"; }); });
     document.querySelectorAll('a[href^="#"]').forEach(function(a) { a.addEventListener('click', function(e) { e.preventDefault(); const t = document.querySelector(this.getAttribute('href')); if (t) { window.scrollTo({ top: t.getBoundingClientRect().top + window.pageYOffset - document.querySelector('nav').offsetHeight - 20, behavior: 'smooth' }); if (menu && menu.classList.contains('active')) { closeMenu(); } } }); });
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>

@@ -175,9 +175,9 @@
   <section class="py-20 md:py-28 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-12">
-        <div>
+        <div class="reveal">
           <span class="text-brand-gold font-semibold text-sm uppercase tracking-[0.2em]">Reach Us</span>
-          <h2 class="text-4xl md:text-7xl font-display text-brand-dark mt-3 mb-12">Contact Information</h2>
+          <h2 class="text-4xl md:text-7xl font-display text-brand-dark mt-3 mb-12 gold-accent-border">Contact Information</h2>
           <div class="space-y-6">
             <div class="flex items-start gap-4">
               <div class="w-12 h-12 bg-brand-dark rounded-xl flex items-center justify-center flex-shrink-0">
@@ -227,8 +227,8 @@
           </div>
         </div>
         <div>
-          <div class="bg-brand-gold-light rounded-2xl p-8 md:p-10 shadow-sm border border-brand-gold/10">
-            <h3 class="text-3xl font-display text-brand-dark mb-8">Send Us a Message</h3>
+          <div class="bg-brand-gold-light rounded-2xl p-8 md:p-10 shadow-sm border border-brand-gold/10 gold-card reveal reveal-delay-1">
+            <h3 class="text-3xl font-display text-brand-dark mb-8 gold-accent-border">Send Us a Message</h3>
             <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="space-y-4">
               <input type="hidden" name="form-name" value="contact">
               <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
@@ -259,10 +259,10 @@
   <!-- Map -->
   <section class="py-20 md:py-28 bg-brand-gold-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-10">
+      <div class="text-center mb-10 reveal">
         <span class="text-brand-gold font-semibold text-sm uppercase tracking-[0.2em]">Location</span>
-        <h2 class="text-4xl md:text-7xl font-display text-brand-dark mt-3 mb-8">Find Us</h2>
-        <div class="w-16 h-0.5 bg-brand-gold mx-auto"></div>
+        <h2 class="text-4xl md:text-7xl font-display text-brand-dark mt-3 mb-8 gold-accent-border">Find Us</h2>
+        <div class="gold-divider"></div>
       </div>
       <div class="rounded-2xl overflow-hidden shadow-sm border border-brand-gold/10">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.846511511511!2d36.818217!3d-1.284047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMTcnMDIuNiJTIDM2wrA0OScwOS4xIkU!5e0!3m2!1sen!2ske!4v1" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -294,16 +294,7 @@
             <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-white/10 text-white/50 hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-linkedin"></i></a>
             <a href="https://www.instagram.com/greatscopeinsurance/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-10 h-10 rounded-full bg-white/10 text-white/50 hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-instagram"></i></a>
           </div>
-          <div>
-            <h5 class="text-base font-semibold mb-3 text-white/80">Newsletter</h5>
-            <p class="text-sm text-white/40 mb-4">Subscribe for exclusive updates.</p>
-            <form name="newsletter-contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="flex">
-              <input type="hidden" name="form-name" value="newsletter-contact">
-              <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
-              <input type="email" name="email" placeholder="Email address" class="w-full p-3 rounded-l-md border-0 bg-white/10 text-white placeholder-white/30 focus:ring-2 focus:ring-brand-gold focus:outline-none text-base md:text-sm" required>
-              <button type="submit" class="bg-brand-gold text-brand-dark font-semibold px-5 rounded-r-md transition-colors hover:bg-brand-gold/80 text-sm">➔</button>
-            </form>
-          </div>
+
         </div>
       </div>
       <div class="border-t border-white/10 pt-6 mt-10 text-center">
@@ -368,6 +359,10 @@
         }
       });
     });
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
