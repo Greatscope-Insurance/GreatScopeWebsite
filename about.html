@@ -7,7 +7,12 @@
   <title>Greatscope Insurance Agency | About Us</title>
   <meta name="description" content="Learn about Greatscope Insurance Agency, our mission, vision, values, and the leadership driving our commitment to providing exceptional insurance solutions in East Africa.">
   <meta name="keywords" content="about Greatscope, insurance leadership, insurance mission, insurance vision, company values, Francis Muendo, East Africa insurance">
-  <meta name="author" content="Morris Mulitu | Web Developer">
+  <meta name="author" content="Greatscope Insurance Agency">
+  <meta property="og:title" content="Greatscope Insurance Agency | About Us">
+  <meta property="og:description" content="Learn about Greatscope Insurance Agency, our mission, vision, values, and leadership.">
+  <meta property="og:image" content="https://ik.imagekit.io/5zp8ovb7c/Greatscope/greatscope_logo.png?updatedAt=1727715946164">
+  <meta property="og:url" content="https://www.greatscopeinsurance.com/about">
+  <meta name="twitter:card" content="summary_large_image">
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://ik.imagekit.io/5zp8ovb7c/Greatscope/sized_logo_yZUD-_Hdz?updatedAt=1708010673725">
@@ -424,39 +429,26 @@
     }
 
     function submitContactWithComments() {
-      const name = document.getElementById('contact-name').value;
-      const email = document.getElementById('contact-email').value;
-      const message = document.getElementById('contact-message').value;
+      const form = document.querySelector('#contact-widget form');
+      const data = new FormData(form);
       const responseDiv = document.getElementById('contact-response');
 
-      if (!name || !email || !message) {
+      if (!data.get('name') || !data.get('email') || !data.get('message')) {
         responseDiv.innerHTML = '<p class="text-red-500 text-sm">Please fill in all fields.</p>';
-        return;
-      }
-      if (!validateEmail(email)) {
-        responseDiv.innerHTML = '<p class="text-red-500 text-sm">Please enter a valid email address.</p>';
         return;
       }
 
       responseDiv.innerHTML = '<p class="text-yellow-600 text-sm">Sending...</p>';
-      // Simulate API call
-      setTimeout(() => {
-        console.log("Form submitted:", { name, email, message });
-        responseDiv.innerHTML = '<p class="text-green-500 text-sm">Thank you! Your message has been sent.</p>';
-        document.getElementById('contact-name').value = '';
-        document.getElementById('contact-email').value = '';
-        document.getElementById('contact-message').value = '';
-        
-        setTimeout(() => {
-          toggleContactWidget(); 
-          responseDiv.innerHTML = ''; 
-        }, 2000);
-      }, 1500);
-    }
 
-    function validateEmail(email) {
-      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(String(email).toLowerCase());
+      fetch('/', { method: 'POST', body: new URLSearchParams(data), headers: { 'Content-Type': 'application/x-www-form-urlencoded' } })
+        .then(() => {
+          responseDiv.innerHTML = '<p class="text-green-500 text-sm">Thank you! Your message has been sent.</p>';
+          form.reset();
+          setTimeout(() => { toggleContactWidget(); responseDiv.innerHTML = ''; }, 2000);
+        })
+        .catch(() => {
+          responseDiv.innerHTML = '<p class="text-red-500 text-sm">Something went wrong. Please try again.</p>';
+        });
     }
     
     // Smooth scroll for internal links
