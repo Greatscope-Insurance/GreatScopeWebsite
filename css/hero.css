@@ -621,7 +621,11 @@ body {
 }
 
 
-/*My CSS - Media Queries*/
+/* Account for fixed nav */
+.demo-cont {
+  padding-top: 64px;
+}
+
 @media (max-width: 768px) {
 .example-slider .fnc-slide-4 .fnc-slide__inner,
 .example-slider .fnc-slide-4 .fnc-slide__mask-inner {
@@ -639,39 +643,69 @@ body {
 .example-slider .fnc-slide-3 .fnc-slide__mask-inner {
   background-image: url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/old_man_mob?updatedAt=1714381308045");
   }
-    .fnc-slide__heading-line {
-        font-size: 35px;
-        text-align: center;
-        overflow: hidden;
-        position: relative;
-        right: 25%;
-        color: #fff;
-        word-spacing: 10px;
-        font-weight: bold;
-    }
-  
-}
 
-@media (max-width: 768px) {
+  .fnc-slide__heading-line {
+    font-size: 28px;
+    text-align: left;
+    right: auto;
+    padding-right: 0;
+    word-spacing: 5px;
+  }
+
+  .fnc-slide__heading-line:nth-child(2) {
+    padding-left: 0;
+  }
+
+  .fnc-slide__content {
+    left: 10%;
+    top: 35%;
+  }
+
   .fnc-slide__action-btn {
-    position: absolute;
-    left: -25%;
-    transform: translateX(-50%) translateY(-50%);
-    bottom: -50px;
+    margin-left: 0;
+    font-size: 16px;
   }
 
   .fnc-nav__controls {
-  display: flex; /* Makes the container a flexbox */
-  justify-content: center; /* Centers the buttons horizontally within the container */
-}
-.fnc-nav__control {
-    font-size: 13px; /* Adjust font size for smaller screens */
-    width: 90%;
+    display: flex;
+    justify-content: center;
   }
 
-}
-@media (max-width: 480px) {
   .fnc-nav__control {
-    font-size: 12px; /* Further adjust font size for very small screens */
+    font-size: 11px;
+    width: auto;
+    padding: 0 8px;
+    height: 40px;
+  }
+
+  .fnc-slide__mask {
+    right: 50%;
+    width: 40vh;
+    height: 50vh;
+    margin-right: -40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fnc-slide__heading-line {
+    font-size: 22px;
+  }
+
+  .fnc-slide__content {
+    left: 8%;
+    top: 30%;
+  }
+
+  .fnc-nav__control {
+    font-size: 10px;
+    padding: 0 5px;
+    height: 36px;
+  }
+
+  .fnc-slide__mask {
+    right: 40%;
+    width: 30vh;
+    height: 40vh;
+    margin-right: -20px;
   }
 }
