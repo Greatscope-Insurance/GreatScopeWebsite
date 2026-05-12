@@ -19,6 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script type="application/ld+json">
     {
@@ -101,17 +102,35 @@
           <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-9 h-9 rounded-full bg-brand-gold-light text-brand-muted hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-linkedin"></i></a>
           <a href="https://www.instagram.com/greatscopeinsurance/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 rounded-full bg-brand-gold-light text-brand-muted hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-instagram"></i></a>
         </div>
+        <div class="md:hidden">
           <button class="hamburger-btn" aria-label="Toggle mobile menu">
             <i class="fas fa-bars"></i>
           </button>
+        </div>
       </div>
     </div>
     <div class="mobile-overlay"></div>
     <div class="mobile-menu">
       <div class="menu-items">
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="insurance.html" class="active-page">Our Products</a>
+        <div class="menu-item-has-children">
+          <a href="about.html" class="menu-parent">About <i class="fas fa-chevron-down"></i></a>
+          <div class="sub-menu">
+            <a href="about.html#leadership">Leadership</a>
+            <a href="about.html#mission-vision">Mission & Vision</a>
+            <a href="about.html#values">Company Values</a>
+            <a href="about.html#key-numbers">Key Numbers</a>
+          </div>
+        </div>
+        <div class="menu-item-has-children">
+          <a href="insurance.html" class="menu-parent active-page">Our Products <i class="fas fa-chevron-down"></i></a>
+          <div class="sub-menu">
+            <a href="insurance.html#health-insurance">Health Insurance</a>
+            <a href="insurance.html#life-insurance">Life Insurance</a>
+            <a href="insurance.html#pension-insurance">Pensions</a>
+            <a href="insurance.html#general-insurance">General Insurance</a>
+          </div>
+        </div>
         <a href="contact.html">Contact</a>
       </div>
       <div class="menu-social">
@@ -126,7 +145,7 @@
   <!-- Hero -->
   <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-16 md:pt-20">
     <div class="absolute inset-0">
-      <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&q=80" alt="" class="w-full h-full object-cover" loading="eager">
+      <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&q=80" alt="" class="w-full h-full object-cover" loading="eager" fetchpriority="high">
       <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/95 via-brand-dark/80 to-brand-dark/60"></div>
     </div>
     <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
@@ -148,7 +167,7 @@
       <!-- Health Insurance -->
       <div id="health-insurance" class="mb-24 md:mb-32">
         <div class="relative rounded-3xl overflow-hidden mb-10">
-          <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1600w=1400&q=80q=90" alt="Health Insurance" class="w-full h-52 md:h-72 object-cover" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1600&q=80" alt="Health Insurance" class="w-full h-52 md:h-72 object-cover" loading="lazy">
           <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/90 to-transparent"></div>
           <div class="absolute inset-0 flex items-center px-8 md:px-12">
             <div class="flex items-center gap-4">
@@ -160,7 +179,7 @@
         <div class="grid md:grid-cols-2 gap-6 md:gap-8">
           <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
             <div class="relative h-56 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800w=600&q=80q=90" alt="Family medical insurance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=80" alt="Family medical insurance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             </div>
             <div class="p-6 md:p-8">
@@ -171,7 +190,7 @@
           </div>
           <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
             <div class="relative h-56 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=800w=600&q=80q=90" alt="Corporate medical insurance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=800&q=80" alt="Corporate medical insurance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             </div>
             <div class="p-6 md:p-8">
@@ -186,7 +205,7 @@
       <!-- Life Insurance -->
       <div id="life-insurance" class="mb-24 md:mb-32">
         <div class="relative rounded-3xl overflow-hidden mb-10">
-          <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=1600w=1400&q=80q=90" alt="Life Insurance" class="w-full h-52 md:h-72 object-cover" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=1600&q=80" alt="Life Insurance" class="w-full h-52 md:h-72 object-cover" loading="lazy">
           <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/90 to-transparent"></div>
           <div class="absolute inset-0 flex items-center px-8 md:px-12">
             <div class="flex items-center gap-4">
@@ -198,7 +217,7 @@
         <div class="grid md:grid-cols-3 gap-6">
           <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
             <div class="relative aspect-[1/1] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800w=600&q=80q=90" alt="Group last expense" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&q=80" alt="Group last expense" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
               <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
             </div>
             <div class="p-6">
@@ -209,7 +228,7 @@
           </div>
           <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
             <div class="relative aspect-[1/1] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800w=600&q=80q=90" alt="Group Life" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&q=80" alt="Group Life" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
               <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
             </div>
             <div class="p-6">
@@ -220,7 +239,7 @@
           </div>
           <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
             <div class="relative aspect-[1/1] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1533093818119-ac1fa47a6d59?w=800w=600&q=80q=90" alt="Whole Life" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1533093818119-ac1fa47a6d59?w=800&q=80" alt="Whole Life" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
               <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
             </div>
             <div class="p-6">
@@ -231,7 +250,7 @@
           </div>
           <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
             <div class="relative aspect-[1/1] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800w=600&q=80q=90" alt="Credit Life" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80" alt="Credit Life" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
               <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
             </div>
             <div class="p-6">
@@ -242,7 +261,7 @@
           </div>
           <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
             <div class="relative aspect-[1/1] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800w=600&q=80q=90" alt="Education" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80" alt="Education" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
               <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
             </div>
             <div class="p-6">
@@ -257,7 +276,7 @@
       <!-- Pensions -->
       <div id="pension-insurance" class="mb-24 md:mb-32">
         <div class="relative rounded-3xl overflow-hidden mb-10">
-          <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1600w=1400&q=80q=90" alt="Pensions" class="w-full h-52 md:h-72 object-cover" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1600&q=80" alt="Pensions" class="w-full h-52 md:h-72 object-cover" loading="lazy">
           <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/90 to-transparent"></div>
           <div class="absolute inset-0 flex items-center px-8 md:px-12">
             <div class="flex items-center gap-4">
@@ -269,7 +288,7 @@
         <div class="grid md:grid-cols-2 gap-6 md:gap-8">
           <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
             <div class="relative h-56 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800w=600&q=80q=90" alt="Individual Pension" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80" alt="Individual Pension" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             </div>
             <div class="p-6 md:p-8">
@@ -280,7 +299,7 @@
           </div>
           <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
             <div class="relative h-56 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800w=600&q=80q=90" alt="Umbrella Retirement" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&q=80" alt="Umbrella Retirement" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             </div>
             <div class="p-6 md:p-8">
@@ -295,7 +314,7 @@
       <!-- General Insurance -->
       <div id="general-insurance">
         <div class="relative rounded-3xl overflow-hidden mb-10">
-          <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1600w=1400&q=80q=90" alt="General Insurance" class="w-full h-52 md:h-72 object-cover" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1600&q=80" alt="General Insurance" class="w-full h-52 md:h-72 object-cover" loading="lazy">
           <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/90 to-transparent"></div>
           <div class="absolute inset-0 flex items-center px-8 md:px-12">
             <div class="flex items-center gap-4">
@@ -307,7 +326,7 @@
         <div class="grid md:grid-cols-3 gap-6">
           <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
             <div class="relative aspect-[1/1] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600w=400&q=80q=90" alt="Motor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&q=80" alt="Motor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
             </div>
             <div class="p-4">
               <h4 class="font-bold text-brand-dark text-sm mb-1">Motor Insurance</h4>
@@ -317,7 +336,7 @@
           </div>
           <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
             <div class="relative aspect-[1/1] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600w=400&q=80q=90" alt="Goods in Transit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80" alt="Goods in Transit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
             </div>
             <div class="p-4">
               <h4 class="font-bold text-brand-dark text-sm mb-1">Goods in Transit</h4>
@@ -327,7 +346,7 @@
           </div>
           <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
             <div class="relative aspect-[1/1] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?w=600w=400&q=80q=90" alt="Travel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?w=600&q=80" alt="Travel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
             </div>
             <div class="p-4">
               <h4 class="font-bold text-brand-dark text-sm mb-1">Travel Insurance</h4>
@@ -337,7 +356,7 @@
           </div>
           <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
             <div class="relative aspect-[1/1] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600w=400&q=80q=90" alt="Fire and Perils" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&q=80" alt="Fire and Perils" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
             </div>
             <div class="p-4">
               <h4 class="font-bold text-brand-dark text-sm mb-1">Fire and Perils</h4>
@@ -347,7 +366,7 @@
           </div>
           <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
             <div class="relative aspect-[1/1] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=600w=400&q=80q=90" alt="Burglary" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=600&q=80" alt="Burglary" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
             </div>
             <div class="p-4">
               <h4 class="font-bold text-brand-dark text-sm mb-1">Burglary Insurance</h4>
@@ -357,7 +376,7 @@
           </div>
           <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
             <div class="relative aspect-[1/1] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600w=400&q=80q=90" alt="Domestic Package" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=80" alt="Domestic Package" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
             </div>
             <div class="p-4">
               <h4 class="font-bold text-brand-dark text-sm mb-1">Domestic Package</h4>
@@ -367,7 +386,7 @@
           </div>
           <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
             <div class="relative aspect-[1/1] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600w=400&q=80q=90" alt="Contractors All Risks" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&q=80" alt="Contractors All Risks" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
             </div>
             <div class="p-4">
               <h4 class="font-bold text-brand-dark text-sm mb-1">Contractors' All Risks</h4>
@@ -377,7 +396,7 @@
           </div>
           <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
             <div class="relative aspect-[1/1] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=600w=400&q=80q=90" alt="WIBA" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=600&q=80" alt="WIBA" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
             </div>
             <div class="p-4">
               <h4 class="font-bold text-brand-dark text-sm mb-1">WIBA and ECL</h4>
@@ -387,7 +406,7 @@
           </div>
           <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
             <div class="relative aspect-[1/1] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1439405326854-014607f694d7?w=600w=400&q=80q=90" alt="Marine" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1439405326854-014607f694d7?w=600&q=80" alt="Marine" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
             </div>
             <div class="p-4">
               <h4 class="font-bold text-brand-dark text-sm mb-1">Marine Insurance</h4>
@@ -397,7 +416,7 @@
           </div>
           <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
             <div class="relative aspect-[1/1] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600w=400&q=80q=90" alt="Personal Accident" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80" alt="Personal Accident" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
             </div>
             <div class="p-4">
               <h4 class="font-bold text-brand-dark text-sm mb-1">Personal Accident</h4>
@@ -407,7 +426,7 @@
           </div>
           <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
             <div class="relative aspect-[1/1] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600w=400&q=80q=90" alt="Group Personal Accident" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80" alt="Group Personal Accident" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
             </div>
             <div class="p-4">
               <h4 class="font-bold text-brand-dark text-sm mb-1">Group Personal Accident</h4>
@@ -417,7 +436,7 @@
           </div>
           <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
             <div class="relative aspect-[1/1] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600w=400&q=80q=90" alt="Fidelity" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&q=80" alt="Fidelity" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
             </div>
             <div class="p-4">
               <h4 class="font-bold text-brand-dark text-sm mb-1">Fidelity Guarantee</h4>
@@ -427,7 +446,7 @@
           </div>
           <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
             <div class="relative aspect-[1/1] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600w=400&q=80q=90" alt="Public Liability" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80" alt="Public Liability" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
             </div>
             <div class="p-4">
               <h4 class="font-bold text-brand-dark text-sm mb-1">Public Liability</h4>
@@ -437,7 +456,7 @@
           </div>
           <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
             <div class="relative aspect-[1/1] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600w=400&q=80q=90" alt="Product Liability" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Product Liability" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
             </div>
             <div class="p-4">
               <h4 class="font-bold text-brand-dark text-sm mb-1">Product Liability</h4>
@@ -559,15 +578,37 @@
   </footer>
 
   <script>
-    const menuBtn = document.querySelector('hamburger-btn');
+    const menuBtn = document.querySelector('.hamburger-btn');
     const menu = document.querySelector('.mobile-menu');
     const overlay = document.querySelector('.mobile-overlay');
-    function closeMenu() { menuBtn.classList.remove('active'); menu.classList.remove('active'); overlay.classList.remove('active'); }
-    function toggleMenu() { menuBtn.classList.toggle('active'); menu.classList.toggle('active'); overlay.classList.toggle('active'); }
+    function closeMenu() {
+      menuBtn.classList.remove('active');
+      menu.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.classList.remove('overflow-hidden');
+      menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+    function toggleMenu() {
+      const opening = !menu.classList.contains('active');
+      menuBtn.classList.toggle('active');
+      menu.classList.toggle('active');
+      overlay.classList.toggle('active');
+      document.body.classList.toggle('overflow-hidden', opening);
+      menuBtn.innerHTML = opening ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    }
     if (menuBtn && menu && overlay) {
       menuBtn.addEventListener('click', toggleMenu);
       overlay.addEventListener('click', closeMenu);
     }
+    document.querySelectorAll('.menu-parent').forEach(function(el) {
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.closest('.menu-item-has-children').classList.toggle('open');
+      });
+    });
+    document.querySelectorAll('.sub-menu a').forEach(function(el) {
+      el.addEventListener('click', closeMenu);
+    });
     const n = document.querySelector('nav');
     window.addEventListener('scroll', () => { n.classList.toggle('shadow-lg', window.scrollY > 50); n.classList.toggle('bg-white/95', window.scrollY > 50); });
     const t = document.getElementById('topBtn');

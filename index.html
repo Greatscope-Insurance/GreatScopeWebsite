@@ -132,8 +132,24 @@
     <div class="mobile-menu">
       <div class="menu-items">
         <a href="index.html" class="active-page">Home</a>
-        <a href="about.html">About</a>
-        <a href="insurance.html">Our Products</a>
+        <div class="menu-item-has-children">
+          <a href="about.html" class="menu-parent">About <i class="fas fa-chevron-down"></i></a>
+          <div class="sub-menu">
+            <a href="about.html#leadership">Leadership</a>
+            <a href="about.html#mission-vision">Mission & Vision</a>
+            <a href="about.html#values">Company Values</a>
+            <a href="about.html#key-numbers">Key Numbers</a>
+          </div>
+        </div>
+        <div class="menu-item-has-children">
+          <a href="insurance.html" class="menu-parent">Our Products <i class="fas fa-chevron-down"></i></a>
+          <div class="sub-menu">
+            <a href="insurance.html#health-insurance">Health Insurance</a>
+            <a href="insurance.html#life-insurance">Life Insurance</a>
+            <a href="insurance.html#pension-insurance">Pensions</a>
+            <a href="insurance.html#general-insurance">General Insurance</a>
+          </div>
+        </div>
         <a href="contact.html">Contact</a>
       </div>
       <div class="menu-social">
@@ -452,15 +468,37 @@
   <script src='https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js'></script>
   <script src="js/hero.js"></script>
   <script>
-    const menuBtn = document.querySelector('hamburger-btn');
+    const menuBtn = document.querySelector('.hamburger-btn');
     const menu = document.querySelector('.mobile-menu');
     const overlay = document.querySelector('.mobile-overlay');
-    function closeMenu() { menuBtn.classList.remove('active'); menu.classList.remove('active'); overlay.classList.remove('active'); }
-    function toggleMenu() { menuBtn.classList.toggle('active'); menu.classList.toggle('active'); overlay.classList.toggle('active'); }
+    function closeMenu() {
+      menuBtn.classList.remove('active');
+      menu.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.classList.remove('overflow-hidden');
+      menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+    function toggleMenu() {
+      const opening = !menu.classList.contains('active');
+      menuBtn.classList.toggle('active');
+      menu.classList.toggle('active');
+      overlay.classList.toggle('active');
+      document.body.classList.toggle('overflow-hidden', opening);
+      menuBtn.innerHTML = opening ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    }
     if (menuBtn && menu && overlay) {
       menuBtn.addEventListener('click', toggleMenu);
       overlay.addEventListener('click', closeMenu);
     }
+    document.querySelectorAll('.menu-parent').forEach(function(el) {
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.closest('.menu-item-has-children').classList.toggle('open');
+      });
+    });
+    document.querySelectorAll('.sub-menu a').forEach(function(el) {
+      el.addEventListener('click', closeMenu);
+    });
     const nav = document.querySelector('nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('shadow-lg', window.scrollY > 50);
