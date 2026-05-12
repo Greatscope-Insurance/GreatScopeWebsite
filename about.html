@@ -10,7 +10,7 @@
   <meta name="keywords" content="about Greatscope, insurance leadership, insurance mission, insurance vision, company values, Francis Muendo, East Africa insurance">
   <meta name="author" content="Greatscope Insurance Agency">
   <meta property="og:title" content="Greatscope Insurance Agency | About Us">
-  <meta property="og:description" content="Meet the team behind East Africa<meta property="og:description" content="Learn about Greatscope Insurance Agency, our mission, vision, values, and leadership.">apos;s most trusted insurance agency. 8+ years of experience, 12+ insurance partners. Your peace of mind starts here.">
+  <meta property="og:description" content="Learn about Greatscope Insurance Agency, our mission, vision, values, and leadership.">
   <meta property="og:image" content="https://ik.imagekit.io/5zp8ovb7c/Greatscope/greatscope_logo.png?updatedAt=1727715946164">
   <meta property="og:url" content="https://www.greatscopeinsurance.com/about">
   <meta name="twitter:card" content="summary_large_image">
@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="css/tailwind.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/about.css">
+  <link rel="preconnect" href="https://ik.imagekit.io">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <script type="application/ld+json">
@@ -156,38 +157,39 @@
         </div>
       </div>
     </div>
-    <div class="mobile-overlay"></div>
-    <div class="mobile-menu">
-      <div class="menu-items">
-        <a href="index.html">Home</a>
-        <div class="menu-item-has-children">
-          <a href="about.html" class="menu-parent active-page">About <i class="fas fa-chevron-down"></i></a>
-          <div class="sub-menu">
-            <a href="about.html#leadership">Leadership</a>
-            <a href="about.html#mission-vision">Mission & Vision</a>
-            <a href="about.html#values">Company Values</a>
-            <a href="about.html#key-numbers">Key Numbers</a>
-          </div>
-        </div>
-        <div class="menu-item-has-children">
-          <a href="insurance.html" class="menu-parent">Our Products <i class="fas fa-chevron-down"></i></a>
-          <div class="sub-menu">
-            <a href="insurance.html#health-insurance">Health Insurance</a>
-            <a href="insurance.html#life-insurance">Life Insurance</a>
-            <a href="insurance.html#pension-insurance">Pensions</a>
-            <a href="insurance.html#general-insurance">General Insurance</a>
-          </div>
-        </div>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="menu-social">
-        <a href="https://twitter.com/frankaizKenya" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="https://web.facebook.com/Greatscopeinsurance" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.instagram.com/greatscopeinsurance/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
   </nav>
+
+  <div class="mobile-overlay"></div>
+  <div class="mobile-menu">
+    <div class="menu-items">
+      <a href="index.html">Home</a>
+      <div class="menu-item-has-children">
+        <a href="about.html" class="menu-parent active-page">About <i class="fas fa-chevron-down"></i></a>
+        <div class="sub-menu">
+          <a href="about.html#leadership">Leadership</a>
+          <a href="about.html#mission-vision">Mission & Vision</a>
+          <a href="about.html#values">Company Values</a>
+          <a href="about.html#key-numbers">Key Numbers</a>
+        </div>
+      </div>
+      <div class="menu-item-has-children">
+        <a href="insurance.html" class="menu-parent">Our Products <i class="fas fa-chevron-down"></i></a>
+        <div class="sub-menu">
+          <a href="insurance.html#health-insurance">Health Insurance</a>
+          <a href="insurance.html#life-insurance">Life Insurance</a>
+          <a href="insurance.html#pension-insurance">Pensions</a>
+          <a href="insurance.html#general-insurance">General Insurance</a>
+        </div>
+      </div>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="menu-social">
+      <a href="https://twitter.com/frankaizKenya" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://web.facebook.com/Greatscopeinsurance" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/greatscopeinsurance/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
 
   <!-- Hero Section -->
   <section class="relative min-h-[55vh] md:min-h-[65vh] flex items-center justify-center overflow-hidden pt-16 md:pt-20">
@@ -223,8 +225,9 @@
           <div class="md:col-span-2 relative">
             <div class="absolute -inset-2 bg-brand-gold/20 rounded-xl blur"></div>
             <img src="https://ik.imagekit.io/5zp8ovb7c/Kaiti%20Greening%20Champions/images/Leaders/Francis-Muendo.jpeg"
-                 alt="Francis Muendo"
-                 class="relative rounded-xl w-full h-auto max-h-[450px] object-cover object-top shadow-lg">
+     alt="Francis Muendo"
+     loading="lazy" decoding="async"
+     class="relative rounded-xl w-full h-auto max-h-[450px] object-cover object-top shadow-lg">
           </div>
           
           <div class="md:col-span-3 space-y-5">
@@ -363,7 +366,7 @@
         <span class="text-brand-gold font-semibold text-sm uppercase tracking-[0.2em]">Get Started</span>
         <h2 class="text-4xl md:text-7xl font-display text-white mt-3 mb-8">Ready to Secure Your Future?</h2>
         <p class="text-lg md:text-xl text-white/50 mb-10 max-w-2xl mx-auto leading-relaxed">Partner with Greatscope Insurance Agency for expert advice and comprehensive coverage tailored to your needs.</p>
-        <a href="contact.html" class="inline-block bg-brand-gold text-brand-dark font-semibold py-3.5 px-10 rounded-lg text-lg hover:bg-brand-gold/80 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md">Get a Free Quote Today</a>
+        <a href="https://wa.me/254719151288" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-[#25D366] text-white font-semibold py-3.5 px-10 rounded-lg text-lg hover:bg-[#128C7E] transition-all duration-300 transform hover:-translate-y-0.5 shadow-md"><i class="fab fa-whatsapp text-xl"></i> Chat on WhatsApp</a>
       </div>
     </div>
   </section>
