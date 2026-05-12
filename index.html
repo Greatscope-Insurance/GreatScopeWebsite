@@ -8,17 +8,13 @@
   <meta name="keywords" content="insurance, Greatscope Insurance Agency, insurance consultancy, insurance brokerage, insurance solutions, East Africa insurance, insurance professionals">
   <meta name="author" content="Greatscope Insurance Agency">
   <link rel="icon" type="image/png" href="https://ik.imagekit.io/5zp8ovb7c/Greatscope/sized_logo_yZUD-_Hdz?updatedAt=1708010673725">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/hero.css">
-
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -40,80 +36,84 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { inter: ['Inter', 'sans-serif'], poppins: ['Poppins', 'sans-serif'] },
-          colors: { 'custom-purple': '#5D3A9A', 'brand-purple': '#6D28D9', 'brand-blue': '#2563EB' }
+          fontFamily: { inter: ['Inter', 'sans-serif'], display: ['DM Serif Display', 'serif'] },
+          colors: {
+            'brand-dark': '#1E1B2E',
+            'brand-muted': '#3B3552',
+            'brand-gold': '#E4C680',
+            'brand-gold-light': '#F8F4EC'
+          }
         }
       }
     }
   </script>
 </head>
-<body class="font-inter antialiased bg-gray-50">
+<body class="font-inter antialiased bg-brand-gold-light">
 
-  <button id="topBtn" class="fixed bottom-6 left-6 z-50 bg-gray-900 text-white p-3 rounded-full shadow-2xl opacity-0 translate-y-10 transition-all duration-300 hover:bg-gray-800 hover:scale-110">
-    <i class="fas fa-arrow-up text-xl"></i>
+  <button id="topBtn" class="fixed bottom-6 left-6 z-50 bg-brand-dark text-white p-3.5 rounded-full shadow-2xl opacity-0 translate-y-10 transition-all duration-300 hover:bg-brand-muted hover:scale-110">
+    <i class="fas fa-arrow-up text-lg"></i>
   </button>
 
-  <!-- Modern Navigation -->
-  <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-200 z-40 transition-all duration-300">
+  <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-brand-gold-light z-40 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
+      <div class="flex justify-between items-center h-16 md:h-20">
         <div class="flex items-center">
-          <a href="index.html" class="flex items-center space-x-3">
-            <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/greatscope_logo-removebg-preview.png?updatedAt=1727717017528" alt="Greatscope Logo" class="h-10 w-auto">
+          <a href="index.html">
+            <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/greatscope_logo-removebg-preview.png?updatedAt=1727717017528" alt="Greatscope Logo" class="h-10 md:h-12 w-auto">
           </a>
         </div>
         <div class="hidden md:block">
-          <div class="ml-10 flex items-baseline space-x-6">
-            <a href="index.html" class="text-brand-purple font-semibold px-3 py-2 rounded-md text-sm font-medium">Home</a>
+          <div class="flex items-baseline space-x-1">
+            <a href="index.html" class="text-brand-dark font-semibold px-4 py-2 rounded-lg text-sm bg-brand-gold-light">Home</a>
             <div class="relative group">
-              <a href="about.html" class="text-gray-600 hover:text-brand-purple px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
-              <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                <div class="py-1">
-                  <a href="about.html#leadership" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-brand-purple">Leadership</a>
-                  <a href="about.html#mission-vision" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-brand-purple">Mission & Vision</a>
-                  <a href="about.html#values" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-brand-purple">Company Values</a>
-                  <a href="about.html#key-numbers" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-brand-purple">Key Numbers</a>
+              <a href="about.html" class="text-brand-muted hover:text-brand-dark px-4 py-2 rounded-lg text-sm font-medium transition-colors">About</a>
+              <div class="absolute left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-brand-gold-light opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <div class="py-2">
+                  <a href="about.html#leadership" class="block px-4 py-2.5 text-sm text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light transition-colors">Leadership</a>
+                  <a href="about.html#mission-vision" class="block px-4 py-2.5 text-sm text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light transition-colors">Mission & Vision</a>
+                  <a href="about.html#values" class="block px-4 py-2.5 text-sm text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light transition-colors">Company Values</a>
+                  <a href="about.html#key-numbers" class="block px-4 py-2.5 text-sm text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light transition-colors">Key Numbers</a>
                 </div>
               </div>
             </div>
             <div class="relative group">
-              <a href="insurance.html" class="text-gray-600 hover:text-brand-purple px-3 py-2 rounded-md text-sm font-medium transition-colors">Our Products</a>
-              <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                <div class="py-1">
-                  <a href="insurance.html#health-insurance" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-brand-purple">Health Insurance</a>
-                  <a href="insurance.html#life-insurance" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-brand-purple">Life Insurance</a>
-                  <a href="insurance.html#pension-insurance" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-brand-purple">Pensions</a>
-                  <a href="insurance.html#general-insurance" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-brand-purple">General Insurance</a>
+              <a href="insurance.html" class="text-brand-muted hover:text-brand-dark px-4 py-2 rounded-lg text-sm font-medium transition-colors">Our Products</a>
+              <div class="absolute left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-brand-gold-light opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <div class="py-2">
+                  <a href="insurance.html#health-insurance" class="block px-4 py-2.5 text-sm text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light transition-colors">Health Insurance</a>
+                  <a href="insurance.html#life-insurance" class="block px-4 py-2.5 text-sm text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light transition-colors">Life Insurance</a>
+                  <a href="insurance.html#pension-insurance" class="block px-4 py-2.5 text-sm text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light transition-colors">Pensions</a>
+                  <a href="insurance.html#general-insurance" class="block px-4 py-2.5 text-sm text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light transition-colors">General Insurance</a>
                 </div>
               </div>
             </div>
-            <a href="contact.html" class="text-gray-600 hover:text-brand-purple px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+            <a href="contact.html" class="text-brand-muted hover:text-brand-dark px-4 py-2 rounded-lg text-sm font-medium transition-colors">Contact</a>
           </div>
         </div>
-        <div class="hidden md:flex items-center space-x-4">
-          <a href="https://twitter.com/frankaizKenya" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-brand-purple transition-colors"><i class="fab fa-twitter text-lg"></i></a>
-          <a href="https://web.facebook.com/Greatscopeinsurance" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-brand-purple transition-colors"><i class="fab fa-facebook-f text-lg"></i></a>
-          <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-brand-purple transition-colors"><i class="fab fa-linkedin text-lg"></i></a>
-          <a href="https://www.instagram.com/greatscopeinsurance/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-brand-purple transition-colors"><i class="fab fa-instagram text-lg"></i></a>
+        <div class="hidden md:flex items-center space-x-3">
+          <a href="https://twitter.com/frankaizKenya" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-brand-gold-light text-brand-muted hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-twitter"></i></a>
+          <a href="https://web.facebook.com/Greatscopeinsurance" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-brand-gold-light text-brand-muted hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-brand-gold-light text-brand-muted hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/greatscopeinsurance/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-brand-gold-light text-brand-muted hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-instagram"></i></a>
         </div>
         <div class="md:hidden">
-          <button class="mobile-menu-btn text-gray-600 hover:text-brand-purple p-2" aria-label="Toggle mobile menu">
+          <button class="mobile-menu-btn text-brand-muted hover:text-brand-dark p-2" aria-label="Toggle mobile menu">
             <i class="fas fa-bars text-xl"></i>
           </button>
         </div>
       </div>
     </div>
-    <div class="mobile-menu md:hidden hidden bg-white border-t border-gray-200">
-      <div class="px-2 pt-2 pb-3 space-y-1">
-        <a href="index.html" class="block px-3 py-2 text-base font-medium text-brand-purple bg-purple-50 rounded-md">Home</a>
-        <a href="about.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-purple hover:bg-purple-50 rounded-md">About</a>
-        <a href="insurance.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-purple hover:bg-purple-50 rounded-md">Our Products</a>
-        <a href="contact.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-purple hover:bg-purple-50 rounded-md">Contact</a>
-        <div class="flex justify-center space-x-5 px-3 py-3 border-t mt-2">
-          <a href="https://twitter.com/frankaizKenya" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-purple"><i class="fab fa-twitter text-xl"></i></a>
-          <a href="https://web.facebook.com/Greatscopeinsurance" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-purple"><i class="fab fa-facebook-f text-xl"></i></a>
-          <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-purple"><i class="fab fa-linkedin text-xl"></i></a>
-          <a href="https://www.instagram.com/greatscopeinsurance/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-purple"><i class="fab fa-instagram text-xl"></i></a>
+    <div class="mobile-menu md:hidden hidden bg-white border-t border-brand-gold-light">
+      <div class="px-4 pt-3 pb-4 space-y-1">
+        <a href="index.html" class="block px-4 py-3 text-base font-semibold text-brand-dark bg-brand-gold-light rounded-lg">Home</a>
+        <a href="about.html" class="block px-4 py-3 text-base font-medium text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light rounded-lg transition-colors">About</a>
+        <a href="insurance.html" class="block px-4 py-3 text-base font-medium text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light rounded-lg transition-colors">Our Products</a>
+        <a href="contact.html" class="block px-4 py-3 text-base font-medium text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light rounded-lg transition-colors">Contact</a>
+        <div class="flex justify-center space-x-4 pt-4 border-t border-brand-gold-light mt-2">
+          <a href="https://twitter.com/frankaizKenya" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-brand-gold-light text-brand-muted hover:bg-brand-gold flex items-center justify-center transition-all"><i class="fab fa-twitter"></i></a>
+          <a href="https://web.facebook.com/Greatscopeinsurance" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-brand-gold-light text-brand-muted hover:bg-brand-gold flex items-center justify-center transition-all"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-brand-gold-light text-brand-muted hover:bg-brand-gold flex items-center justify-center transition-all"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/greatscopeinsurance/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-brand-gold-light text-brand-muted hover:bg-brand-gold flex items-center justify-center transition-all"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
     </div>
@@ -197,92 +197,92 @@
   </div>
 
   <!-- Services -->
-  <section class="py-16 md:py-24 bg-white">
+  <section class="py-20 md:py-28 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12 md:mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3 font-poppins">Our Insurance Solutions</h2>
-        <div class="w-20 h-1 bg-gradient-to-r from-brand-purple to-brand-blue mx-auto"></div>
-        <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-4">Comprehensive coverage tailored to protect what matters most.</p>
+      <div class="text-center mb-14 md:mb-20">
+        <span class="text-brand-gold font-semibold text-sm uppercase tracking-[0.2em]">What We Offer</span>
+        <h2 class="text-3xl md:text-5xl font-display text-brand-dark mt-3 mb-4">Our Insurance Solutions</h2>
+        <div class="w-16 h-0.5 bg-brand-gold mx-auto"></div>
+        <p class="text-brand-muted text-lg max-w-2xl mx-auto mt-5 leading-relaxed">Comprehensive coverage tailored to protect what matters most.</p>
       </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <a href="insurance.html#health-insurance" class="group block bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-          <div class="w-16 h-16 bg-gradient-to-br from-brand-purple to-brand-blue rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
-            <i class="fas fa-heartbeat text-2xl text-white"></i>
+      <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+        <a href="insurance.html#health-insurance" class="group block bg-brand-gold-light rounded-2xl p-8 md:p-10 shadow-sm hover:shadow-xl transform hover:-translate-y-1 transition-all duration-500 border border-transparent hover:border-brand-gold/30">
+          <div class="w-14 h-14 bg-brand-dark rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i class="fas fa-heartbeat text-xl text-brand-gold"></i>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3 font-poppins">Health Insurance</h3>
-          <p class="text-gray-600 leading-relaxed">Our health insurance provides a safety net, covering medical costs and promoting wellness for you and your family.</p>
-          <span class="inline-block mt-4 text-brand-purple font-semibold text-sm group-hover:translate-x-1 transition-transform">View Covers →</span>
+          <h3 class="text-xl font-bold text-brand-dark mb-3">Health Insurance</h3>
+          <p class="text-brand-muted leading-relaxed text-sm">Our health insurance provides a safety net, covering medical costs and promoting wellness for you and your family.</p>
+          <span class="inline-flex items-center mt-5 text-brand-dark font-semibold text-sm group-hover:translate-x-2 transition-transform">View Covers <i class="fas fa-arrow-right ml-2 text-xs"></i></span>
         </a>
-        <a href="insurance.html#life-insurance" class="group block bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-          <div class="w-16 h-16 bg-gradient-to-br from-brand-blue to-sky-500 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
-            <i class="fas fa-shield-heart text-2xl text-white"></i>
+        <a href="insurance.html#life-insurance" class="group block bg-brand-gold-light rounded-2xl p-8 md:p-10 shadow-sm hover:shadow-xl transform hover:-translate-y-1 transition-all duration-500 border border-transparent hover:border-brand-gold/30">
+          <div class="w-14 h-14 bg-brand-dark rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i class="fas fa-shield-heart text-xl text-brand-gold"></i>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3 font-poppins">Life & Pension</h3>
-          <p class="text-gray-600 leading-relaxed">Life and pension insurance ensuring financial security for you and your loved ones.</p>
-          <span class="inline-block mt-4 text-brand-purple font-semibold text-sm group-hover:translate-x-1 transition-transform">View Covers →</span>
+          <h3 class="text-xl font-bold text-brand-dark mb-3">Life &amp; Pension</h3>
+          <p class="text-brand-muted leading-relaxed text-sm">Life and pension insurance ensuring financial security for you and your loved ones.</p>
+          <span class="inline-flex items-center mt-5 text-brand-dark font-semibold text-sm group-hover:translate-x-2 transition-transform">View Covers <i class="fas fa-arrow-right ml-2 text-xs"></i></span>
         </a>
-        <a href="insurance.html#general-insurance" class="group block bg-gradient-to-br from-blue-50 to-sky-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-          <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-500 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
-            <i class="fas fa-building-shield text-2xl text-white"></i>
+        <a href="insurance.html#general-insurance" class="group block bg-brand-gold-light rounded-2xl p-8 md:p-10 shadow-sm hover:shadow-xl transform hover:-translate-y-1 transition-all duration-500 border border-transparent hover:border-brand-gold/30">
+          <div class="w-14 h-14 bg-brand-dark rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i class="fas fa-building-shield text-xl text-brand-gold"></i>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3 font-poppins">General Insurance</h3>
-          <p class="text-gray-600 leading-relaxed">General insurance safeguards assets against unforeseen events, offering peace of mind and financial protection.</p>
-          <span class="inline-block mt-4 text-brand-purple font-semibold text-sm group-hover:translate-x-1 transition-transform">View Covers →</span>
+          <h3 class="text-xl font-bold text-brand-dark mb-3">General Insurance</h3>
+          <p class="text-brand-muted leading-relaxed text-sm">General insurance safeguards assets against unforeseen events, offering peace of mind and financial protection.</p>
+          <span class="inline-flex items-center mt-5 text-brand-dark font-semibold text-sm group-hover:translate-x-2 transition-transform">View Covers <i class="fas fa-arrow-right ml-2 text-xs"></i></span>
         </a>
       </div>
     </div>
   </section>
 
   <!-- Why Us -->
-  <section class="py-16 md:py-24 bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50">
+  <section class="py-20 md:py-28 bg-brand-gold-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
         <div>
-          <h4 class="text-brand-blue font-semibold text-sm uppercase tracking-wider mb-2">Why choose us</h4>
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-poppins">With us, you gain more than a policy</h2>
-          <p class="text-gray-700 text-lg leading-relaxed mb-8">
-            Our dedication to your peace of mind and comprehensive coverage options make us your ideal partner in protection.
-            With us, you gain more than a policy. You secure a future safeguarded by professionals committed to your needs.
+          <span class="text-brand-gold font-semibold text-sm uppercase tracking-[0.2em]">Why Choose Us</span>
+          <h2 class="text-3xl md:text-5xl font-display text-brand-dark mt-3 mb-6">With us, you gain more than a policy</h2>
+          <p class="text-brand-muted text-lg leading-relaxed mb-10">
+            Our dedication to your peace of mind and comprehensive coverage options make us your ideal partner in protection. You secure a future safeguarded by professionals committed to your needs.
           </p>
           <div class="grid sm:grid-cols-2 gap-6">
             <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-amber-400 rounded-full flex items-center justify-center flex-shrink-0">
-                <i class="fas fa-headset text-white text-xl"></i>
+              <div class="w-12 h-12 bg-brand-dark rounded-xl flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-headset text-brand-gold"></i>
               </div>
               <div>
-                <h3 class="font-bold text-gray-900 mb-1">24x7 Support</h3>
-                <p class="text-gray-600 text-sm">Round-the-Clock Peace of Mind with our dedicated support team.</p>
+                <h3 class="font-bold text-brand-dark mb-1">24x7 Support</h3>
+                <p class="text-brand-muted text-sm">Round-the-Clock peace of mind with our dedicated team.</p>
               </div>
             </div>
             <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-amber-400 rounded-full flex items-center justify-center flex-shrink-0">
-                <i class="fas fa-crown text-white text-xl"></i>
+              <div class="w-12 h-12 bg-brand-dark rounded-xl flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-crown text-brand-gold"></i>
               </div>
               <div>
-                <h3 class="font-bold text-gray-900 mb-1">Premium Services</h3>
-                <p class="text-gray-600 text-sm">Exclusive, tailored solutions for those who expect the best.</p>
+                <h3 class="font-bold text-brand-dark mb-1">Premium Services</h3>
+                <p class="text-brand-muted text-sm">Exclusive, tailored solutions for those who expect the best.</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="bg-white rounded-2xl p-8 shadow-xl">
-          <h3 class="text-xl font-bold text-gray-900 mb-6 font-poppins">Get a Free Quote</h3>
+        <div class="bg-white rounded-2xl p-8 md:p-10 shadow-xl border border-brand-gold/20">
+          <h3 class="text-2xl font-display text-brand-dark mb-6">Get a Free Quote</h3>
           <form name="get-quote" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="space-y-4">
             <input type="hidden" name="form-name" value="get-quote">
             <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
             <div>
-              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-              <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-purple focus:border-transparent">
+              <label for="name" class="block text-sm font-medium text-brand-muted mb-1">Full Name</label>
+              <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-brand-gold-light border-0 rounded-lg focus:ring-2 focus:ring-brand-gold">
             </div>
             <div>
-              <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone No.</label>
-              <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-purple focus:border-transparent">
+              <label for="phone" class="block text-sm font-medium text-brand-muted mb-1">Phone No.</label>
+              <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 bg-brand-gold-light border-0 rounded-lg focus:ring-2 focus:ring-brand-gold">
             </div>
             <div>
-              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-              <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-purple focus:border-transparent">
+              <label for="email" class="block text-sm font-medium text-brand-muted mb-1">Email Address</label>
+              <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-brand-gold-light border-0 rounded-lg focus:ring-2 focus:ring-brand-gold">
             </div>
-            <button type="submit" class="w-full bg-gradient-to-r from-brand-purple to-brand-blue text-white py-3 rounded-lg font-semibold hover:from-brand-purple/80 hover:to-brand-blue/80 transition-all duration-300">Get a Quote</button>
+            <button type="submit" class="w-full bg-brand-dark text-white py-3.5 rounded-lg font-semibold hover:bg-brand-muted transition-all duration-300 text-sm tracking-wider uppercase">Get a Quote</button>
           </form>
         </div>
       </div>
@@ -290,130 +290,131 @@
   </section>
 
   <!-- Partners -->
-  <section class="py-16 md:py-24 bg-white">
+  <section class="py-20 md:py-28 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3 font-poppins">Our Partners</h2>
-        <div class="w-20 h-1 bg-gradient-to-r from-brand-purple to-brand-blue mx-auto"></div>
+      <div class="text-center mb-14">
+        <span class="text-brand-gold font-semibold text-sm uppercase tracking-[0.2em]">Trusted By</span>
+        <h2 class="text-3xl md:text-5xl font-display text-brand-dark mt-3 mb-4">Our Partners</h2>
+        <div class="w-16 h-0.5 bg-brand-gold mx-auto"></div>
       </div>
-      <div class="grid grid-cols-3 md:grid-cols-6 gap-6 items-center justify-items-center">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/occidental.webp?updatedAt=1708028480864" alt="Occidental" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity ">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/apa.webp?updatedAt=1708028934382" alt="APA insurance" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity ">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/heritage.webp?updatedAt=1708028933679" alt="Heritage insurance" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity ">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/directline.webp?updatedAt=1708028935190" alt="Directline" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity ">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/cic.webp?updatedAt=1708028933828" alt="CIC" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity ">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/fidelity.webp?updatedAt=1708028933723" alt="Fidelity" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity ">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/ga.webp?updatedAt=1708032123447" alt="GA" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity ">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/absa.webp?updatedAt=1708032123653" alt="ABSA Life" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity ">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/aar.webp?updatedAt=1708033134033" alt="AAR" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity ">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/uap_old.webp?updatedAt=1708032933915" alt="UAP" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity ">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/korient.webp?updatedAt=1708032123835" alt="Kenya Orient" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity ">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/trident.webp?updatedAt=1709291818662" alt="Trident" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity ">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/Jubilee%20Allianz%20Logo.svg?updatedAt=1726301762562" alt="Jubilee Allianz" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity ">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/prudential.jpg?updatedAt=1726301761707" alt="Prudential" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity ">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/Monarch.jpeg?updatedAt=1726301761684" alt="Monarch" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity ">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/kenindia.jpg?updatedAt=1726302515386" alt="Kenindia" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity ">
+      <div class="grid grid-cols-3 md:grid-cols-6 gap-8 items-center justify-items-center">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/occidental.webp?updatedAt=1708028480864" alt="Occidental" loading="lazy" class="h-10 md:h-12 opacity-50 hover:opacity-100 transition-opacity">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/apa.webp?updatedAt=1708028934382" alt="APA insurance" loading="lazy" class="h-10 md:h-12 opacity-50 hover:opacity-100 transition-opacity">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/heritage.webp?updatedAt=1708028933679" alt="Heritage insurance" loading="lazy" class="h-10 md:h-12 opacity-50 hover:opacity-100 transition-opacity">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/directline.webp?updatedAt=1708028935190" alt="Directline" loading="lazy" class="h-10 md:h-12 opacity-50 hover:opacity-100 transition-opacity">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/cic.webp?updatedAt=1708028933828" alt="CIC" loading="lazy" class="h-10 md:h-12 opacity-50 hover:opacity-100 transition-opacity">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/fidelity.webp?updatedAt=1708028933723" alt="Fidelity" loading="lazy" class="h-10 md:h-12 opacity-50 hover:opacity-100 transition-opacity">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/ga.webp?updatedAt=1708032123447" alt="GA" loading="lazy" class="h-10 md:h-12 opacity-50 hover:opacity-100 transition-opacity">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/absa.webp?updatedAt=1708032123653" alt="ABSA Life" loading="lazy" class="h-10 md:h-12 opacity-50 hover:opacity-100 transition-opacity">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/aar.webp?updatedAt=1708033134033" alt="AAR" loading="lazy" class="h-10 md:h-12 opacity-50 hover:opacity-100 transition-opacity">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/uap_old.webp?updatedAt=1708032933915" alt="UAP" loading="lazy" class="h-10 md:h-12 opacity-50 hover:opacity-100 transition-opacity">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/korient.webp?updatedAt=1708032123835" alt="Kenya Orient" loading="lazy" class="h-10 md:h-12 opacity-50 hover:opacity-100 transition-opacity">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/trident.webp?updatedAt=1709291818662" alt="Trident" loading="lazy" class="h-10 md:h-12 opacity-50 hover:opacity-100 transition-opacity">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/Jubilee%20Allianz%20Logo.svg?updatedAt=1726301762562" alt="Jubilee Allianz" loading="lazy" class="h-10 md:h-12 opacity-50 hover:opacity-100 transition-opacity">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/prudential.jpg?updatedAt=1726301761707" alt="Prudential" loading="lazy" class="h-10 md:h-12 opacity-50 hover:opacity-100 transition-opacity">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/Monarch.jpeg?updatedAt=1726301761684" alt="Monarch" loading="lazy" class="h-10 md:h-12 opacity-50 hover:opacity-100 transition-opacity">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/kenindia.jpg?updatedAt=1726302515386" alt="Kenindia" loading="lazy" class="h-10 md:h-12 opacity-50 hover:opacity-100 transition-opacity">
       </div>
     </div>
   </section>
 
   <!-- Testimonials -->
-  <section class="py-16 md:py-24 bg-gradient-to-br from-gray-800 via-gray-900 to-black text-white">
+  <section class="py-20 md:py-28 bg-brand-dark text-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h4 class="text-brand-blue font-semibold text-sm uppercase tracking-wider mb-2">Testimonials</h4>
-      <h2 class="text-3xl md:text-4xl font-bold mb-12 font-poppins">What Our Customers Say</h2>
+      <span class="text-brand-gold font-semibold text-sm uppercase tracking-[0.2em]">Testimonials</span>
+      <h2 class="text-3xl md:text-5xl font-display mt-3 mb-14">What Our Customers Say</h2>
       <div class="relative">
         <div class="testimonial-slider overflow-hidden">
           <div class="testimonial-item">
-            <p class="text-lg md:text-xl text-gray-300 italic mb-8">"Great services given expeditiously, honesty policy seems to be the order of the day."</p>
+            <p class="text-lg md:text-xl text-white/70 italic mb-8 leading-relaxed">"Great services given expeditiously, honesty policy seems to be the order of the day."</p>
             <div class="flex items-center justify-center gap-4 mb-4">
-              <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Testimonials/ngeli%20(1).webp?updatedAt=1710755861972" alt="Client" class="w-12 h-12 rounded-full object-cover">
+              <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Testimonials/ngeli%20(1).webp?updatedAt=1710755861972" alt="Client" class="w-12 h-12 rounded-full object-cover border-2 border-brand-gold">
               <div class="text-left">
-                <h6 class="font-semibold">Nicholas Ngeli</h6>
-                <p class="text-sm text-gray-400">Nairobi</p>
+                <h6 class="font-semibold text-white">Nicholas Ngeli</h6>
+                <p class="text-sm text-white/50">Nairobi</p>
               </div>
             </div>
-            <div class="text-amber-400">★★★★☆</div>
+            <div class="text-brand-gold">★★★★☆</div>
           </div>
           <div class="testimonial-item hidden">
-            <p class="text-lg md:text-xl text-gray-300 italic mb-8">"Greatscope thanks for giving us the best group last expense cover after explaining the pros and cons for all in the market."</p>
+            <p class="text-lg md:text-xl text-white/70 italic mb-8 leading-relaxed">"Greatscope thanks for giving us the best group last expense cover after explaining the pros and cons for all in the market."</p>
             <div class="flex items-center justify-center gap-4 mb-4">
-              <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Testimonials/mboya%20(1).webp?updatedAt=1710755862204" alt="Client" class="w-12 h-12 rounded-full object-cover">
+              <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Testimonials/mboya%20(1).webp?updatedAt=1710755862204" alt="Client" class="w-12 h-12 rounded-full object-cover border-2 border-brand-gold">
               <div class="text-left">
-                <h6 class="font-semibold">Ruth Mboya</h6>
-                <p class="text-sm text-gray-400">Nairobi</p>
+                <h6 class="font-semibold text-white">Ruth Mboya</h6>
+                <p class="text-sm text-white/50">Nairobi</p>
               </div>
             </div>
-            <div class="text-amber-400">★★★★½</div>
+            <div class="text-brand-gold">★★★★½</div>
           </div>
           <div class="testimonial-item hidden">
-            <p class="text-lg md:text-xl text-gray-300 italic mb-8">"The Insurance agency staff are professional, friendly and care about their customers. Thanks Greatscope for fast tracking my claim."</p>
+            <p class="text-lg md:text-xl text-white/70 italic mb-8 leading-relaxed">"The Insurance agency staff are professional, friendly and care about their customers. Thanks Greatscope for fast tracking my claim."</p>
             <div class="flex items-center justify-center gap-4 mb-4">
-              <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Testimonials/mathias%20(1).webp?updatedAt=1710755861965" alt="Client" class="w-12 h-12 rounded-full object-cover">
+              <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Testimonials/mathias%20(1).webp?updatedAt=1710755861965" alt="Client" class="w-12 h-12 rounded-full object-cover border-2 border-brand-gold">
               <div class="text-left">
-                <h6 class="font-semibold">Mat Hias</h6>
-                <p class="text-sm text-gray-400">Nairobi</p>
+                <h6 class="font-semibold text-white">Mat Hias</h6>
+                <p class="text-sm text-white/50">Nairobi</p>
               </div>
             </div>
-            <div class="text-amber-400">★★★★½</div>
+            <div class="text-brand-gold">★★★★½</div>
           </div>
           <div class="testimonial-item hidden">
-            <p class="text-lg md:text-xl text-gray-300 italic mb-8">"Simply amazing, your partner in eventualities."</p>
+            <p class="text-lg md:text-xl text-white/70 italic mb-8 leading-relaxed">"Simply amazing, your partner in eventualities."</p>
             <div class="flex items-center justify-center gap-4 mb-4">
-              <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Testimonials/kliss%20(1).webp?updatedAt=1710755672770" alt="Client" class="w-12 h-12 rounded-full object-cover">
+              <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Testimonials/kliss%20(1).webp?updatedAt=1710755672770" alt="Client" class="w-12 h-12 rounded-full object-cover border-2 border-brand-gold">
               <div class="text-left">
-                <h6 class="font-semibold">Kliss Kinyungu</h6>
-                <p class="text-sm text-gray-400">Nairobi</p>
+                <h6 class="font-semibold text-white">Kliss Kinyungu</h6>
+                <p class="text-sm text-white/50">Nairobi</p>
               </div>
             </div>
-            <div class="text-amber-400">★★★★½</div>
+            <div class="text-brand-gold">★★★★½</div>
           </div>
         </div>
-        <div class="flex justify-center gap-4 mt-8">
-          <button id="prev-testimonial" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors flex items-center justify-center"><i class="fas fa-chevron-left"></i></button>
-          <button id="next-testimonial" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors flex items-center justify-center"><i class="fas fa-chevron-right"></i></button>
+        <div class="flex justify-center gap-4 mt-10">
+          <button id="prev-testimonial" class="w-12 h-12 rounded-full bg-white/10 hover:bg-brand-gold hover:text-brand-dark transition-all flex items-center justify-center"><i class="fas fa-chevron-left"></i></button>
+          <button id="next-testimonial" class="w-12 h-12 rounded-full bg-white/10 hover:bg-brand-gold hover:text-brand-dark transition-all flex items-center justify-center"><i class="fas fa-chevron-right"></i></button>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-custom-purple text-white py-10 px-6 md:px-10">
+  <footer class="bg-brand-dark text-white py-14 px-6 md:px-10">
     <div class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
         <div>
-          <h1 class="text-3xl md:text-4xl font-bold font-poppins mb-4">Greatscope</h1>
-          <div class="space-y-3 text-sm text-purple-200 leading-relaxed">
+          <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/greatscope_logo-removebg-preview.png?updatedAt=1727717017528" alt="Greatscope Logo" class="h-12 w-auto mb-6 brightness-0 invert">
+          <div class="space-y-3 text-sm text-white/50 leading-relaxed">
             <p>Greatscope serves as the unwavering bedrock of trust, providing steadfast commitment to safeguard what holds paramount importance across the varied realms of life, health, motor, and housing insurance.</p>
-            <div class="mt-4 space-y-2">
-              <p class="flex items-center"><i class="fas fa-phone fa-fw mr-3 text-purple-300"></i> 0719 151 288 / 0797 313 199</p>
-              <p class="flex items-center"><i class="fas fa-envelope fa-fw mr-3 text-purple-300"></i> info@greatscopeinsurance.com</p>
-              <p class="flex items-start"><i class="fas fa-location-dot fa-fw mr-3 text-purple-300 mt-1"></i> Portal Place House 4th Floor, Muindi Mbingu Street.</p>
+            <div class="mt-6 space-y-3">
+              <p class="flex items-center"><i class="fas fa-phone fa-fw mr-3 text-brand-gold"></i> 0719 151 288 / 0797 313 199</p>
+              <p class="flex items-center"><i class="fas fa-envelope fa-fw mr-3 text-brand-gold"></i> info@greatscopeinsurance.com</p>
+              <p class="flex items-start"><i class="fas fa-location-dot fa-fw mr-3 text-brand-gold mt-1"></i> Portal Place House 4th Floor, Muindi Mbingu Street.</p>
             </div>
           </div>
         </div>
-        <div class="md:pl-8">
-          <h5 class="text-xl font-semibold font-poppins mb-4 text-purple-100">Stay Connected</h5>
-          <div class="flex space-x-4 mb-6">
-            <a href="https://twitter.com/frankaizKenya" target="_blank" rel="noopener noreferrer" class="text-purple-300 hover:text-white transition-colors"><i class="fab fa-twitter text-2xl"></i></a>
-            <a href="https://web.facebook.com/Greatscopeinsurance" target="_blank" rel="noopener noreferrer" class="text-purple-300 hover:text-white transition-colors"><i class="fab fa-facebook-f text-2xl"></i></a>
-            <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" target="_blank" rel="noopener noreferrer" class="text-purple-300 hover:text-white transition-colors"><i class="fab fa-linkedin text-2xl"></i></a>
-            <a href="https://www.instagram.com/greatscopeinsurance/" target="_blank" rel="noopener noreferrer" class="text-purple-300 hover:text-white transition-colors"><i class="fab fa-instagram text-2xl"></i></a>
+        <div class="md:pl-8 md:border-l border-white/10">
+          <h5 class="text-lg font-semibold mb-5 text-white">Stay Connected</h5>
+          <div class="flex space-x-3 mb-8">
+            <a href="https://twitter.com/frankaizKenya" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 text-white/50 hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-twitter"></i></a>
+            <a href="https://web.facebook.com/Greatscopeinsurance" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 text-white/50 hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 text-white/50 hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/greatscopeinsurance/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 text-white/50 hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-instagram"></i></a>
           </div>
           <div>
-            <h5 class="text-lg font-semibold mb-2 text-purple-100 font-poppins">Newsletter</h5>
-            <p class="text-sm text-purple-200 mb-3">Subscribe for discounts and updates.</p>
+            <h5 class="text-base font-semibold mb-3 text-white/80">Newsletter</h5>
+            <p class="text-sm text-white/40 mb-4">Subscribe for exclusive updates.</p>
             <form name="newsletter" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="flex">
               <input type="hidden" name="form-name" value="newsletter">
               <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
-              <input type="email" name="email" placeholder="Email address" class="w-full p-2.5 rounded-l-md border-0 bg-purple-600/70 text-white placeholder-purple-300 focus:ring-2 focus:ring-purple-400 focus:outline-none text-sm" required>
-              <button type="submit" class="bg-purple-400 hover:bg-purple-300 text-custom-purple font-bold p-2.5 rounded-r-md transition-colors text-lg">➔</button>
+              <input type="email" name="email" placeholder="Email address" class="w-full p-3 rounded-l-md border-0 bg-white/10 text-white placeholder-white/30 focus:ring-2 focus:ring-brand-gold focus:outline-none text-sm" required>
+              <button type="submit" class="bg-brand-gold text-brand-dark font-semibold px-5 rounded-r-md transition-colors hover:bg-brand-gold/80 text-sm">➔</button>
             </form>
           </div>
         </div>
       </div>
-      <div class="border-t border-purple-500/50 pt-6 mt-8 text-center">
-        <p class="text-xs text-purple-300">© 2025 Greatscope Insurance Agency. All rights reserved.</p>
+      <div class="border-t border-white/10 pt-6 mt-10 text-center">
+        <p class="text-xs text-white/30">&copy; 2025 Greatscope Insurance Agency. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -422,7 +423,6 @@
   <script src='https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js'></script>
   <script src="js/hero.js"></script>
   <script>
-    // Mobile menu
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const mobileMenu = document.querySelector('.mobile-menu');
     if (mobileMenuBtn && mobileMenu) {
@@ -433,15 +433,11 @@
         icon.classList.toggle('fa-bars');
       });
     }
-
-    // Navbar scroll
     const nav = document.querySelector('nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('shadow-lg', window.scrollY > 50);
       nav.classList.toggle('bg-white/95', window.scrollY > 50);
     });
-
-    // Scroll to top
     const topBtn = document.getElementById('topBtn');
     if (topBtn) {
       window.addEventListener('scroll', () => {
@@ -450,8 +446,6 @@
       });
       topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     }
-
-    // Testimonials
     const items = document.querySelectorAll('.testimonial-item');
     const prevBtn = document.getElementById('prev-testimonial');
     const nextBtn = document.getElementById('next-testimonial');
@@ -469,8 +463,6 @@
         showTestimonial(current);
       });
     }
-
-    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();

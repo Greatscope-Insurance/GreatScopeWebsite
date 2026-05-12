@@ -9,7 +9,7 @@ body
 /*------------------ Breadcrumb styling --------------------*/
 .breadcrumbs
 {
-	background: linear-gradient(rgba(150, 60, 221, 0.1), rgba(17, 17, 69, 0.8)), url('https://ik.imagekit.io/5zp8ovb7c/Greatscope/nairobi?updatedAt=1714639747659');
+	background: linear-gradient(rgba(30, 27, 46, 0.85), rgba(30, 27, 46, 0.95)), url('https://ik.imagekit.io/5zp8ovb7c/Greatscope/nairobi?updatedAt=1714639747659');
 	background-position: center top;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -184,7 +184,7 @@ body
 /*--------------------------------- About CTA -------------------------------------*/
 .about-cta
 {
-	background: linear-gradient(rgba(10, 17, 79, 0.9), rgba(10, 17, 79, 0.9)), url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/nairobi?updatedAt=1714639747659");
+	background: linear-gradient(rgba(30, 27, 46, 0.9), rgba(30, 27, 46, 0.9)), url("https://ik.imagekit.io/5zp8ovb7c/Greatscope/nairobi?updatedAt=1714639747659");
 	background-position: center top;
 	background-repeat: no-repeat;
 	background-size: cover;

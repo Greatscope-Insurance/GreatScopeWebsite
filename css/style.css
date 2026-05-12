@@ -5,12 +5,12 @@
 /* --------------------- CSS Global variables ------------*/
 :root {
     /*------------ Colors -------------*/
-    --primary-color: #963cdd; /*---- Purple ----*/
-    --secondary-color: #1668b8; /*---- Blue ------*/
+    --primary-color: #1E1B2E; /*---- Deep Navy ----*/
+    --secondary-color: #3B3552; /*---- Muted Purple ----*/
     --third-color: #000000; /*----- Black ------*/
     --fourth-color: #ffffff; /*---- White ------*/
-    --blue-color: #2540ce; /*---- Button Blue -----*/
-    --yellow-color: #fcb900; /*---- Button Yello ----*/
+    --blue-color: #1E1B2E; /*---- Deep Navy ----*/
+    --yellow-color: #E4C680; /*---- Gold ----*/
 
     /*------------ Font Size --------------*/
     --heading-font-size: 1.5rem;

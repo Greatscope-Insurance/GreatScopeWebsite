@@ -19,7 +19,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -34,79 +34,83 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { inter: ['Inter', 'sans-serif'], poppins: ['Poppins', 'sans-serif'] },
-          colors: { 'custom-purple': '#5D3A9A', 'brand-purple': '#6D28D9', 'brand-blue': '#2563EB' }
+          fontFamily: { inter: ['Inter', 'sans-serif'], display: ['DM Serif Display', 'serif'] },
+          colors: {
+            'brand-dark': '#1E1B2E',
+            'brand-muted': '#3B3552',
+            'brand-gold': '#E4C680',
+            'brand-gold-light': '#F8F4EC'
+          }
         }
       }
     }
   </script>
 </head>
-<body class="font-inter antialiased bg-gray-50">
+<body class="font-inter antialiased bg-brand-gold-light">
 
-  <button id="topBtn" class="fixed bottom-6 left-6 z-50 bg-gray-900 text-white p-3 rounded-full shadow-2xl opacity-0 translate-y-10 transition-all duration-300 hover:bg-gray-800 hover:scale-110">
-    <i class="fas fa-arrow-up text-xl"></i>
+  <button id="topBtn" class="fixed bottom-6 left-6 z-50 bg-brand-dark text-white p-3.5 rounded-full shadow-2xl opacity-0 translate-y-10 transition-all duration-300 hover:bg-brand-muted hover:scale-110">
+    <i class="fas fa-arrow-up text-lg"></i>
   </button>
 
-  <!-- Modern Navigation -->
-  <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-200 z-40 transition-all duration-300">
+  <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-brand-gold-light z-40 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
+      <div class="flex justify-between items-center h-16 md:h-20">
         <div class="flex items-center">
-          <a href="index.html" class="flex items-center space-x-3">
-            <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/greatscope_logo-removebg-preview.png?updatedAt=1727717017528" alt="Greatscope Logo" class="h-10 w-auto">
+          <a href="index.html">
+            <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/greatscope_logo-removebg-preview.png?updatedAt=1727717017528" alt="Greatscope Logo" class="h-10 md:h-12 w-auto">
           </a>
         </div>
         <div class="hidden md:block">
-          <div class="ml-10 flex items-baseline space-x-6">
-            <a href="index.html" class="text-gray-600 hover:text-brand-purple px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+          <div class="flex items-baseline space-x-1">
+            <a href="index.html" class="text-brand-muted hover:text-brand-dark px-4 py-2 rounded-lg text-sm font-medium transition-colors">Home</a>
             <div class="relative group">
-              <a href="about.html" class="text-gray-600 hover:text-brand-purple px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
-              <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                <div class="py-1">
-                  <a href="about.html#leadership" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-brand-purple">Leadership</a>
-                  <a href="about.html#values" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-brand-purple">Company Values</a>
-                  <a href="about.html#key-numbers" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-brand-purple">Key Numbers</a>
+              <a href="about.html" class="text-brand-muted hover:text-brand-dark px-4 py-2 rounded-lg text-sm font-medium transition-colors">About</a>
+              <div class="absolute left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-brand-gold-light opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <div class="py-2">
+                  <a href="about.html#leadership" class="block px-4 py-2.5 text-sm text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light transition-colors">Leadership</a>
+                  <a href="about.html#values" class="block px-4 py-2.5 text-sm text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light transition-colors">Company Values</a>
+                  <a href="about.html#key-numbers" class="block px-4 py-2.5 text-sm text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light transition-colors">Key Numbers</a>
                 </div>
               </div>
             </div>
             <div class="relative group">
-              <a href="insurance.html" class="text-brand-purple font-semibold px-3 py-2 rounded-md text-sm font-medium">Our Products</a>
-              <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                <div class="py-1">
-                  <a href="insurance.html#health-insurance" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-brand-purple">Health Insurance</a>
-                  <a href="insurance.html#life-insurance" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-brand-purple">Life Insurance</a>
-                  <a href="insurance.html#pension-insurance" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-brand-purple">Pensions</a>
-                  <a href="insurance.html#general-insurance" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-brand-purple">General Insurance</a>
+              <a href="insurance.html" class="text-brand-dark font-semibold px-4 py-2 rounded-lg text-sm bg-brand-gold-light">Our Products</a>
+              <div class="absolute left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-brand-gold-light opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <div class="py-2">
+                  <a href="insurance.html#health-insurance" class="block px-4 py-2.5 text-sm text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light transition-colors">Health Insurance</a>
+                  <a href="insurance.html#life-insurance" class="block px-4 py-2.5 text-sm text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light transition-colors">Life Insurance</a>
+                  <a href="insurance.html#pension-insurance" class="block px-4 py-2.5 text-sm text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light transition-colors">Pensions</a>
+                  <a href="insurance.html#general-insurance" class="block px-4 py-2.5 text-sm text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light transition-colors">General Insurance</a>
                 </div>
               </div>
             </div>
-            <a href="contact.html" class="text-gray-600 hover:text-brand-purple px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+            <a href="contact.html" class="text-brand-muted hover:text-brand-dark px-4 py-2 rounded-lg text-sm font-medium transition-colors">Contact</a>
           </div>
         </div>
-        <div class="hidden md:flex items-center space-x-4">
-          <a href="https://twitter.com/frankaizKenya" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-brand-purple transition-colors"><i class="fab fa-twitter text-lg"></i></a>
-          <a href="https://web.facebook.com/Greatscopeinsurance" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-brand-purple transition-colors"><i class="fab fa-facebook-f text-lg"></i></a>
-          <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-brand-purple transition-colors"><i class="fab fa-linkedin text-lg"></i></a>
-          <a href="https://www.instagram.com/greatscopeinsurance/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-brand-purple transition-colors"><i class="fab fa-instagram text-lg"></i></a>
+        <div class="hidden md:flex items-center space-x-3">
+          <a href="https://twitter.com/frankaizKenya" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-brand-gold-light text-brand-muted hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-twitter"></i></a>
+          <a href="https://web.facebook.com/Greatscopeinsurance" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-brand-gold-light text-brand-muted hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-brand-gold-light text-brand-muted hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/greatscopeinsurance/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-brand-gold-light text-brand-muted hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-instagram"></i></a>
         </div>
         <div class="md:hidden">
-          <button class="mobile-menu-btn text-gray-600 hover:text-brand-purple p-2" aria-label="Toggle mobile menu">
+          <button class="mobile-menu-btn text-brand-muted hover:text-brand-dark p-2" aria-label="Toggle mobile menu">
             <i class="fas fa-bars text-xl"></i>
           </button>
         </div>
       </div>
     </div>
-    <div class="mobile-menu md:hidden hidden bg-white border-t border-gray-200">
-      <div class="px-2 pt-2 pb-3 space-y-1">
-        <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-purple hover:bg-purple-50 rounded-md">Home</a>
-        <a href="about.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-purple hover:bg-purple-50 rounded-md">About</a>
-        <a href="insurance.html" class="block px-3 py-2 text-base font-medium text-brand-purple bg-purple-50 rounded-md">Our Products</a>
-        <a href="contact.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-purple hover:bg-purple-50 rounded-md">Contact</a>
-        <div class="flex justify-center space-x-5 px-3 py-3 border-t mt-2">
-          <a href="https://twitter.com/frankaizKenya" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-purple"><i class="fab fa-twitter text-xl"></i></a>
-          <a href="https://web.facebook.com/Greatscopeinsurance" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-purple"><i class="fab fa-facebook-f text-xl"></i></a>
-          <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-purple"><i class="fab fa-linkedin text-xl"></i></a>
-          <a href="https://www.instagram.com/greatscopeinsurance/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-purple"><i class="fab fa-instagram text-xl"></i></a>
+    <div class="mobile-menu md:hidden hidden bg-white border-t border-brand-gold-light">
+      <div class="px-4 pt-3 pb-4 space-y-1">
+        <a href="index.html" class="block px-4 py-3 text-base font-medium text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light rounded-lg transition-colors">Home</a>
+        <a href="about.html" class="block px-4 py-3 text-base font-medium text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light rounded-lg transition-colors">About</a>
+        <a href="insurance.html" class="block px-4 py-3 text-base font-semibold text-brand-dark bg-brand-gold-light rounded-lg">Our Products</a>
+        <a href="contact.html" class="block px-4 py-3 text-base font-medium text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light rounded-lg transition-colors">Contact</a>
+        <div class="flex justify-center space-x-4 pt-4 border-t border-brand-gold-light mt-2">
+          <a href="https://twitter.com/frankaizKenya" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-brand-gold-light text-brand-muted hover:bg-brand-gold flex items-center justify-center transition-all"><i class="fab fa-twitter"></i></a>
+          <a href="https://web.facebook.com/Greatscopeinsurance" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-brand-gold-light text-brand-muted hover:bg-brand-gold flex items-center justify-center transition-all"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-brand-gold-light text-brand-muted hover:bg-brand-gold flex items-center justify-center transition-all"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/greatscopeinsurance/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-brand-gold-light text-brand-muted hover:bg-brand-gold flex items-center justify-center transition-all"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
     </div>
@@ -403,42 +407,42 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-custom-purple text-white py-10 px-6 md:px-10">
+  <footer class="bg-brand-dark text-white py-14 px-6 md:px-10">
     <div class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
         <div>
-          <h1 class="text-3xl md:text-4xl font-bold font-poppins mb-4">Greatscope</h1>
-          <div class="space-y-3 text-sm text-purple-200 leading-relaxed">
+          <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/greatscope_logo-removebg-preview.png?updatedAt=1727717017528" alt="Greatscope Logo" class="h-12 w-auto mb-6 brightness-0 invert">
+          <div class="space-y-3 text-sm text-white/50 leading-relaxed">
             <p>Greatscope serves as the unwavering bedrock of trust, providing steadfast commitment to safeguard what holds paramount importance across the varied realms of life, health, motor, and housing insurance.</p>
-            <div class="mt-4 space-y-2">
-              <p class="flex items-center"><i class="fas fa-phone fa-fw mr-3 text-purple-300"></i> 0719 151 288 / 0797 313 199</p>
-              <p class="flex items-center"><i class="fas fa-envelope fa-fw mr-3 text-purple-300"></i> info@greatscopeinsurance.com</p>
-              <p class="flex items-start"><i class="fas fa-location-dot fa-fw mr-3 text-purple-300 mt-1"></i> Portal Place House 4th Floor, Muindi Mbingu Street.</p>
+            <div class="mt-6 space-y-3">
+              <p class="flex items-center"><i class="fas fa-phone fa-fw mr-3 text-brand-gold"></i> 0719 151 288 / 0797 313 199</p>
+              <p class="flex items-center"><i class="fas fa-envelope fa-fw mr-3 text-brand-gold"></i> info@greatscopeinsurance.com</p>
+              <p class="flex items-start"><i class="fas fa-location-dot fa-fw mr-3 text-brand-gold mt-1"></i> Portal Place House 4th Floor, Muindi Mbingu Street.</p>
             </div>
           </div>
         </div>
-        <div class="md:pl-8">
-          <h5 class="text-xl font-semibold font-poppins mb-4 text-purple-100">Stay Connected</h5>
-          <div class="flex space-x-4 mb-6">
-            <a href="https://twitter.com/frankaizKenya" target="_blank" rel="noopener noreferrer" class="text-purple-300 hover:text-white transition-colors"><i class="fab fa-twitter text-2xl"></i></a>
-            <a href="https://web.facebook.com/Greatscopeinsurance" target="_blank" rel="noopener noreferrer" class="text-purple-300 hover:text-white transition-colors"><i class="fab fa-facebook-f text-2xl"></i></a>
-            <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" target="_blank" rel="noopener noreferrer" class="text-purple-300 hover:text-white transition-colors"><i class="fab fa-linkedin text-2xl"></i></a>
-            <a href="https://www.instagram.com/greatscopeinsurance/" target="_blank" rel="noopener noreferrer" class="text-purple-300 hover:text-white transition-colors"><i class="fab fa-instagram text-2xl"></i></a>
+        <div class="md:pl-8 md:border-l border-white/10">
+          <h5 class="text-lg font-semibold mb-5 text-white">Stay Connected</h5>
+          <div class="flex space-x-3 mb-8">
+            <a href="https://twitter.com/frankaizKenya" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 text-white/50 hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-twitter"></i></a>
+            <a href="https://web.facebook.com/Greatscopeinsurance" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 text-white/50 hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 text-white/50 hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/greatscopeinsurance/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 text-white/50 hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-instagram"></i></a>
           </div>
           <div>
-            <h5 class="text-lg font-semibold mb-2 text-purple-100 font-poppins">Newsletter</h5>
-            <p class="text-sm text-purple-200 mb-3">Subscribe for discounts and updates.</p>
+            <h5 class="text-base font-semibold mb-3 text-white/80">Newsletter</h5>
+            <p class="text-sm text-white/40 mb-4">Subscribe for exclusive updates.</p>
             <form name="newsletter-insurance" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="flex">
               <input type="hidden" name="form-name" value="newsletter-insurance">
               <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
-              <input type="email" name="email" placeholder="Email address" class="w-full p-2.5 rounded-l-md border-0 bg-purple-600/70 text-white placeholder-purple-300 focus:ring-2 focus:ring-purple-400 focus:outline-none text-sm" required>
-              <button type="submit" class="bg-purple-400 hover:bg-purple-300 text-custom-purple font-bold p-2.5 rounded-r-md transition-colors text-lg">➔</button>
+              <input type="email" name="email" placeholder="Email address" class="w-full p-3 rounded-l-md border-0 bg-white/10 text-white placeholder-white/30 focus:ring-2 focus:ring-brand-gold focus:outline-none text-sm" required>
+              <button type="submit" class="bg-brand-gold text-brand-dark font-semibold px-5 rounded-r-md transition-colors hover:bg-brand-gold/80 text-sm">➔</button>
             </form>
           </div>
         </div>
       </div>
-      <div class="border-t border-purple-500/50 pt-6 mt-8 text-center">
-        <p class="text-xs text-purple-300">© 2025 Greatscope Insurance Agency. All rights reserved.</p>
+      <div class="border-t border-white/10 pt-6 mt-10 text-center">
+        <p class="text-xs text-white/30">&copy; 2025 Greatscope Insurance Agency. All rights reserved.</p>
       </div>
     </div>
   </footer>
