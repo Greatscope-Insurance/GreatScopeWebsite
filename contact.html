@@ -112,10 +112,8 @@
           <a href="https://www.instagram.com/greatscopeinsurance/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 rounded-full bg-brand-gold-light text-brand-muted hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-instagram"></i></a>
         </div>
         <div class="md:hidden">
-          <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
-            <span></span>
-            <span></span>
-            <span></span>
+          <button class="hamburger-btn" aria-label="Toggle mobile menu">
+            <i class="fas fa-bars"></i>
           </button>
         </div>
       </div>
@@ -298,7 +296,7 @@
   </footer>
 
   <script>
-    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const menuBtn = document.querySelector('hamburger-btn');
     const menu = document.querySelector('.mobile-menu');
     const overlay = document.querySelector('.mobile-overlay');
     function closeMenu() { menuBtn.classList.remove('active'); menu.classList.remove('active'); overlay.classList.remove('active'); }
