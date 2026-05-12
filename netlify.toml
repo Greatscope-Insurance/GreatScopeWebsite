@@ -1,0 +1,12 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/insurance-details"
+  to = "/insurance.html"
+  status = 301
+
+[[redirects]]
+  from = "/insurance-details.html"
+  to = "/insurance.html"
+  status = 301

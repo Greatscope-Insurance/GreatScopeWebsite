@@ -1,756 +1,450 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Title Tag -->
   <title>Greatscope Insurance Agency | Consult, Insure, Relax</title>
-  <meta name="description"
-    content="Greatscope Insurance Agency is your one stop shop for all your insurance needs,offering tailored insurance
-    solutions for your risk exposures.
-    Greatscope is run by certified insurance professionals with wealth of industry experience.">
-  <meta name="keywords"
-    content="insurance, Greatscope Insurance Agency, insurance consultancy, insurance brokerage, insurance solutions, East Africa insurance, insurance professionals">
-  <!-- Mission -->
-  <meta name="mission"
-    content="Maintaining the highest standards of integrity and professionalism, providing tailor-made insurance solutions in a changing market.">
-  <!-- Core Values -->
-  <meta name="core-values" content="Transparency, Integrity, Customer Focus, Innovation">
-  <!-- Services -->
-  <meta name="services"
-    content="Motor Insurance, Fire and Perils Insurance, Domestic Package, Contractors All Risks, WIBA and ECL, Personal Accident, Marine Insurance, Group Life Insurance, Travel Insurance, Goods in Transit, Medical Insurance, Credit Life Insurance, Education Endowment Insurance, Whole Life Insurance">
-  <!-- Team Expertise -->
-  <meta name="team"
-    content="Led by Francis Muendo, a seasoned professional with over 8 years in the insurance industry, specializing in Insurance Underwriting, Claims Management, and Marketing.">
-  <meta name="author" content="Morris Mulitu | Web Developer">
-  <!-- Favicon -->
-  <link rel="icon" type="image/png"
-    href="https://ik.imagekit.io/5zp8ovb7c/Greatscope/sized_logo_yZUD-_Hdz?updatedAt=1708010673725">
-  <!-- External CSS link -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/footer-style.css">
-  <link rel="stylesheet" href="css/hero.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta name="description" content="Greatscope Insurance Agency is your one stop shop for all your insurance needs, offering tailored insurance solutions for your risk exposures.">
+  <meta name="keywords" content="insurance, Greatscope Insurance Agency, insurance consultancy, insurance brokerage, insurance solutions, East Africa insurance, insurance professionals">
+  <meta name="author" content="Greatscope Insurance Agency">
+  <link rel="icon" type="image/png" href="https://ik.imagekit.io/5zp8ovb7c/Greatscope/sized_logo_yZUD-_Hdz?updatedAt=1708010673725">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Ionic icons CDN -->
-  <script async type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script async src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
-  <!-- Jquery CDN link -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/footer-style.css">
+
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "InsuranceAgency",
       "name": "Greatscope Insurance Agency",
       "image": "https://ik.imagekit.io/5zp8ovb7c/Greatscope/greatscope_logo.png?updatedAt=1727715946164",
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "-1.2840471635762207",
-        "longitude": "36.82040522642048"
-      },
+      "geo": { "@type": "GeoCoordinates", "latitude": "-1.2840471635762207", "longitude": "36.82040522642048" },
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "08:00",
-        "closes": "17:00"
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00", "closes": "17:00"
       },
       "telephone": "+254 719 151 288",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+254 719 151 288",
-        "contactType": "hire an insurance professional"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/company/greatscope-insurance-agency/",
-        "https://www.instagram.com/greatscopeinsurance/",
-        "https://web.facebook.com/Greatscopeinsurance",
-        "https://twitter.com/frankaizKenya"
-      ],
-      "description": "Explore Greatscope Insurance Agency for comprehensive insurance solutions. Our dedicated team of professionals provides personalized consultations, ensuring you find the right coverage for your needs. Whether it's auto, home, health, or business insurance, we've got you covered. Relax knowing you're in capable hands with Greatscope."
+      "contactPoint": { "@type": "ContactPoint", "telephone": "+254 719 151 288", "contactType": "hire an insurance professional" },
+      "sameAs": ["https://www.linkedin.com/company/greatscope-insurance-agency/","https://www.instagram.com/greatscopeinsurance/","https://web.facebook.com/Greatscopeinsurance","https://twitter.com/frankaizKenya"]
+    }
+  </script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { inter: ['Inter', 'sans-serif'], poppins: ['Poppins', 'sans-serif'] },
+          colors: { 'custom-purple': '#5D3A9A', 'brand-purple': '#6D28D9', 'brand-blue': '#2563EB' }
+        }
+      }
     }
   </script>
 </head>
+<body class="font-inter antialiased bg-gray-50">
 
-<body class="">
-
-    <!-- Fydo Contact Form Widget HTML -->
-    <div id="multi-tab" onclick="toggleContactWidget()"><span><i class="bi bi-chat-left-text"></i></span></div>
-    <div id="contact-widget" style="display: none;">
-    <h4>Send us a message</h4>
-    <p>Name</p><input id="contact-name" placeholder="" type="text" name="name">
-    <p>Email</p><input id="contact-email" placeholder="" type="email" name="email" pattern=".+@.+\..+" required>
-    <p>Message</p><textarea id="contact-message" placeholder=""></textarea>
-    <input type="hidden" name="api_key" value="56683f0f9f208053be3c0c65206303fe">
-    <!-- Replace YOUR_API_KEY_HERE with your key -->
-    <input type="hidden" name="actual_referer" id="actual_referer" value="">
-    <button onclick="submitContactWithComments()">Get a Quote</button>
-    <div id="contact-response"></div><br>
-    <div id="contact-powered">Powered by <a href="https://fydo.co.uk" target="_blank" >Fydo</a></div></div>
-    <script src="https://fydo.co.uk/contact-widget-loader-remote.js"></script>
-
-  <!-- Scroll to top starts -->
-  <button id="topBtn">
-    <ion-icon name="arrow-up-outline"></ion-icon>
+  <!-- Scroll to Top -->
+  <button id="topBtn" class="fixed bottom-6 left-6 z-50 bg-gray-900 text-white p-3 rounded-full shadow-2xl opacity-0 translate-y-10 transition-all duration-300 hover:bg-gray-800 hover:scale-110">
+    <i class="fas fa-arrow-up text-xl"></i>
   </button>
-  <!-- Scroll to top ends -->
 
-  <!-- Navigation starts -->
-  <nav>
-    <div class="menu-container nav-wrapper">
-      <div class="brand" id="brandLogo">
-        <a href="index.html">
-          <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/greatscope_logo-removebg-preview.png?updatedAt=1727717017528"
-            alt="Insurance Logo">
-        </a>
-      <!-- <div class="brand-text"><strong>Greatscope</strong></div>  Text "Greatscope" added below the logo -->
-      </div>
-
-      <!-- Hamburger Menu for Mobile -->
-      <button class="hamberger" aria-label="Open navigation menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <ul class="nav-list">
-        <li class="active"><a href="index.html"><strong>Home</strong></a></li>
-        <li>
-        <a href="about.html"><strong>About</strong></a>
-          <ul class="dropdown-list">
-            <li><a href="about.html#leadership">Leadership</a></li>
-            <li><a href="about.html#values">Company Values</a></li>
-            <li><a href="about.html#key-numbers">Key Numbers</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="insurance.html"><strong>Our Products</strong></a>
-          <ul class="dropdown-list">
-            <li><a href="insurance.html#health-insurance">Health Insurance</a></li>
-            <li><a href="insurance.html#life-insurance">Life Insurance</a></li>
-            <li><a href="insurance.html#pension-insurance">Pensions</a></li>
-            <li><a href="insurance.html#general-insurance">General Insurance</a></li>
-          </ul>
-        </li>
-        <li><a href="contact.html"><strong>Contact Us</strong></a></li>
-        <li>
-            <div class="flex justify-center md:justify-end mb-4">
-              <a href="https://twitter.com/frankaizKenya" class="social-icon">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="https://web.facebook.com/Greatscopeinsurance" class="social-icon">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" class="social-icon">
-                <i class="fab fa-linkedin"></i>
-              </a>
-              <a href="https://www.instagram.com/greatscopeinsurance/" class="social-icon">
-                <i class="fab fa-instagram"></i>
-              </a>
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-200 z-40 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="index.html" class="flex items-center space-x-3">
+            <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/greatscope_logo-removebg-preview.png?updatedAt=1727717017528" alt="Greatscope Logo" class="h-10 w-auto">
+            <span class="text-xl font-bold text-gray-900 font-poppins">Greatscope</span>
+          </a>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-6">
+            <a href="index.html" class="text-brand-purple font-semibold px-3 py-2 rounded-md text-sm font-medium">Home</a>
+            <div class="relative group">
+              <a href="about.html" class="text-gray-600 hover:text-brand-purple px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+              <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <div class="py-1">
+                  <a href="about.html#leadership" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-brand-purple">Leadership</a>
+                  <a href="about.html#mission-vision" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-brand-purple">Mission & Vision</a>
+                  <a href="about.html#values" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-brand-purple">Company Values</a>
+                  <a href="about.html#key-numbers" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-brand-purple">Key Numbers</a>
+                </div>
+              </div>
             </div>
-        </li>
-      </ul>
+            <div class="relative group">
+              <a href="insurance.html" class="text-gray-600 hover:text-brand-purple px-3 py-2 rounded-md text-sm font-medium transition-colors">Our Products</a>
+              <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <div class="py-1">
+                  <a href="insurance.html#health-insurance" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-brand-purple">Health Insurance</a>
+                  <a href="insurance.html#life-insurance" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-brand-purple">Life Insurance</a>
+                  <a href="insurance.html#pension-insurance" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-brand-purple">Pensions</a>
+                  <a href="insurance.html#general-insurance" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-brand-purple">General Insurance</a>
+                </div>
+              </div>
+            </div>
+            <a href="contact.html" class="text-gray-600 hover:text-brand-purple px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+          </div>
+        </div>
+        <div class="hidden md:flex items-center space-x-4">
+          <a href="https://twitter.com/frankaizKenya" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-brand-purple transition-colors"><i class="fab fa-twitter text-lg"></i></a>
+          <a href="https://web.facebook.com/Greatscopeinsurance" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-brand-purple transition-colors"><i class="fab fa-facebook-f text-lg"></i></a>
+          <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-brand-purple transition-colors"><i class="fab fa-linkedin text-lg"></i></a>
+          <a href="https://www.instagram.com/greatscopeinsurance/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-brand-purple transition-colors"><i class="fab fa-instagram text-lg"></i></a>
+        </div>
+        <div class="md:hidden">
+          <button class="mobile-menu-btn text-gray-600 hover:text-brand-purple p-2" aria-label="Toggle mobile menu">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-menu md:hidden hidden bg-white border-t border-gray-200">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <a href="index.html" class="block px-3 py-2 text-base font-medium text-brand-purple bg-purple-50 rounded-md">Home</a>
+        <a href="about.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-purple hover:bg-purple-50 rounded-md">About</a>
+        <a href="insurance.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-purple hover:bg-purple-50 rounded-md">Our Products</a>
+        <a href="contact.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-purple hover:bg-purple-50 rounded-md">Contact</a>
+        <div class="flex justify-center space-x-5 px-3 py-3 border-t mt-2">
+          <a href="https://twitter.com/frankaizKenya" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-purple"><i class="fab fa-twitter text-xl"></i></a>
+          <a href="https://web.facebook.com/Greatscopeinsurance" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-purple"><i class="fab fa-facebook-f text-xl"></i></a>
+          <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-purple"><i class="fab fa-linkedin text-xl"></i></a>
+          <a href="https://www.instagram.com/greatscopeinsurance/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-purple"><i class="fab fa-instagram text-xl"></i></a>
+        </div>
+      </div>
     </div>
   </nav>
 
-  <!-- Navigation ends -->
-
-  <!-- Hero section starts -->
-  <div class="demo-cont">
-    <!-- slider start -->
-    <div class="fnc-slider example-slider">
-      <div class="fnc-slider__slides">
-        <!-- slide start -->
-        <div class="fnc-slide m--blend-green m--active-slide">
-          <div class="fnc-slide__inner">
-            <div class="fnc-slide__mask">
-              <div class="fnc-slide__mask-inner"></div>
-            </div>
-            <div class="fnc-slide__content">
-              <h2 class="fnc-slide__heading">
-                <div class="fnc-slide__heading-line">
-                  <span>Health</span>
-                </div>
-                <div class="fnc-slide__heading-line">
-                  <span>Insurance</span>
-                </div>
-              </h2>
-              <button type="button" class="fnc-slide__action-btn">
-                Greatscope
-                <span data-text="INSURANCE">GREATSCOPE</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- slide end -->
-        <!-- slide start -->
-        <div class="fnc-slide m--blend-dark">
-          <div class="fnc-slide__inner">
-            <div class="fnc-slide__mask">
-              <div class="fnc-slide__mask-inner"></div>
-            </div>
-            <div class="fnc-slide__content">
-              <h2 class="fnc-slide__heading">
-                <div class="fnc-slide__heading-line">
-                  <span>Life</span>
-                </div>
-                <div class="fnc-slide__heading-line">
-                  <span>Insurance</span>
-                </div>
-              </h2>
-              <button type="button" class="fnc-slide__action-btn">
-                Greatscope
-                <span data-text="INSURANCE">GREATSCOPE</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- slide end -->
-        <!-- slide start -->
-        <div class="fnc-slide m--blend-red">
-          <div class="fnc-slide__inner">
-            <div class="fnc-slide__mask">
-              <div class="fnc-slide__mask-inner"></div>
-            </div>
-            <div class="fnc-slide__content">
-              <h2 class="fnc-slide__heading">
-                <div class="fnc-slide__heading-line">
-                  <span>Pension</span>
-                </div>
-              </h2>
-              <button type="button" class="fnc-slide__action-btn">
-                Greatscope
-                <span data-text="INSURANCE">Greatscope</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- slide end -->
-        <!-- slide start -->
-        <div class="fnc-slide m--blend-blue">
-          <div class="fnc-slide__inner">
-            <div class="fnc-slide__mask">
-              <div class="fnc-slide__mask-inner"></div>
-            </div>
-            <div class="fnc-slide__content">
-              <h2 class="fnc-slide__heading">
-                <div class="fnc-slide__heading-line">
-                  <span>General</span>
-                </div>
-                <div class="fnc-slide__heading-line">
-                  <span>Insurance</span>
-                </div>
-              </h2>
-              <button type="button" class="fnc-slide__action-btn">
-                Greatscope
-                <span data-text="INSURANCE">Greatscope</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- slide end -->
+  <!-- Hero -->
+  <section class="relative min-h-[70vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden pt-16">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-purple via-brand-blue to-indigo-800"></div>
+    <div class="absolute inset-0 bg-black/30"></div>
+    <div class="absolute inset-0">
+      <div class="absolute top-1/4 left-1/4 w-48 h-48 md:w-72 md:h-72 bg-brand-purple/10 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-60 h-60 md:w-96 md:h-96 bg-brand-blue/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1.5s;"></div>
+    </div>
+    <div class="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
+      <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 font-poppins leading-tight">
+        Consult. <span class="bg-gradient-to-r from-purple-300 to-blue-300 bg-clip-text text-transparent">Insure.</span> Relax.
+      </h1>
+      <p class="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed mb-10">
+        Your trusted partner for comprehensive insurance solutions across East Africa. 
+        Tailored coverage backed by certified professionals with years of industry experience.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="insurance.html" class="inline-block bg-white text-brand-purple font-semibold py-3 px-8 rounded-lg text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-md">Explore Products</a>
+        <a href="contact.html" class="inline-block bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-lg text-lg hover:bg-white/10 transition-all duration-300 transform hover:scale-105">Get a Quote</a>
       </div>
-      <nav class="fnc-nav">
-        <div class="fnc-nav__bgs">
-          <div class="fnc-nav__bg m--navbg-green m--active-nav-bg"></div>
-          <div class="fnc-nav__bg m--navbg-dark"></div>
-          <div class="fnc-nav__bg m--navbg-red"></div>
-          <div class="fnc-nav__bg m--navbg-blue"></div>
-        </div>
-        <div class="fnc-nav__controls">
-          <button class="fnc-nav__control">
-            Health Insurance
-            <span class="fnc-nav__control-progress"></span>
-          </button>
-          <button class="fnc-nav__control">
-            Life Insurance
-            <span class="fnc-nav__control-progress"></span>
-          </button>
-          <button class="fnc-nav__control">
-            Pension
-            <span class="fnc-nav__control-progress"></span>
-          </button>
-          <button class="fnc-nav__control">
-            General Insurance
-            <span class="fnc-nav__control-progress"></span>
-          </button>
-        </div>
-      </nav>
-    </div>
-    <!-- slider end -->
-    <div class="demo-cont__credits">
-      <div class="demo-cont__credits-close"></div>
-      <section class="our-services">
-        <div class="container">
-          <h2 class="heading">
-            Greatscope Insurance Solutions
-          </h2>
-
-          <main class="page-content">
-            <div class="card">
-              <div class="content">
-                <h2 class="title">Health</h2>
-                <p class="copy">Our health insurance provides a safety net, covering medical costs and promoting wellness.</p>
-                <a href="insurance.html#health-insurance" class="card-btn">View Covers</a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="content">
-                <h2 class="title">Life</h2>
-                <p class="copy">and pension insurance ensuring financial security for you and your loved ones.</p>
-                <a href="insurance.html#life-insurance" class="card-btn">View Covers</a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="content">
-                <h2 class="title">General</h2>
-                <p class="copy">General insurance safeguards assets against unforeseen events, offering peace of mind and financial protection.</p>
-                <a href="insurance.html#general-insurance" class="card-btn">View Covers</a>
-              </div>
-            </div>
-          </main>
-        </div>
-      </section>
-    </div>
-  </div>
-
-  </div>
-
-  <!-- Hero section ends -->
-
-  <!-- Services section starts -->
-  <section class="our-services">
-    <div class="container">
-      <h2 class="heading">
-        Our Insurance Solutions
-      </h2>
-
-      <main class="page-content">
-        <div class="card card-health">
-          <div class="content">
-            <h2 class="title">Health</h2>
-            <p class="copy">Our health insurance provides a safety net, covering medical costs and promoting wellness.
-            </p>
-            <a href="insurance.html#health-insurance">
-              <button class="card-btn">View Covers</button>
-            </a>
-          </div>
-        </div>
-        <div class="card card-life-pension">
-          <div class="content">
-            <h2 class="title">Life & Pension</h2>
-            <p class="copy">Life and pension insurance ensuring financial security for you and your loved ones.</p>
-            <a href="insurance.html#life-insurance">
-              <button class="card-btn">View Covers</button>
-            </a>
-          </div>
-        </div>
-        <div class="card card-general-insurance">
-          <div class="content">
-            <h2 class="title">General Insurance</h2>
-            <p class="copy">General insurance safeguards assets against unforeseen events, offering peace of mind and
-              financial protection.</p>
-            <a href="insurance.html#general-insurance">
-              <button class="card-btn">View Covers</button>
-            </a>
-          </div>
-        </div>
-      </main>
     </div>
   </section>
-  <!-- Services section ends -->
 
-  <!-- Why us section starts -->
-  <section class="why-us">
-    <div class="container">
-      <div class="row">
-        <div class="col why-us-content">
-          <h4 class="sub-heading">Why choose us</h4>
+  <!-- Services -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 md:mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3 font-poppins">Our Insurance Solutions</h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-brand-purple to-brand-blue mx-auto"></div>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-4">Comprehensive coverage tailored to protect what matters most.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <a href="insurance.html#health-insurance" class="group block bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+          <div class="w-16 h-16 bg-gradient-to-br from-brand-purple to-brand-blue rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+            <i class="fas fa-heartbeat text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 font-poppins">Health Insurance</h3>
+          <p class="text-gray-600 leading-relaxed">Our health insurance provides a safety net, covering medical costs and promoting wellness for you and your family.</p>
+          <span class="inline-block mt-4 text-brand-purple font-semibold text-sm group-hover:translate-x-1 transition-transform">View Covers →</span>
+        </a>
+        <a href="insurance.html#life-insurance" class="group block bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+          <div class="w-16 h-16 bg-gradient-to-br from-brand-blue to-sky-500 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+            <i class="fas fa-shield-heart text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 font-poppins">Life & Pension</h3>
+          <p class="text-gray-600 leading-relaxed">Life and pension insurance ensuring financial security for you and your loved ones.</p>
+          <span class="inline-block mt-4 text-brand-purple font-semibold text-sm group-hover:translate-x-1 transition-transform">View Covers →</span>
+        </a>
+        <a href="insurance.html#general-insurance" class="group block bg-gradient-to-br from-blue-50 to-sky-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+          <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-500 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+            <i class="fas fa-building-shield text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 font-poppins">General Insurance</h3>
+          <p class="text-gray-600 leading-relaxed">General insurance safeguards assets against unforeseen events, offering peace of mind and financial protection.</p>
+          <span class="inline-block mt-4 text-brand-purple font-semibold text-sm group-hover:translate-x-1 transition-transform">View Covers →</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
-          <h2 class="heading">
-            With us, you gain more than a policy
-          </h2>
-
-          <p class="para-line">
-            Our dedication to your peace of mind and comprehensive coverage options make us your ideal partner in
-            protection. With us, you gain more than a policy. You secure a future safeguarded by professionals committed
-            to your needs. Greatscope isn't just an option; it's the best choice for those who value reliability and
-            tailored care.
+  <!-- Why Us -->
+  <section class="py-16 md:py-24 bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h4 class="text-brand-blue font-semibold text-sm uppercase tracking-wider mb-2">Why choose us</h4>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-poppins">With us, you gain more than a policy</h2>
+          <p class="text-gray-700 text-lg leading-relaxed mb-8">
+            Our dedication to your peace of mind and comprehensive coverage options make us your ideal partner in protection. 
+            With us, you gain more than a policy. You secure a future safeguarded by professionals committed to your needs.
           </p>
-
-          <div class="inner-row why-us-row">
-            <div class="inner-col why-us-col">
-              <ion-icon name="call-outline"></ion-icon>
-              <h3 class="why-us-highlight-heading">
-                24x7 Support
-              </h3>
-              <p class="para-line">
-                Round-the-Clock Peace of Mind: Our dedicated support team is available 24/7.
-              </p>
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-amber-400 rounded-full flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-headset text-white text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">24x7 Support</h3>
+                <p class="text-gray-600 text-sm">Round-the-Clock Peace of Mind with our dedicated support team.</p>
+              </div>
             </div>
-            <div class="inner-col why-us-col">
-              <ion-icon name="flame-outline"></ion-icon>
-              <h3 class="why-us-highlight-heading">
-                Premium Services
-              </h3>
-              <p class="para-line">
-                Exclusivity at Its Best: Greatscope Insurance Agency's premium services are tailored for those who
-                expect nothing but the best.
-              </p>
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-amber-400 rounded-full flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-crown text-white text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">Premium Services</h3>
+                <p class="text-gray-600 text-sm">Exclusive, tailored solutions for those who expect the best.</p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col why-us-lead-form">
-          <div class="lead-form">
-            <form id="quote-form" name="get-quote-form" method="POST" netlify>
-              <div class="input-field">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" placeholder="Your name" required>
-              </div>
+        <div class="bg-white rounded-2xl p-8 shadow-xl">
+          <h3 class="text-xl font-bold text-gray-900 mb-6 font-poppins">Get a Free Quote</h3>
+          <form name="get-quote" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="space-y-4">
+            <input type="hidden" name="form-name" value="get-quote">
+            <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+              <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-purple focus:border-transparent">
+            </div>
+            <div>
+              <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone No.</label>
+              <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-purple focus:border-transparent">
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+              <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-purple focus:border-transparent">
+            </div>
+            <button type="submit" class="w-full bg-gradient-to-r from-brand-purple to-brand-blue text-white py-3 rounded-lg font-semibold hover:from-brand-purple/80 hover:to-brand-blue/80 transition-all duration-300">Get a Quote</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
-              <div class="input-field">
-                <label for="number">Phone No.</label>
-                <input type="text" id="number" placeholder="Your phone number" required>
-              </div>
+  <!-- Partners -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3 font-poppins">Our Partners</h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-brand-purple to-brand-blue mx-auto"></div>
+      </div>
+      <div class="grid grid-cols-3 md:grid-cols-6 gap-6 items-center justify-items-center">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/occidental.webp?updatedAt=1708028480864" alt="Occidental" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/apa.webp?updatedAt=1708028934382" alt="APA insurance" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/heritage.webp?updatedAt=1708028933679" alt="Heritage insurance" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/directline.webp?updatedAt=1708028935190" alt="Directline" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/cic.webp?updatedAt=1708028933828" alt="CIC" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/fidelity.webp?updatedAt=1708028933723" alt="Fidelity" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/ga.webp?updatedAt=1708032123447" alt="GA" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/absa.webp?updatedAt=1708032123653" alt="ABSA Life" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/aar.webp?updatedAt=1708033134033" alt="AAR" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/uap_old.webp?updatedAt=1708032933915" alt="UAP" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/korient.webp?updatedAt=1708032123835" alt="Kenya Orient" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/trident.webp?updatedAt=1709291818662" alt="Trident" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/Jubilee%20Allianz%20Logo.svg?updatedAt=1726301762562" alt="Jubilee Allianz" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/prudential.jpg?updatedAt=1726301761707" alt="Prudential" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/Monarch.jpeg?updatedAt=1726301761684" alt="Monarch" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/kenindia.jpg?updatedAt=1726302515386" alt="Kenindia" loading="lazy" class="h-10 md:h-12 opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+      </div>
+    </div>
+  </section>
 
-              <div class="input-field">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" placeholder="Your email address" required>
+  <!-- Testimonials -->
+  <section class="py-16 md:py-24 bg-gradient-to-br from-gray-800 via-gray-900 to-black text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h4 class="text-brand-blue font-semibold text-sm uppercase tracking-wider mb-2">Testimonials</h4>
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 font-poppins">What Our Customers Say</h2>
+      <div class="relative">
+        <div class="testimonial-slider overflow-hidden">
+          <div class="testimonial-item">
+            <p class="text-lg md:text-xl text-gray-300 italic mb-8">"Great services given expeditiously, honesty policy seems to be the order of the day."</p>
+            <div class="flex items-center justify-center gap-4 mb-4">
+              <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Testimonials/ngeli%20(1).webp?updatedAt=1710755861972" alt="Client" class="w-12 h-12 rounded-full object-cover">
+              <div class="text-left">
+                <h6 class="font-semibold">Nicholas Ngeli</h6>
+                <p class="text-sm text-gray-400">Nairobi</p>
               </div>
-              <button class="btn btn-blue" type="submit">Get a Quote</button>
+            </div>
+            <div class="text-amber-400">★★★★☆</div>
+          </div>
+          <div class="testimonial-item hidden">
+            <p class="text-lg md:text-xl text-gray-300 italic mb-8">"Greatscope thanks for giving us the best group last expense cover after explaining the pros and cons for all in the market."</p>
+            <div class="flex items-center justify-center gap-4 mb-4">
+              <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Testimonials/mboya%20(1).webp?updatedAt=1710755862204" alt="Client" class="w-12 h-12 rounded-full object-cover">
+              <div class="text-left">
+                <h6 class="font-semibold">Ruth Mboya</h6>
+                <p class="text-sm text-gray-400">Nairobi</p>
+              </div>
+            </div>
+            <div class="text-amber-400">★★★★½</div>
+          </div>
+          <div class="testimonial-item hidden">
+            <p class="text-lg md:text-xl text-gray-300 italic mb-8">"The Insurance agency staff are professional, friendly and care about their customers. Thanks Greatscope for fast tracking my claim."</p>
+            <div class="flex items-center justify-center gap-4 mb-4">
+              <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Testimonials/mathias%20(1).webp?updatedAt=1710755861965" alt="Client" class="w-12 h-12 rounded-full object-cover">
+              <div class="text-left">
+                <h6 class="font-semibold">Mat Hias</h6>
+                <p class="text-sm text-gray-400">Nairobi</p>
+              </div>
+            </div>
+            <div class="text-amber-400">★★★★½</div>
+          </div>
+          <div class="testimonial-item hidden">
+            <p class="text-lg md:text-xl text-gray-300 italic mb-8">"Simply amazing, your partner in eventualities."</p>
+            <div class="flex items-center justify-center gap-4 mb-4">
+              <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Testimonials/kliss%20(1).webp?updatedAt=1710755672770" alt="Client" class="w-12 h-12 rounded-full object-cover">
+              <div class="text-left">
+                <h6 class="font-semibold">Kliss Kinyungu</h6>
+                <p class="text-sm text-gray-400">Nairobi</p>
+              </div>
+            </div>
+            <div class="text-amber-400">★★★★½</div>
+          </div>
+        </div>
+        <div class="flex justify-center gap-4 mt-8">
+          <button id="prev-testimonial" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors flex items-center justify-center"><i class="fas fa-chevron-left"></i></button>
+          <button id="next-testimonial" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors flex items-center justify-center"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-custom-purple text-white py-10 px-6 md:px-10">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
+        <div>
+          <h1 class="text-3xl md:text-4xl font-bold font-poppins mb-4">Greatscope</h1>
+          <div class="space-y-3 text-sm text-purple-200 leading-relaxed">
+            <p>Greatscope serves as the unwavering bedrock of trust, providing steadfast commitment to safeguard what holds paramount importance across the varied realms of life, health, motor, and housing insurance.</p>
+            <div class="mt-4 space-y-2">
+              <p class="flex items-center"><i class="fas fa-phone fa-fw mr-3 text-purple-300"></i> 0719 151 288 / 0797 313 199</p>
+              <p class="flex items-center"><i class="fas fa-envelope fa-fw mr-3 text-purple-300"></i> info@greatscopeinsurance.com</p>
+              <p class="flex items-start"><i class="fas fa-location-dot fa-fw mr-3 text-purple-300 mt-1"></i> Portal Place House 4th Floor, Muindi Mbingu Street.</p>
+            </div>
+          </div>
+        </div>
+        <div class="md:pl-8">
+          <h5 class="text-xl font-semibold font-poppins mb-4 text-purple-100">Stay Connected</h5>
+          <div class="flex space-x-4 mb-6">
+            <a href="https://twitter.com/frankaizKenya" target="_blank" rel="noopener noreferrer" class="text-purple-300 hover:text-white transition-colors"><i class="fab fa-twitter text-2xl"></i></a>
+            <a href="https://web.facebook.com/Greatscopeinsurance" target="_blank" rel="noopener noreferrer" class="text-purple-300 hover:text-white transition-colors"><i class="fab fa-facebook-f text-2xl"></i></a>
+            <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" target="_blank" rel="noopener noreferrer" class="text-purple-300 hover:text-white transition-colors"><i class="fab fa-linkedin text-2xl"></i></a>
+            <a href="https://www.instagram.com/greatscopeinsurance/" target="_blank" rel="noopener noreferrer" class="text-purple-300 hover:text-white transition-colors"><i class="fab fa-instagram text-2xl"></i></a>
+          </div>
+          <div>
+            <h5 class="text-lg font-semibold mb-2 text-purple-100 font-poppins">Newsletter</h5>
+            <p class="text-sm text-purple-200 mb-3">Subscribe for discounts and updates.</p>
+            <form name="newsletter" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="flex">
+              <input type="hidden" name="form-name" value="newsletter">
+              <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
+              <input type="email" name="email" placeholder="Email address" class="w-full p-2.5 rounded-l-md border-0 bg-purple-600/70 text-white placeholder-purple-300 focus:ring-2 focus:ring-purple-400 focus:outline-none text-sm" required>
+              <button type="submit" class="bg-purple-400 hover:bg-purple-300 text-custom-purple font-bold p-2.5 rounded-r-md transition-colors text-lg">➔</button>
             </form>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- Why us section ends -->
-
-  <!-- Overline section starts -->
-  <!--
-<section class="overline">
-		<div class="container">
-
-			<h2 class="heading white">
-				Our Core Values
-			</h2>
-
-
-			<div class="overlines">
-				<div class="row">
-					<div class="col">
-						<ion-icon name="contrast-outline" class="white"></ion-icon>
-						<h2 class="overline-heading">Transparency</h2>
-					</div>
-					<div class="col">
-						<ion-icon name="trophy-outline" class="white"></ion-icon>
-						<h2 class="overline-heading">Integrity</h2>
-					</div>
-					<div class="col">
-						<ion-icon name="heart-circle-outline" class="white"></ion-icon>
-						<h2 class="overline-heading">Customer Focus</h2>
-					</div>
-					<div class="col">
-						<ion-icon name="bulb-outline" class="white"></ion-icon>
-						<h2 class="overline-heading">Innovation</h2>
-					</div>
-				</div>
-			</div>
-
-			<button class="btn btn-yellow">
-				<a href="#">All Our Policies</a>
-			</button>
-		</div>
-	</section>
--->
-  <!-- Overline section ends -->
-
-  <!-- About section starts -->
-  <!-- Partners Section -->
-  <section class="partners-section">
-    <div class="container">
-      <h2 class="text-4xl font-bold">Our Partners</h2>
-      <div class="partners-grid">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/occidental.webp?updatedAt=1708028480864" alt="Occidental" title="Partner" class="partner-img">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/apa.webp?updatedAt=1708028934382" alt="APA insurance" title="Partner" class="partner-img">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/heritage.webp?updatedAt=1708028933679" alt="Heritage insurance" title="Partner" class="partner-img">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/directline.webp?updatedAt=1708028935190" alt="Directline insurance" title="Partner" class="partner-img">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/cic.webp?updatedAt=1708028933828" alt="CIC insurance" title="Partner" class="partner-img">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/fidelity.webp?updatedAt=1708028933723" alt="Fidelity insurance" title="Partner" class="partner-img">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/ga.webp?updatedAt=1708032123447" alt="GA insurance" title="Partner" class="partner-img">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/absa.webp?updatedAt=1708032123653" alt="ABSA Life insurance" title="Partner" class="partner-img">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/aar.webp?updatedAt=1708033134033" alt="AAR" title="Partner" class="partner-img">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/uap_old.webp?updatedAt=1708032933915" alt="UAP Old Mutual" title="Partner" class="partner-img">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/korient.webp?updatedAt=1708032123835" alt="Kenya Orient" title="Partner" class="partner-img">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/trident.webp?updatedAt=1709291818662" alt="Trident Insurance" title="Partner" class="partner-img">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/Jubilee%20Allianz%20Logo.svg?updatedAt=1726301762562" alt="Jubilee Allianz Insurance" title="Partner" class="partner-img">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/prudential.jpg?updatedAt=1726301761707" alt="Prudential Insurance" title="Partner" class="partner-img">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/Monarch.jpeg?updatedAt=1726301761684" alt="Monarch Insurance" title="Partner" class="partner-img">
-        <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Partners/kenindia.jpg?updatedAt=1726302515386" alt="Kenindia Insurance" title="Partner" class="partner-img">
-      </div>
-    </div>
-  </section>
-
-  <!-- About section ends -->
-
-  <!-- Testimonial section starts -->
-  <section class="testimonial">
-    <div class="container">
-      <h4 class="sub-heading white">Testimonials</h4>
-      <h2 class="heading white">What Our Customers Say</h2>
-
-      <div class="testimonial-item" style="display: block;">
-        <p class="para-line white">
-          Great services given expeditiously, honesty policy seems to be the order of the day.
-        </p>
-        <div class="testimonial-profile">
-          <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Testimonials/ngeli%20(1).webp?updatedAt=1710755861972"
-            alt="Client" title="Client" class="profile-img">
-          <span>
-            <h6 class="client-name white">Nicholas Ngeli</h6>
-            <p class="client-location white">Nairobi</p>
-          </span>
-        </div>
-        <div class="stars">
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star-outline"></ion-icon>
-        </div>
-      </div>
-
-      <div class="testimonial-item" style="display: none;">
-        <p class="para-line white">
-          Greatscope thanks for giving us the best group last expense cover after explaining the pros and cons for all
-          in the market.
-        </p>
-        <div class="testimonial-profile">
-          <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Testimonials/mboya%20(1).webp?updatedAt=1710755862204"
-            alt="Client" title="Client" class="profile-img">
-          <span>
-            <h6 class="client-name white">Ruth Mboya</h6>
-            <p class="client-location white">Nairobi</p>
-          </span>
-        </div>
-        <div class="stars">
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star-half-outline"></ion-icon>
-        </div>
-      </div>
-
-      <div class="testimonial-item" style="display: none;">
-        <p class="para-line white">
-          The Insurance agency staff are professional, friendly and care about their customers.Thanks Greatscope IA for
-          fast tracking my claim and ensuring that my compensation was processed promptly.
-        </p>
-        <div class="testimonial-profile">
-          <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Testimonials/mathias%20(1).webp?updatedAt=1710755861965"
-            alt="Client" title="Client" class="profile-img">
-          <span>
-            <h6 class="client-name white">Mat Hias</h6>
-            <p class="client-location white">Nairobi</p>
-          </span>
-        </div>
-        <div class="stars">
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star-half-outline"></ion-icon>
-        </div>
-      </div>
-
-      <div class="testimonial-item" style="display: none;">
-        <p class="para-line white">
-          Simply amazing, your partner in eventualities.
-        </p>
-        <div class="testimonial-profile">
-          <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Testimonials/kliss%20(1).webp?updatedAt=1710755672770"
-            alt="Client" title="Client" class="profile-img">
-          <span>
-            <h6 class="client-name white">Kliss Kinyungu</h6>
-            <p class="client-location white">Nairobi</p>
-          </span>
-        </div>
-        <div class="stars">
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star-half-outline"></ion-icon>
-        </div>
-      </div>
-
-      <!-- Navigation buttons -->
-      <button id="prev-btn">&lt;</button>
-      <button id="next-btn">&gt;</button>
-    </div>
-  </section>
-  <!-- Testimonial section ends -->
-  <!-- Footer starts -->
-  <!-- Combined Footer -->
-  <footer class="bg-custom-purple text-white py-6 px-10">
-    <div class="container mx-auto">
-      <div class="footer-content grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
-        <!-- Brand and About Column -->
-        <div class="brand-and-about">
-          <h1 class="text-4xl font-bold">Greatscope</h1>
-          <div class="about mt-4">
-            <p class="footer-text">Greatscope serves as the unwavering bedrock of trust, providing steadfast commitment
-              to safeguard what holds paramount importance across the varied realms of life, health, motor, and housing
-              insurance.</p>
-            <div class="contact-info mt-4 space-y-2">
-              <p class="footer-text"><i class="fas fa-phone-alt contact-icon"></i> 0719 151 288 / 0797 313 199</p>
-              <p class="footer-text"><i class="fas fa-envelope contact-icon"></i> info@greatscopeinsurance.com</p>
-              <p class="footer-text"><i class="fas fa-map-marker-alt contact-icon"></i> Portal Place House 4th Floor,
-                Muindi Mbingu Street.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Social Icons and Newsletter Column -->
-        <div class="social-and-newsletter">
-          <!-- Social Icons -->
-          <div class="flex justify-center md:justify-end mb-4">
-            <a href="https://twitter.com/frankaizKenya" class="social-icon">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="https://web.facebook.com/Greatscopeinsurance" class="social-icon">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" class="social-icon">
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://www.instagram.com/greatscopeinsurance/" class="social-icon">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </div>
-          <!-- Newsletter -->
-          <div class="newsletter mt-4 md:mt-0">
-            <h5 class="footer-heading">Newsletter</h5>
-            <p class="footer-text">Subscribe to our newsletter for discounts and more.</p>
-            <form id="subscribe" name="newsletter-index" method="POST" class="newsletter-form mt-4" netlify>
-              <input type="email" placeholder="Email address" class="newsletter-input">
-              <button type="submit" class="newsletter-submit">→</button>
-            </form>
-          </div>
-        </div>
-      </div>
-      <!-- Copyright Notice -->
-      <div class="border-t border-gray-700 py-2 mt-4"></div>
-      <div class="text-center text-sm mt-4">
-        &copy; 2024 Greatscope Insurance Agency. All rights reserved.
+      <div class="border-t border-purple-500/50 pt-6 mt-8 text-center">
+        <p class="text-xs text-purple-300">© 2025 Greatscope Insurance Agency. All rights reserved.</p>
       </div>
     </div>
   </footer>
-  <!-- Footer ends -->
 
-  <!-------------- Importing JS file -------------->
-  <script src="js/script.js"></script>
   <script>
-    // ------------------------ Scroll to top button --------------------
-    $(document).ready(function () {
-      $(window).scroll(function () {
-        if ($(this).scrollTop() > 40) {
-          $('#topBtn').fadeIn();
+    // Mobile menu
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    if (mobileMenuBtn && mobileMenu) {
+      const icon = mobileMenuBtn.querySelector('i');
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        if (mobileMenu.classList.contains('hidden')) {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
         } else {
-          $('#topBtn').fadeOut();
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
         }
-      });
-
-      $("#topBtn").click(function () {
-        $('html, body').animate({
-          scrollTop: 0
-        }, 800);
-      });
-    });
-    // ------------------------ Scroll to top button --------------------
-  </script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var hamburger = document.querySelector('.hamberger');
-      var navList = document.querySelector('.nav-list');
-
-      hamburger.addEventListener('click', function () {
-        hamburger.classList.toggle('active');
-        navList.classList.toggle('active');
-      });
-    });
-  </script>
-
-
-  <script>
-    let currentTestimonialIndex = 0;
-    const testimonials = document.querySelectorAll('.testimonial-item');
-
-    function showTestimonial(index) {
-      testimonials.forEach((testimonial, idx) => {
-        testimonial.style.display = idx === index ? 'block' : 'none';
       });
     }
 
-    document.getElementById('prev-btn').addEventListener('click', () => {
-      currentTestimonialIndex = (currentTestimonialIndex - 1 + testimonials.length) % testimonials.length;
-      showTestimonial(currentTestimonialIndex);
+    // Navbar scroll
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('shadow-lg', 'bg-white/95');
+      } else {
+        nav.classList.remove('shadow-lg', 'bg-white/95');
+      }
     });
 
-    document.getElementById('next-btn').addEventListener('click', () => {
-      currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
-      showTestimonial(currentTestimonialIndex);
+    // Scroll to top
+    const topBtn = document.getElementById('topBtn');
+    if (topBtn) {
+      window.addEventListener('scroll', () => {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+          topBtn.style.opacity = '1';
+          topBtn.style.transform = 'translateY(0)';
+        } else {
+          topBtn.style.opacity = '0';
+          topBtn.style.transform = 'translateY(10px)';
+        }
+      });
+      topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    }
+
+    // Testimonials
+    const items = document.querySelectorAll('.testimonial-item');
+    const prevBtn = document.getElementById('prev-testimonial');
+    const nextBtn = document.getElementById('next-testimonial');
+    let current = 0;
+    function showTestimonial(index) {
+      items.forEach((el, i) => el.classList.toggle('hidden', i !== index));
+    }
+    if (prevBtn && nextBtn && items.length) {
+      prevBtn.addEventListener('click', () => {
+        current = (current - 1 + items.length) % items.length;
+        showTestimonial(current);
+      });
+      nextBtn.addEventListener('click', () => {
+        current = (current + 1) % items.length;
+        showTestimonial(current);
+      });
+    }
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const navHeight = document.querySelector('nav').offsetHeight;
+          window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - navHeight - 20, behavior: 'smooth' });
+          if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          }
+        }
+      });
     });
   </script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-      let currentIndex = 0;
-      const images = document.querySelectorAll('.slider-img');
-      const imageCount = images.length;
-
-      // Function to change image
-      const changeImage = () => {
-        // Hide all images
-        images.forEach((img) => {
-          img.style.display = 'none';
-        });
-
-        // Show the next image
-        images[currentIndex].style.display = 'block';
-
-        // Update the index to the next image
-        currentIndex = (currentIndex + 1) % imageCount;
-      };
-
-      // Show the first image initially
-      changeImage();
-
-      // Change the image every 3 seconds (3000 milliseconds)
-      setInterval(changeImage, 3000);
-    });
-  </script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js'></script>
-  <script src='https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js'></script>
-  <script src="js/hero.js"></script>
 </body>
-
 </html>
