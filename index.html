@@ -120,24 +120,27 @@
           <a href="https://www.instagram.com/greatscopeinsurance/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 rounded-full bg-brand-gold-light text-brand-muted hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-instagram"></i></a>
         </div>
         <div class="md:hidden">
-          <button class="mobile-menu-btn text-brand-muted hover:text-brand-dark p-2" aria-label="Toggle mobile menu">
-            <i class="fas fa-bars text-xl"></i>
+          <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+            <span></span>
+            <span></span>
+            <span></span>
           </button>
         </div>
       </div>
     </div>
-    <div class="mobile-menu md:hidden hidden bg-white border-t border-brand-gold-light">
-      <div class="px-4 pt-3 pb-4 space-y-1">
-        <a href="index.html" class="block px-4 py-3 text-base font-semibold text-brand-dark bg-brand-gold-light rounded-lg">Home</a>
-        <a href="about.html" class="block px-4 py-3 text-base font-medium text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light rounded-lg transition-colors">About</a>
-        <a href="insurance.html" class="block px-4 py-3 text-base font-medium text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light rounded-lg transition-colors">Our Products</a>
-        <a href="contact.html" class="block px-4 py-3 text-base font-medium text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light rounded-lg transition-colors">Contact</a>
-        <div class="flex justify-center space-x-4 pt-4 border-t border-brand-gold-light mt-2">
-          <a href="https://twitter.com/frankaizKenya" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="w-10 h-10 rounded-full bg-brand-gold-light text-brand-muted hover:bg-brand-gold flex items-center justify-center transition-all"><i class="fab fa-twitter"></i></a>
-          <a href="https://web.facebook.com/Greatscopeinsurance" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-10 h-10 rounded-full bg-brand-gold-light text-brand-muted hover:bg-brand-gold flex items-center justify-center transition-all"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-brand-gold-light text-brand-muted hover:bg-brand-gold flex items-center justify-center transition-all"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.instagram.com/greatscopeinsurance/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-10 h-10 rounded-full bg-brand-gold-light text-brand-muted hover:bg-brand-gold flex items-center justify-center transition-all"><i class="fab fa-instagram"></i></a>
-        </div>
+    <div class="mobile-overlay"></div>
+    <div class="mobile-menu">
+      <div class="menu-items">
+        <a href="index.html" class="active-page">Home</a>
+        <a href="about.html">About</a>
+        <a href="insurance.html">Our Products</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="menu-social">
+        <a href="https://twitter.com/frankaizKenya" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://web.facebook.com/Greatscopeinsurance" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/greatscopeinsurance/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
   </nav>
@@ -449,15 +452,14 @@
   <script src='https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js'></script>
   <script src="js/hero.js"></script>
   <script>
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    if (mobileMenuBtn && mobileMenu) {
-      const icon = mobileMenuBtn.querySelector('i');
-      mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-        icon.classList.toggle('fa-times');
-        icon.classList.toggle('fa-bars');
-      });
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const menu = document.querySelector('.mobile-menu');
+    const overlay = document.querySelector('.mobile-overlay');
+    function closeMenu() { menuBtn.classList.remove('active'); menu.classList.remove('active'); overlay.classList.remove('active'); }
+    function toggleMenu() { menuBtn.classList.toggle('active'); menu.classList.toggle('active'); overlay.classList.toggle('active'); }
+    if (menuBtn && menu && overlay) {
+      menuBtn.addEventListener('click', toggleMenu);
+      overlay.addEventListener('click', closeMenu);
     }
     const nav = document.querySelector('nav');
     window.addEventListener('scroll', () => {
@@ -495,10 +497,7 @@
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
           window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - document.querySelector('nav').offsetHeight - 20, behavior: 'smooth' });
-          if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-            mobileMenu.classList.add('hidden');
-            mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
-          }
+          if (menu && menu.classList.contains('active')) { closeMenu(); }
         }
       });
     });
