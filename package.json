@@ -1,0 +1,10 @@
+{
+  "name": "greatscope-website",
+  "private": true,
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./src/input.css -o ./css/tailwind.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}
