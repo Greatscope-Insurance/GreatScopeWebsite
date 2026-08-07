@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#1E1B2E">
+  <meta name="theme-color" content="#003478">
   <title>404 — Page Not Found | Greatscope Insurance Agency</title>
   <meta name="description" content="Page not found. Greatscope Insurance Agency — your trusted partner for comprehensive insurance solutions in East Africa.">
   <meta property="og:title" content="404 — Page Not Found | Greatscope Insurance Agency">
@@ -15,11 +15,12 @@
   <meta property="og:site_name" content="Greatscope Insurance Agency">
   <link rel="canonical" href="https://www.greatscopeinsurance.com/404">
   <link rel="icon" type="image/png" href="https://ik.imagekit.io/5zp8ovb7c/Greatscope/sized_logo_yZUD-_Hdz?updatedAt=1708010673725">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap"></noscript>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -38,26 +39,19 @@
       ]
     }
   </script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { inter: ['Inter', 'sans-serif'], display: ['DM Serif Display', 'serif'] },
-          colors: { 'brand-dark': '#1E1B2E', 'brand-muted': '#3B3552', 'brand-gold': '#E4C680', 'brand-gold-light': '#F8F4EC' }
-        }
-      }
-    }
-  </script>
 </head>
-<body class="font-inter antialiased bg-brand-gold-light min-h-screen flex items-center justify-center">
+<body class="font-inter antialiased bg-brand-paper min-h-screen flex items-center justify-center">
   <div class="text-center px-6 max-w-lg mx-auto">
-    <div class="w-20 h-20 bg-brand-dark rounded-2xl flex items-center justify-center mx-auto mb-8">
+    <div class="w-20 h-20 bg-brand-dark rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-lift">
       <i class="fas fa-shield-halved text-3xl text-brand-gold"></i>
     </div>
     <h1 class="text-7xl md:text-8xl font-display text-brand-dark mb-4">404</h1>
     <p class="text-xl text-brand-muted mb-2">Page not found</p>
     <p class="text-brand-muted/70 mb-10">The page you're looking for doesn't exist or has been moved.</p>
-    <a href="/" class="inline-block bg-brand-dark text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-brand-muted transition-all duration-300">Back to Home</a>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="/" class="btn-dark">Back to Home</a>
+      <a href="https://wa.me/254719151288" target="_blank" rel="noopener noreferrer" class="btn-whatsapp"><i class="fab fa-whatsapp text-lg"></i> Get Help</a>
+    </div>
   </div>
 </body>
 </html>

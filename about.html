@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#1E1B2E">
+  <meta name="theme-color" content="#003478">
   <title>Greatscope Insurance Agency | About Us</title>
   <meta name="description" content="Learn about Greatscope Insurance Agency, our mission, vision, values, and the leadership driving our commitment to providing exceptional insurance solutions in East Africa.">
   <meta name="keywords" content="about Greatscope, insurance leadership, insurance mission, insurance vision, company values, Francis Muendo, East Africa insurance">
@@ -16,19 +16,16 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:locale" content="en_KE">
   <meta property="og:site_name" content="Greatscope Insurance Agency">
-  <meta name="twitter:site" content="@frankaizKenya">  
-  <!-- Favicon -->
+  <meta name="twitter:site" content="@frankaizKenya">
   <link rel="icon" type="image/png" href="https://ik.imagekit.io/5zp8ovb7c/Greatscope/sized_logo_yZUD-_Hdz?updatedAt=1708010673725">
   <link rel="canonical" href="https://www.greatscopeinsurance.com/about">
-  
-  <!-- External Libraries -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/tailwind.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/about.css">
   <link rel="preconnect" href="https://ik.imagekit.io">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap"></noscript>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -72,16 +69,16 @@
   </script>
 </head>
 
-<body class="font-inter antialiased bg-brand-gold-light">
+<body class="font-inter antialiased bg-brand-paper">
   <a href="https://wa.me/254719151288" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:bg-[#128C7E] transition-all hover:scale-110">
     <i class="fab fa-whatsapp text-2xl"></i>
   </a>
 
   <!-- Contact Widget -->
-  <div id="multi-tab" onclick="toggleContactWidget()" class="fixed bottom-6 right-20 md:right-6 z-50 bg-brand-dark text-brand-gold p-4 rounded-full shadow-2xl cursor-pointer hover:scale-110 transition-all duration-300">
+  <div id="multi-tab" onclick="toggleContactWidget()" class="fixed bottom-6 right-20 md:bottom-24 md:right-6 z-50 bg-brand-dark text-brand-gold p-4 rounded-full shadow-2xl cursor-pointer hover:scale-110 transition-all duration-300">
     <i class="fas fa-comments text-xl"></i>
   </div>
-  
+
   <div id="contact-widget" class="fixed bottom-24 right-4 left-4 sm:left-auto sm:right-6 sm:w-80 z-50 bg-white rounded-2xl shadow-2xl p-6 transform translate-y-10 opacity-0 transition-all duration-300 border border-brand-gold/20" style="display: none;">
     <h4 class="text-xl font-bold text-brand-dark mb-4">Send us a message</h4>
     <form name="contact-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="space-y-4">
@@ -89,50 +86,65 @@
       <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
       <div>
         <label for="contact-name" class="block text-sm font-medium text-brand-muted mb-1">Name</label>
-        <input id="contact-name" name="name" type="text" class="w-full px-4 py-2 bg-brand-gold-light border-0 rounded-lg focus:ring-2 focus:ring-brand-gold" required>
+        <input id="contact-name" name="name" type="text" class="w-full px-4 py-2.5 bg-brand-gold-light border-0 rounded-lg focus:ring-2 focus:ring-brand-gold" required>
       </div>
       <div>
         <label for="contact-email" class="block text-sm font-medium text-brand-muted mb-1">Email</label>
-        <input id="contact-email" name="email" type="email" class="w-full px-4 py-2 bg-brand-gold-light border-0 rounded-lg focus:ring-2 focus:ring-brand-gold" required>
+        <input id="contact-email" name="email" type="email" class="w-full px-4 py-2.5 bg-brand-gold-light border-0 rounded-lg focus:ring-2 focus:ring-brand-gold" required>
       </div>
       <div>
         <label for="contact-message" class="block text-sm font-medium text-brand-muted mb-1">Message</label>
-        <textarea id="contact-message" name="message" rows="3" class="w-full px-4 py-2 bg-brand-gold-light border-0 rounded-lg focus:ring-2 focus:ring-brand-gold" required></textarea>
+        <textarea id="contact-message" name="message" rows="3" class="w-full px-4 py-2.5 bg-brand-gold-light border-0 rounded-lg focus:ring-2 focus:ring-brand-gold" required></textarea>
       </div>
       <button type="button" onclick="submitContactWithComments()" class="w-full bg-brand-dark text-white py-3 rounded-lg font-semibold hover:bg-brand-muted transition-all duration-300 tracking-wider uppercase text-sm">Get a Quote</button>
     </form>
     <div id="contact-response" class="mt-4"></div>
   </div>
 
-  <button id="topBtn" class="fixed bottom-6 left-6 z-50 bg-brand-dark text-white p-3.5 rounded-full shadow-2xl opacity-0 translate-y-10 transition-all duration-300 hover:bg-brand-muted hover:scale-110">
+  <button id="topBtn" aria-label="Back to top" class="fixed bottom-6 left-6 z-50 bg-brand-dark text-white p-3.5 rounded-full shadow-2xl opacity-0 translate-y-10 transition-all duration-300 hover:bg-brand-muted hover:scale-110">
     <i class="fas fa-arrow-up text-lg"></i>
   </button>
 
-  <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-brand-gold-light z-40 transition-all duration-300">
+  <header class="fixed top-0 w-full z-40">
+    <div class="hidden md:block bg-brand-dark text-white/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-11">
+          <div class="flex items-center gap-6 text-sm">
+            <a href="mailto:info@greatscopeinsurance.com" class="flex items-center gap-2 hover:text-brand-gold transition-colors"><i class="fas fa-envelope text-xs text-brand-gold"></i> info@greatscopeinsurance.com</a>
+            <a href="tel:+254719151288" class="flex items-center gap-2 hover:text-brand-gold transition-colors"><i class="fas fa-phone text-xs text-brand-gold"></i> +254 719 151 288</a>
+          </div>
+          <div class="flex items-center gap-6 text-sm font-medium">
+            <a href="https://wa.me/254719151288?text=Hi%20Greatscope%2C%20I%20would%20like%20to%20make%20a%20claim." target="_blank" rel="noopener noreferrer" class="hover:text-brand-gold transition-colors">Make a Claim</a>
+            <a href="insurance.html" class="hover:text-brand-gold transition-colors">Solution Center</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="bg-white border-b border-brand-gold-light transition-shadow duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16 md:h-20">
         <div class="flex items-center">
           <a href="index.html">
-            <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/greatscope_logo-removebg-preview.png?updatedAt=1727717017528" alt="Greatscope Logo" class="h-10 md:h-12 w-auto">
+            <img src="img/logo-mark.png" alt="Greatscope Insurance Agency" class="h-12 md:h-16 w-auto">
           </a>
         </div>
-        <div class="hidden md:block">
-          <div class="flex items-baseline space-x-1">
-            <a href="index.html" class="text-brand-muted hover:text-brand-dark px-4 py-2 rounded-lg text-sm font-medium transition-colors">Home</a>
+        <div class="hidden lg:block">
+          <div class="flex items-center gap-1">
+            <a href="index.html" class="relative text-brand-muted hover:text-brand-dark px-4 py-2 rounded-lg text-sm font-medium transition-colors">Home</a>
             <div class="relative group">
-              <a href="about.html" class="text-brand-dark font-semibold px-4 py-2 rounded-lg text-sm bg-brand-gold-light">About</a>
-              <div class="absolute left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-brand-gold-light opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              <a href="about.html" class="relative text-brand-dark font-semibold px-4 py-2 rounded-lg text-sm transition-colors after:absolute after:left-4 after:right-4 after:-bottom-1 after:h-0.5 after:rounded-full after:bg-brand-gold after:content-['']">About</a>
+              <div class="absolute left-0 mt-2 w-48 bg-white rounded-2xl shadow-card border border-brand-gold-light opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-50">
                 <div class="py-2">
                   <a href="#leadership" class="block px-4 py-2.5 text-sm text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light transition-colors">Leadership</a>
-                  <a href="#mission-vision" class="block px-4 py-2.5 text-sm text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light transition-colors">Mission & Vision</a>
+                  <a href="#mission-vision" class="block px-4 py-2.5 text-sm text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light transition-colors">Mission &amp; Vision</a>
                   <a href="#values" class="block px-4 py-2.5 text-sm text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light transition-colors">Company Values</a>
                   <a href="#key-numbers" class="block px-4 py-2.5 text-sm text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light transition-colors">Key Numbers</a>
                 </div>
               </div>
             </div>
             <div class="relative group">
-              <a href="insurance.html" class="text-brand-muted hover:text-brand-dark px-4 py-2 rounded-lg text-sm font-medium transition-colors">Our Products</a>
-              <div class="absolute left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-brand-gold-light opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              <a href="insurance.html" class="relative text-brand-muted hover:text-brand-dark px-4 py-2 rounded-lg text-sm font-medium transition-colors">Our Products</a>
+              <div class="absolute left-0 mt-2 w-48 bg-white rounded-2xl shadow-card border border-brand-gold-light opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-50">
                 <div class="py-2">
                   <a href="insurance.html#health-insurance" class="block px-4 py-2.5 text-sm text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light transition-colors">Health Insurance</a>
                   <a href="insurance.html#life-insurance" class="block px-4 py-2.5 text-sm text-brand-muted hover:text-brand-dark hover:bg-brand-gold-light transition-colors">Life Insurance</a>
@@ -141,33 +153,35 @@
                 </div>
               </div>
             </div>
-            <a href="contact.html" class="text-brand-muted hover:text-brand-dark px-4 py-2 rounded-lg text-sm font-medium transition-colors">Contact</a>
+            <a href="contact.html" class="relative text-brand-muted hover:text-brand-dark px-4 py-2 rounded-lg text-sm font-medium transition-colors">Contact</a>
           </div>
         </div>
-        <div class="hidden md:flex items-center space-x-3">
-          <a href="https://twitter.com/frankaizKenya" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="w-9 h-9 rounded-full bg-brand-gold-light text-brand-muted hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-twitter"></i></a>
-          <a href="https://web.facebook.com/Greatscopeinsurance" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-9 h-9 rounded-full bg-brand-gold-light text-brand-muted hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-9 h-9 rounded-full bg-brand-gold-light text-brand-muted hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.instagram.com/greatscopeinsurance/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 rounded-full bg-brand-gold-light text-brand-muted hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-instagram"></i></a>
+        <div class="hidden lg:flex items-center">
+          <a href="https://wa.me/254719151288" target="_blank" rel="noopener noreferrer" class="btn-gold !px-5 !py-2.5 text-sm"><i class="fab fa-whatsapp text-base"></i> Get a Quote</a>
         </div>
-        <div class="md:hidden">
-          <button class="hamburger-btn" aria-label="Toggle mobile menu">
+        <div class="lg:hidden">
+          <button class="hamburger-btn" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
             <i class="fas fa-bars"></i>
           </button>
         </div>
       </div>
     </div>
   </nav>
+  </header>
 
   <div class="mobile-overlay"></div>
-  <div class="mobile-menu">
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="flex items-center justify-between px-5 pt-5 pb-4 border-b border-brand-gold-light">
+      <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/greatscope_logo.png?updatedAt=1727716546739" alt="Greatscope Logo" class="h-12 w-auto">
+      <button class="menu-close" aria-label="Close menu"><i class="fas fa-times"></i></button>
+    </div>
     <div class="menu-items">
       <a href="index.html">Home</a>
       <div class="menu-item-has-children">
         <a href="about.html" class="menu-parent active-page">About <i class="fas fa-chevron-down"></i></a>
         <div class="sub-menu">
           <a href="about.html#leadership">Leadership</a>
-          <a href="about.html#mission-vision">Mission & Vision</a>
+          <a href="about.html#mission-vision">Mission &amp; Vision</a>
           <a href="about.html#values">Company Values</a>
           <a href="about.html#key-numbers">Key Numbers</a>
         </div>
@@ -183,6 +197,9 @@
       </div>
       <a href="contact.html">Contact</a>
     </div>
+    <div class="menu-cta">
+      <a href="https://wa.me/254719151288" target="_blank" rel="noopener noreferrer" class="btn-whatsapp text-sm"><i class="fab fa-whatsapp text-lg"></i> Get a Quote</a>
+    </div>
     <div class="menu-social">
       <a href="https://twitter.com/frankaizKenya" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
       <a href="https://web.facebook.com/Greatscopeinsurance" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -191,18 +208,11 @@
     </div>
   </div>
 
-  <!-- Hero Section -->
-  <section class="relative min-h-[55vh] md:min-h-[65vh] flex items-center justify-center overflow-hidden pt-16 md:pt-20">
-    <div class="absolute inset-0 bg-brand-dark"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/80 via-brand-dark to-brand-muted/80"></div>
-    <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 25% 25%, #E4C680 1px, transparent 1px); background-size: 40px 40px;"></div>
-    <div class="absolute inset-0">
-      <div class="absolute top-1/4 left-1/4 w-48 h-48 md:w-72 md:h-72 bg-brand-gold/5 rounded-full blur-3xl animate-pulse"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-60 h-60 md:w-96 md:h-96 bg-brand-gold/5 rounded-full blur-3xl animate-pulse" style="animation-delay: 1.5s;"></div>
-    </div>
+  <!-- Hero -->
+  <section class="relative min-h-[55vh] md:min-h-[60vh] flex items-center justify-center overflow-hidden pt-20 md:pt-28 bg-brand-darker">
     <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-      <span class="text-brand-gold font-semibold text-sm uppercase tracking-[0.2em]">About Us</span>
-      <h1 class="text-5xl md:text-8xl font-display mt-4 mb-8 leading-tight">
+      <span class="section-eyebrow text-white">About Us</span>
+      <h1 class="text-4xl sm:text-5xl md:text-7xl font-display mt-4 mb-8 leading-tight">
         About <span class="text-brand-gold">Greatscope</span>
       </h1>
       <p class="text-lg sm:text-xl md:text-2xl text-white/60 max-w-2xl mx-auto leading-relaxed">
@@ -211,42 +221,39 @@
     </div>
   </section>
 
-  <!-- Leadership Section -->
+  <!-- Leadership -->
   <section id="leadership" class="py-20 md:py-28 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-14 md:mb-20 reveal">
-        <span class="text-brand-gold font-semibold text-sm uppercase tracking-[0.2em]">Our Leader</span>
-        <h2 class="text-4xl md:text-7xl font-display text-brand-dark mt-3 mb-8 gold-accent-border">Leadership Excellence</h2>
+        <span class="section-eyebrow">Our Leader</span>
+        <h2 class="text-4xl md:text-6xl font-display text-brand-dark mt-4 mb-4">Leadership Excellence</h2>
         <div class="gold-divider"></div>
       </div>
 
-      <div class="bg-brand-gold-light rounded-2xl p-8 md:p-12 shadow-sm border border-brand-gold/10 gold-card reveal">
+      <div class="card bg-brand-gold-light p-8 md:p-12 gold-card reveal">
         <div class="grid md:grid-cols-5 gap-8 md:gap-12 items-center">
           <div class="md:col-span-2 relative">
             <div class="absolute -inset-2 bg-brand-gold/20 rounded-xl blur"></div>
             <img src="https://ik.imagekit.io/5zp8ovb7c/Kaiti%20Greening%20Champions/images/Leaders/Francis-Muendo.jpeg"
-     alt="Francis Muendo"
-     loading="lazy" decoding="async"
-     class="relative rounded-xl w-full h-auto max-h-[450px] object-cover object-top shadow-lg">
+                 alt="Francis Muendo"
+                 loading="lazy" decoding="async"
+                 class="relative rounded-xl w-full h-auto max-h-[450px] object-cover object-top shadow-lg">
           </div>
-          
           <div class="md:col-span-3 space-y-5">
             <div>
               <h3 class="text-3xl md:text-4xl font-display text-brand-dark mb-2">Francis Muendo AIIK</h3>
-              <p class="text-lg text-brand-gold font-semibold">Managing Director</p>
+              <p class="text-lg text-brand-gold-deep font-semibold">Managing Director</p>
             </div>
-            
             <div class="space-y-4 text-brand-muted text-base md:text-lg">
               <p class="leading-relaxed">
-                Francis holds a bachelor's degree in <strong class="text-brand-dark">Actuarial Science</strong> from 
-                <strong class="text-brand-dark">Jomo Kenyatta University of Agriculture and Technology</strong> and a 
+                Francis holds a bachelor's degree in <strong class="text-brand-dark">Actuarial Science</strong> from
+                <strong class="text-brand-dark">Jomo Kenyatta University of Agriculture and Technology</strong> and a
                 <strong class="text-brand-dark">Diploma in Insurance</strong> from the College of Insurance.
               </p>
-              
               <p class="leading-relaxed">
-                With over <strong class="text-brand-dark">8 years</strong> of experience in the insurance industry, 
-                Francis has worked for various insurance companies, specializing in Insurance Underwriting, Claims Management, 
-                and Marketing. He serves as an <strong class="text-brand-dark">Executive Council Member at the 
+                With over <strong class="text-brand-dark">8 years</strong> of experience in the insurance industry,
+                Francis has worked for various insurance companies, specializing in Insurance Underwriting, Claims Management,
+                and Marketing. He serves as an <strong class="text-brand-dark">Executive Council Member at the
                 Insurance Institute of Kenya</strong>, contributing to shaping industry policies and standards.
               </p>
             </div>
@@ -256,53 +263,54 @@
     </div>
   </section>
 
-  <!-- About Us Section -->
+  <!-- About Us -->
   <section class="py-20 md:py-28 bg-brand-gold-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-14 md:mb-20 reveal">
-        <span class="text-brand-gold font-semibold text-sm uppercase tracking-[0.2em]">Our Core Values</span>
-        <h2 class="text-4xl md:text-7xl font-display text-brand-dark mt-3 mb-8 gold-accent-border">What We Stand For</h2>
+        <span class="section-eyebrow">Our Core Values</span>
+        <h2 class="text-4xl md:text-6xl font-display text-brand-dark mt-4 mb-4">What We Stand For</h2>
         <div class="gold-divider"></div>
       </div>
-
-      <div class="max-w-4xl mx-auto">
-        <div class="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-brand-gold/10">
+      <div class="max-w-4xl mx-auto reveal reveal-delay-1">
+        <div class="card p-8 md:p-12 shadow-soft gold-card">
           <div class="space-y-5 text-brand-muted text-base md:text-lg leading-relaxed">
             <p>
-              Greatscope Insurance Agency is a premier insurance consultancy and brokerage firm that provides 
+              Greatscope Insurance Agency is a premier insurance consultancy and brokerage firm that provides
               comprehensive insurance services to our valued clients across East Africa.
             </p>
-            
             <p>
-              Our extensive services portfolio includes <strong class="text-brand-dark">Motor Insurance, 
-              Fire and Perils Insurance, Domestic Package Insurance, Contractors All Risks, WIBA and ECL, 
-              Personal Accident, Marine Insurance, Group Life Insurance, Travel Insurance, Goods in Transit, 
+              Our extensive services portfolio includes <strong class="text-brand-dark">Motor Insurance,
+              Fire and Perils Insurance, Domestic Package Insurance, Contractors All Risks, WIBA and ECL,
+              Personal Accident, Marine Insurance, Group Life Insurance, Travel Insurance, Goods in Transit,
               Medical Insurance, Credit Life Insurance, and Whole Life Insurance.</strong>
             </p>
-            
             <p>
-              We are committed to providing our clients with the highest quality of service, backed by 
+              We are committed to providing our clients with the highest quality of service, backed by
               expertise, integrity, and unwavering dedication to your protection needs.
             </p>
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-dark bg-white rounded-full px-3 py-1.5 border border-brand-gold/30"><i class="fas fa-certificate text-brand-gold"></i> IRA-Regulated Broker</span>
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-dark bg-white rounded-full px-3 py-1.5 border border-brand-gold/30"><i class="fas fa-building-columns text-brand-gold"></i> Insurance Institute of Kenya</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Mission & Vision Section -->
+  <!-- Mission & Vision -->
   <section id="mission-vision" class="py-20 md:py-28 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-14 md:mb-20 reveal">
-        <span class="text-brand-gold font-semibold text-sm uppercase tracking-[0.2em]">By The Numbers</span>
-        <h2 class="text-4xl md:text-7xl font-display text-brand-dark mt-3 mb-8 gold-accent-border">Key Milestones</h2>
+        <span class="section-eyebrow">By The Numbers</span>
+        <h2 class="text-4xl md:text-6xl font-display text-brand-dark mt-4 mb-4">Key Milestones</h2>
         <div class="gold-divider"></div>
       </div>
 
       <div class="grid md:grid-cols-2 gap-8 md:gap-12">
-        <div class="group relative overflow-hidden bg-brand-dark rounded-2xl p-8 md:p-10 text-white transform hover:-translate-y-1 transition-all duration-500 shadow-lg">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 rounded-full -translate-y-16 translate-x-16"></div>
-          <div class="absolute bottom-0 left-0 w-24 h-24 bg-brand-gold/5 rounded-full translate-y-12 -translate-x-12"></div>
+        <div class="group relative overflow-hidden bg-brand-dark rounded-2xl p-8 md:p-10 text-white transform hover:-translate-y-1 transition-all duration-500 shadow-lift reveal">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-brand-gold/10 rounded-full -translate-y-16 translate-x-16"></div>
+          <div class="absolute bottom-0 left-0 w-24 h-24 bg-brand-gold/10 rounded-full translate-y-12 -translate-x-12"></div>
           <div class="relative z-10">
             <div class="w-16 h-16 bg-brand-gold/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
               <i class="fas fa-binoculars text-2xl text-brand-gold"></i>
@@ -313,17 +321,16 @@
             </p>
           </div>
         </div>
-
-        <div class="group relative overflow-hidden bg-brand-muted rounded-2xl p-8 md:p-10 text-white transform hover:-translate-y-1 transition-all duration-500 shadow-lg">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 rounded-full -translate-y-16 translate-x-16"></div>
-          <div class="absolute bottom-0 left-0 w-24 h-24 bg-brand-gold/5 rounded-full translate-y-12 -translate-x-12"></div>
+        <div class="group relative overflow-hidden bg-brand-muted rounded-2xl p-8 md:p-10 text-white transform hover:-translate-y-1 transition-all duration-500 shadow-lift reveal reveal-delay-1">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-brand-gold/10 rounded-full -translate-y-16 translate-x-16"></div>
+          <div class="absolute bottom-0 left-0 w-24 h-24 bg-brand-gold/10 rounded-full translate-y-12 -translate-x-12"></div>
           <div class="relative z-10">
             <div class="w-16 h-16 bg-brand-gold/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
               <i class="fas fa-bullseye text-2xl text-brand-gold"></i>
             </div>
             <h3 class="text-3xl md:text-5xl font-display mb-6">Our Mission</h3>
             <p class="text-lg md:text-xl leading-relaxed text-white/70">
-              To maintain the highest standards of integrity and professionalism in our relationship with our clients. 
+              To maintain the highest standards of integrity and professionalism in our relationship with our clients.
               To provide tailor made insurance solutions in a changing insurance market.
             </p>
           </div>
@@ -336,8 +343,8 @@
   <section id="values" class="py-20 md:py-28 bg-brand-gold-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-14 md:mb-20 reveal">
-        <span class="text-brand-gold font-semibold text-sm uppercase tracking-[0.2em]">Our Mission & Vision</span>
-        <h2 class="text-4xl md:text-7xl font-display text-brand-dark mt-3 mb-8 gold-accent-border">Guiding Our Purpose</h2>
+        <span class="section-eyebrow">Our Mission &amp; Vision</span>
+        <h2 class="text-4xl md:text-6xl font-display text-brand-dark mt-4 mb-4">Guiding Our Purpose</h2>
         <div class="gold-divider"></div>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="values-grid"></div>
@@ -346,243 +353,78 @@
 
   <!-- Key Numbers -->
   <section id="key-numbers" class="py-20 md:py-28 bg-brand-dark text-white relative overflow-hidden">
-    <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 25% 25%, #E4C680 1px, transparent 1px); background-size: 40px 40px;"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-14 md:mb-20">
-        <span class="text-brand-gold font-semibold text-sm uppercase tracking-[0.2em]">Impact</span>
-        <h2 class="text-4xl md:text-7xl font-display mt-3 mb-8">Our Achievements</h2>
-        <div class="w-16 h-0.5 bg-brand-gold mx-auto"></div>
-        <p class="text-white/50 text-lg max-w-3xl mx-auto mt-5 leading-relaxed">Key metrics highlighting our partnerships, customer satisfaction, and reach.</p>
+      <div class="text-center mb-14 md:mb-20 reveal">
+        <span class="section-eyebrow text-white">Impact</span>
+        <h2 class="text-4xl md:text-6xl font-display mt-4 mb-4">Our Achievements</h2>
+        <div class="gold-divider"></div>
+        <p class="text-white/50 text-lg max-w-3xl mx-auto mt-6 leading-relaxed">Key metrics highlighting our partnerships, customer satisfaction, and reach.</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="key-numbers-grid"></div>
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="py-20 md:py-28 bg-brand-dark">
+  <!-- CTA -->
+  <section class="py-20 md:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center reveal">
-        <span class="text-brand-gold font-semibold text-sm uppercase tracking-[0.2em]">Get Started</span>
-        <h2 class="text-4xl md:text-7xl font-display text-white mt-3 mb-8 gold-accent-border">Ready to Secure Your Future?</h2>
-        <p class="text-lg md:text-xl text-white/50 mb-10 max-w-2xl mx-auto leading-relaxed">Partner with Greatscope Insurance Agency for expert advice and comprehensive coverage tailored to your needs.</p>
-        <a href="https://wa.me/254719151288" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-[#25D366] text-white font-semibold py-3.5 px-10 rounded-lg text-lg hover:bg-[#128C7E] transition-all duration-300 transform hover:-translate-y-0.5 shadow-md"><i class="fab fa-whatsapp text-xl"></i> Chat on WhatsApp</a>
+        <span class="section-eyebrow">Get Started</span>
+        <h2 class="text-4xl md:text-6xl font-display text-brand-dark mt-4 mb-6 leading-tight">Ready to Secure Your Future?</h2>
+        <p class="text-lg md:text-xl text-brand-muted mb-10 max-w-2xl mx-auto leading-relaxed">Partner with Greatscope Insurance Agency for expert advice and comprehensive coverage tailored to your needs.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="https://wa.me/254719151288" target="_blank" rel="noopener noreferrer" class="btn-whatsapp"><i class="fab fa-whatsapp text-xl"></i> Chat on WhatsApp</a>
+          <a href="insurance.html" class="btn-dark">Explore Products <i class="fas fa-arrow-right text-sm"></i></a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-brand-dark text-white py-14 px-6 md:px-10">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
-        <div>
+  <footer class="bg-brand-darker text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div class="lg:col-span-2">
           <div class="bg-white rounded-xl p-3 inline-block mb-6">
-            <img src="https://ik.imagekit.io/5zp8ovb7c/Greatscope/Hero/greatscope_logo-removebg-preview.png?updatedAt=1727717017528" alt="Greatscope Logo" class="h-12 w-auto">
+            <img src="img/logo-mark.png" alt="Greatscope Insurance Agency" class="h-12 w-auto">
           </div>
-          <div class="space-y-3 text-sm text-white/50 leading-relaxed">
-            <p>Greatscope serves as the unwavering bedrock of trust, providing steadfast commitment to safeguard what holds paramount importance across the varied realms of life, health, motor, and housing insurance.</p>
-            <div class="mt-6 space-y-3">
-              <p class="flex items-center"><i class="fas fa-phone fa-fw mr-3 text-brand-gold"></i> <a href="tel:+254719151288" class="hover:underline">0719 151 288</a> / <a href="tel:+254797313199" class="hover:underline">0797 313 199</a></p>
-              <p class="flex items-center"><i class="fas fa-envelope fa-fw mr-3 text-brand-gold"></i> info@greatscopeinsurance.com</p>
-              <p class="flex items-start"><i class="fas fa-location-dot fa-fw mr-3 text-brand-gold mt-1"></i> Portal Place House 4th Floor, Muindi Mbingu Street.</p>
-            </div>
+          <p class="text-white/50 text-sm leading-relaxed max-w-md">Greatscope serves as the unwavering bedrock of trust, providing steadfast commitment to safeguard what holds paramount importance across the varied realms of life, health, motor, and housing insurance.</p>
+          <div class="flex flex-wrap gap-2 mt-6">
+            <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-white/80 bg-white/10 rounded-full px-3 py-1.5"><i class="fas fa-certificate text-brand-gold"></i> IRA-Regulated Broker</span>
+            <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-white/80 bg-white/10 rounded-full px-3 py-1.5"><i class="fas fa-building-columns text-brand-gold"></i> Insurance Institute of Kenya</span>
           </div>
-        </div>
-        <div class="md:pl-8 md:border-l border-white/10">
-          <h5 class="text-lg font-semibold mb-5 text-white">Stay Connected</h5>
-          <div class="flex space-x-3 mb-8">
+          <div class="flex space-x-3 mt-6">
             <a href="https://twitter.com/frankaizKenya" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="w-10 h-10 rounded-full bg-white/10 text-white/50 hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-twitter"></i></a>
             <a href="https://web.facebook.com/Greatscopeinsurance" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-10 h-10 rounded-full bg-white/10 text-white/50 hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.linkedin.com/company/greatscope-insurance-agency/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-white/10 text-white/50 hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-linkedin"></i></a>
             <a href="https://www.instagram.com/greatscopeinsurance/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-10 h-10 rounded-full bg-white/10 text-white/50 hover:bg-brand-gold hover:text-brand-dark flex items-center justify-center transition-all"><i class="fab fa-instagram"></i></a>
           </div>
-
+        </div>
+        <div>
+          <span class="block text-white font-semibold mb-5">Quick Links</span>
+          <ul class="space-y-3 text-sm text-white/50">
+            <li><a href="index.html" class="hover:text-brand-gold transition-colors">Home</a></li>
+            <li><a href="about.html" class="hover:text-brand-gold transition-colors">About Us</a></li>
+            <li><a href="insurance.html" class="hover:text-brand-gold transition-colors">Our Products</a></li>
+            <li><a href="contact.html" class="hover:text-brand-gold transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="block text-white font-semibold mb-5">Get in Touch</span>
+          <ul class="space-y-3 text-sm text-white/50">
+            <li class="flex items-center gap-3"><i class="fas fa-phone text-brand-gold"></i> <a href="tel:+254719151288" class="hover:text-brand-gold">0719 151 288</a> / <a href="tel:+254797313199" class="hover:text-brand-gold">0797 313 199</a></li>
+            <li class="flex items-center gap-3"><i class="fas fa-envelope text-brand-gold"></i> info@greatscopeinsurance.com</li>
+            <li class="flex items-start gap-3"><i class="fas fa-location-dot text-brand-gold mt-1"></i> Portal Place House, 4th Floor, Muindi Mbingu Street, Nairobi</li>
+          </ul>
+          <a href="https://wa.me/254719151288" target="_blank" rel="noopener noreferrer" class="btn-whatsapp !px-5 !py-2.5 text-sm mt-6"><i class="fab fa-whatsapp text-base"></i> Chat on WhatsApp</a>
         </div>
       </div>
-      <div class="border-t border-white/10 pt-6 mt-10 text-center">
+      <div class="border-t border-white/10 pt-6 mt-12 flex flex-col sm:flex-row items-center justify-between gap-3">
         <p class="text-xs text-white/30">&copy; 2026 Greatscope Insurance Agency. All rights reserved.</p>
-        <p class="text-xs text-white/30 mt-2">Designed by <a href="https://impelweb.studio" target="_blank" rel="noopener noreferrer" class="text-brand-gold hover:underline">Impel Web</a></p>
+        <p class="text-xs text-white/30">Designed by <a href="https://impelweb.studio" target="_blank" rel="noopener noreferrer" class="text-brand-gold hover:underline">Impel Web</a></p>
       </div>
     </div>
   </footer>
-  
-  <script>
-    const menuBtn = document.querySelector('.hamburger-btn');
-    const menu = document.querySelector('.mobile-menu');
-    const overlay = document.querySelector('.mobile-overlay');
-    function closeMenu() {
-      menuBtn.classList.remove('active');
-      menu.classList.remove('active');
-      overlay.classList.remove('active');
-      document.body.classList.remove('overflow-hidden');
-      menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-    }
-    function toggleMenu() {
-      const opening = !menu.classList.contains('active');
-      menuBtn.classList.toggle('active');
-      menu.classList.toggle('active');
-      overlay.classList.toggle('active');
-      document.body.classList.toggle('overflow-hidden', opening);
-      menuBtn.innerHTML = opening ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-    }
-    if (menuBtn && menu && overlay) {
-      menuBtn.addEventListener('click', toggleMenu);
-      overlay.addEventListener('click', closeMenu);
-    }
-    document.querySelectorAll('.menu-parent').forEach(function(el) {
-      el.addEventListener('click', function(e) {
-        e.preventDefault();
-        this.closest('.menu-item-has-children').classList.toggle('open');
-      });
-    });
-    document.querySelectorAll('.sub-menu a').forEach(function(el) {
-      el.addEventListener('click', closeMenu);
-    });
 
-    // Navbar scroll effect
-    const nav = document.querySelector('nav');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        nav.classList.add('shadow-lg', 'bg-white/95');
-      } else {
-        nav.classList.remove('shadow-lg', 'bg-white/95');
-      }
-    });
-
-    // Scroll to Top button
-    const topBtn = document.getElementById('topBtn');
-    if (topBtn) {
-      window.onscroll = function() {
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-          topBtn.style.opacity = "1";
-          topBtn.style.transform = "translateY(0)";
-        } else {
-          topBtn.style.opacity = "0";
-          topBtn.style.transform = "translateY(10px)";
-        }
-      };
-      topBtn.addEventListener('click', () => {
-        window.scrollTo({top: 0, behavior: 'smooth'});
-      });
-    }
-
-    // Contact Widget
-    const contactWidget = document.getElementById('contact-widget');
-    const multiTab = document.getElementById('multi-tab');
-    let widgetOpen = false;
-
-    function toggleContactWidget() {
-      widgetOpen = !widgetOpen;
-      if (widgetOpen) {
-        contactWidget.style.display = 'block';
-        setTimeout(() => {
-          contactWidget.style.opacity = '1';
-          contactWidget.style.transform = 'translateY(0)';
-          multiTab.innerHTML = '<i class="fas fa-times text-xl"></i>'; 
-        }, 10);
-      } else {
-        contactWidget.style.opacity = '0';
-        contactWidget.style.transform = 'translateY(10px)';
-        multiTab.innerHTML = '<i class="fas fa-comments text-xl"></i>'; 
-        setTimeout(() => {
-          contactWidget.style.display = 'none';
-        }, 300);
-      }
-    }
-
-    function submitContactWithComments() {
-      const form = document.querySelector('#contact-widget form');
-      const data = new FormData(form);
-      const responseDiv = document.getElementById('contact-response');
-
-      if (!data.get('name') || !data.get('email') || !data.get('message')) {
-        responseDiv.innerHTML = '<p class="text-red-500 text-sm">Please fill in all fields.</p>';
-        return;
-      }
-
-      responseDiv.innerHTML = '<p class="text-yellow-600 text-sm">Sending...</p>';
-
-      fetch('/', { method: 'POST', body: new URLSearchParams(data), headers: { 'Content-Type': 'application/x-www-form-urlencoded' } })
-        .then(() => {
-          responseDiv.innerHTML = '<p class="text-green-500 text-sm">Thank you! Your message has been sent.</p>';
-          form.reset();
-          setTimeout(() => { toggleContactWidget(); responseDiv.innerHTML = ''; }, 2000);
-        })
-        .catch(() => {
-          responseDiv.innerHTML = '<p class="text-red-500 text-sm">Something went wrong. Please try again.</p>';
-        });
-    }
-    
-    // Smooth scroll for internal links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          const navHeight = document.querySelector('nav').offsetHeight;
-          const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
-          
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-          if (menu && menu.classList.contains('active')) { closeMenu(); }
-        }
-      });
-    });
-
-    // Render dynamic content for Values and Key Numbers sections
-    function renderDynamicContent() {
-      const valuesSection = document.querySelector('#values-grid');
-      if (valuesSection) {
-        const valuesData = [
-          { icon: 'fas fa-eye', title: 'Transparency', desc: 'We value open and honest communication in all our interactions and business practices.' },
-          { icon: 'fas fa-shield-halved', title: 'Integrity', desc: 'We uphold the highest standards of honesty and ethical conduct in all our dealings.' },
-          { icon: 'fas fa-heart', title: 'Customer Focus', desc: 'We strive to provide exceptional service and exceed our customers\' expectations.' },
-          { icon: 'fas fa-lightbulb', title: 'Innovation', desc: 'We continuously innovate to improve our products and services for better client experiences.' }
-        ];
-        valuesSection.innerHTML = '';
-        valuesData.forEach(value => {
-          const div = document.createElement('div');
-          div.className = "group bg-white rounded-xl p-6 md:p-8 shadow-sm hover:shadow-lg transform hover:-translate-y-1 transition-all duration-500 border border-brand-gold/10 hover:border-brand-gold/30";
-          div.innerHTML = `
-            <div class="w-14 h-14 bg-brand-dark rounded-xl flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300">
-              <i class="${value.icon} text-xl text-brand-gold"></i>
-            </div>
-            <h4 class="text-lg font-bold text-brand-dark mb-2">${value.title}</h4>
-            <p class="text-brand-muted leading-relaxed text-sm">${value.desc}</p>
-          `;
-          valuesSection.appendChild(div);
-        });
-      }
-
-      const keyNumbersSection = document.querySelector('#key-numbers-grid');
-      if (keyNumbersSection) {
-        const keyNumbersData = [
-          { value: '12+', label: 'Insurance Partners' },
-          { value: '99.7%', label: 'Customer Satisfaction' },
-          { value: '7', label: 'National Awards' },
-          { value: '234+', label: 'Clients Covered' }
-        ];
-        keyNumbersSection.innerHTML = '';
-        keyNumbersData.forEach(item => {
-          const div = document.createElement('div');
-          div.className = "text-center group";
-          div.innerHTML = `
-            <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 md:p-8 group-hover:bg-white/10 transition-all duration-300 border border-white/5">
-              <div class="text-4xl md:text-5xl font-bold mb-2 text-brand-gold font-display">${item.value}</div>
-              <p class="text-base md:text-lg text-white/50">${item.label}</p>
-            </div>
-          `;
-          keyNumbersSection.appendChild(div);
-        });
-      }
-    }
-    document.addEventListener('DOMContentLoaded', renderDynamicContent);
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-    }, { threshold: 0.15 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
+  <script src="js/script.min.js"></script>
 </body>
 </html>
