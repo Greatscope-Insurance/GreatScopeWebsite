@@ -19,7 +19,7 @@ export const homePage = defineType({
             defineField({ name: 'label', title: 'Eyebrow label', type: 'string' }),
             defineField({ name: 'title', title: 'Title', type: 'string', validation: (r) => r.required() }),
             defineField({ name: 'subtitle', title: 'Subtitle', type: 'text', rows: 3 }),
-            defineField({ name: 'imageUrl', title: 'Background image URL', type: 'url', validation: (r) => r.uri({ scheme: ['http', 'https'] }) }),
+            defineField({ name: 'image', title: 'Background image', type: 'image', options: { hotspot: true } }),
             defineField({ name: 'exploreHref', title: 'Explore products link', type: 'string', description: 'e.g. insurance.html#health-insurance' }),
           ],
         },

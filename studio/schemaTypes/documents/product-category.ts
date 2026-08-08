@@ -18,13 +18,7 @@ export const productCategory = defineType({
     }),
     defineField({ name: 'icon', title: 'Icon (Font Awesome)', type: 'string', description: 'e.g. "fas fa-heartbeat"', validation: (r) => r.required() }),
     defineField({ name: 'description', title: 'Description', type: 'text', rows: 3 }),
-    defineField({
-      name: 'bannerImageUrl',
-      title: 'Banner Image URL',
-      type: 'url',
-      description: 'URL of the category banner image',
-      validation: (r) => r.uri({ scheme: ['http', 'https'] }),
-    }),
+    defineField({ name: 'banner', title: 'Banner image', type: 'image', options: { hotspot: true } }),
     defineField({ name: 'order', title: 'Order', type: 'number', initialValue: 0 }),
   ],
 })

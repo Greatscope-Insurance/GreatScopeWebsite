@@ -10,7 +10,7 @@ export const aboutPage = defineType({
   fields: [
     defineField({ name: 'leaderName', title: 'Leader name', type: 'string', validation: (r) => r.required() }),
     defineField({ name: 'leaderTitle', title: 'Leader title', type: 'string' }),
-    defineField({ name: 'leaderImageUrl', title: 'Leader image URL', type: 'url', validation: (r) => r.uri({ scheme: ['http', 'https'] }) }),
+    defineField({ name: 'leaderImage', title: 'Leader image', type: 'image', options: { hotspot: true } }),
     defineField({
       name: 'leaderBio',
       title: 'Leader bio (paragraphs)',

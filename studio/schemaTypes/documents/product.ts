@@ -15,12 +15,7 @@ export const product = defineType({
       description: 'Stable slug used to identify/upsert this product across imports, e.g. "motor-insurance"',
     }),
     defineField({ name: 'description', title: 'Description', type: 'text', rows: 3 }),
-    defineField({
-      name: 'imageUrl',
-      title: 'Image URL',
-      type: 'url',
-      validation: (r) => r.uri({ scheme: ['http', 'https'] }),
-    }),
+    defineField({ name: 'image', title: 'Image', type: 'image', options: { hotspot: true } }),
     defineField({
       name: 'category',
       title: 'Category',

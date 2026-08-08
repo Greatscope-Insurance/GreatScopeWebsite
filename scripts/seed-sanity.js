@@ -13,15 +13,13 @@ const PROJECT_ID = '10dparpu';
 const DATASET = 'production';
 const API_VERSION = '2026-02-01';
 const ENDPOINT = `https://${PROJECT_ID}.api.sanity.io/v${API_VERSION}/data/mutate/${DATASET}`;
+const ASSET = `https://${PROJECT_ID}.api.sanity.io/v${API_VERSION}/assets/images/${DATASET}`;
 const READ = `https://${PROJECT_ID}.apicdn.sanity.io/v${API_VERSION}/data/query/${DATASET}`;
 
 async function mutate(mutations) {
   const res = await fetch(ENDPOINT, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`,
-    },
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
     body: JSON.stringify({ mutations }),
   });
   if (!res.ok) {
@@ -29,6 +27,31 @@ async function mutate(mutations) {
     throw new Error(`Sanity mutate failed (${res.status}): ${text.slice(0, 400)}`);
   }
   return res.json();
+}
+
+function sniffContentType(buf) {
+  const l = buf.toString('latin1', 0, 12);
+  if (buf.length >= 12 && l.slice(0, 4) === 'RIFF' && l.slice(8, 12) === 'WEBP') return 'image/webp';
+  if (buf.length >= 8 && buf[0] === 0x89 && l.slice(1, 4) === 'PNG') return 'image/png';
+  if (buf.length >= 3 && buf[0] === 0xff && buf[1] === 0xd8 && buf[2] === 0xff) return 'image/jpeg';
+  if (l.slice(0, 3) === 'GIF') return 'image/gif';
+  if (/^\s*(<svg|<\\?xml|<!DOCTYPE)/i.test(buf.toString('latin1', 0, 300))) return 'image/svg+xml';
+  return 'image/png';
+}
+
+async function uploadImage(url, label) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`fetch ${label} -> ${res.status}`);
+  const buf = Buffer.from(await res.arrayBuffer());
+  const ct = sniffContentType(buf);
+  const up = await fetch(ASSET, {
+    method: 'POST',
+    headers: { 'Content-Type': ct, Authorization: `Bearer ${token}` },
+    body: new Uint8Array(buf),
+  });
+  const json = await up.json();
+  if (!up.ok) throw new Error(`upload ${label} (${ct}) -> ${up.status}: ${(json.message || '').slice(0, 150)}`);
+  return { _type: 'image', asset: { _type: 'reference', _ref: json.document._id } };
 }
 
 const U = 'https://images.unsplash.com/';
@@ -55,125 +78,43 @@ const siteSettings = {
   ],
 };
 
-const homePage = {
-  _id: 'homePage',
-  _type: 'homePage',
-  heroSlides: [
-    {
-      label: 'Health Insurance',
-      title: 'Your health is your wealth',
-      subtitle:
-        'Comprehensive medical cover for individuals, families and corporates — fast, efficient and professional care at the hour of need.',
-      imageUrl: U + 'photo-1559757175-5700dde675bc?w=1600&q=80&fm=webp',
-      exploreHref: 'insurance.html#health-insurance',
-    },
-    {
-      label: 'Life & Pension',
-      title: "Secure your family's future",
-      subtitle:
-        'Flexible life cover, endowments and pension plans that give you and your loved ones lasting financial security.',
-      imageUrl: U + 'photo-1511895426328-dc8714191300?w=1600&q=80&fm=webp',
-      exploreHref: 'insurance.html#life-insurance',
-    },
-    {
-      label: 'General Insurance',
-      title: 'Protect your assets',
-      subtitle:
-        "Motor, property, travel, marine and liability cover that safeguards what you've worked hard to build.",
-      imageUrl: U + 'photo-1560518883-ce09059eeffa?w=1600&q=80&fm=webp',
-      exploreHref: 'insurance.html#general-insurance',
-    },
-  ],
-  services: [
-    {
-      icon: 'fas fa-heartbeat',
-      title: 'Health Insurance',
-      description:
-        'Our health insurance provides a safety net, covering medical costs and promoting wellness for you and your family.',
-      href: 'insurance.html#health-insurance',
-    },
-    {
-      icon: 'fas fa-shield-heart',
-      title: 'Life & Pension',
-      description:
-        'Life and pension insurance ensuring financial security for you and your loved ones.',
-      href: 'insurance.html#life-insurance',
-    },
-    {
-      icon: 'fas fa-building-shield',
-      title: 'General Insurance',
-      description:
-        'General insurance safeguards assets against unforeseen events, offering peace of mind and financial protection.',
-      href: 'insurance.html#general-insurance',
-    },
-  ],
-  howItWorks: [
-    {
-      icon: 'fas fa-headset',
-      title: 'Consult',
-      description:
-        'Tell us about your needs and our certified professionals analyze the market for the right cover.',
-    },
-    {
-      icon: 'fas fa-shield-halved',
-      title: 'Insure',
-      description:
-        'We compare quotes from 19+ leading insurers and tailor a policy recommendation just for you.',
-    },
-    {
-      icon: 'fas fa-umbrella-beach',
-      title: 'Relax',
-      description:
-        'Enjoy ongoing support, renewals and fast-tracked claims handled with care when you need us.',
-    },
-  ],
-  whyUs: [
-    { icon: 'fas fa-headset', title: '24x7 Support', description: 'Round-the-clock peace of mind with our dedicated team.' },
-    { icon: 'fas fa-crown', title: 'Premium Services', description: 'Exclusive, tailored solutions for those who expect the best.' },
-    { icon: 'fas fa-handshake', title: 'Trusted Partners', description: "Backed by 19+ of East Africa's leading insurers." },
-    { icon: 'fas fa-file-shield', title: 'Hassle-Free Claims', description: 'Fast-tracked claims handled with care and integrity.' },
-  ],
-  stats: [
-    { value: '12+', label: 'Insurance Partners' },
-    { value: '234+', label: 'Clients Covered' },
-    { value: '99.7%', label: 'Satisfaction' },
-    { value: '7', label: 'National Awards' },
-  ],
-};
+const heroSlides = [
+  { label: 'Health Insurance', title: 'Your health is your wealth', subtitle: 'Comprehensive medical cover for individuals, families and corporates — fast, efficient and professional care at the hour of need.', imageUrl: U + 'photo-1559757175-5700dde675bc?w=1600&q=80&fm=webp', exploreHref: 'insurance.html#health-insurance' },
+  { label: 'Life & Pension', title: "Secure your family's future", subtitle: 'Flexible life cover, endowments and pension plans that give you and your loved ones lasting financial security.', imageUrl: U + 'photo-1511895426328-dc8714191300?w=1600&q=80&fm=webp', exploreHref: 'insurance.html#life-insurance' },
+  { label: 'General Insurance', title: 'Protect your assets', subtitle: "Motor, property, travel, marine and liability cover that safeguards what you've worked hard to build.", imageUrl: U + 'photo-1560518883-ce09059eeffa?w=1600&q=80&fm=webp', exploreHref: 'insurance.html#general-insurance' },
+];
+
+const services = [
+  { icon: 'fas fa-heartbeat', title: 'Health Insurance', description: 'Our health insurance provides a safety net, covering medical costs and promoting wellness for you and your family.', href: 'insurance.html#health-insurance' },
+  { icon: 'fas fa-shield-heart', title: 'Life & Pension', description: 'Life and pension insurance ensuring financial security for you and your loved ones.', href: 'insurance.html#life-insurance' },
+  { icon: 'fas fa-building-shield', title: 'General Insurance', description: 'General insurance safeguards assets against unforeseen events, offering peace of mind and financial protection.', href: 'insurance.html#general-insurance' },
+];
+
+const howItWorks = [
+  { icon: 'fas fa-headset', title: 'Consult', description: 'Tell us about your needs and our certified professionals analyze the market for the right cover.' },
+  { icon: 'fas fa-shield-halved', title: 'Insure', description: 'We compare quotes from 19+ leading insurers and tailor a policy recommendation just for you.' },
+  { icon: 'fas fa-umbrella-beach', title: 'Relax', description: 'Enjoy ongoing support, renewals and fast-tracked claims handled with care when you need us.' },
+];
+
+const whyUs = [
+  { icon: 'fas fa-headset', title: '24x7 Support', description: 'Round-the-clock peace of mind with our dedicated team.' },
+  { icon: 'fas fa-crown', title: 'Premium Services', description: 'Exclusive, tailored solutions for those who expect the best.' },
+  { icon: 'fas fa-handshake', title: 'Trusted Partners', description: "Backed by 19+ of East Africa's leading insurers." },
+  { icon: 'fas fa-file-shield', title: 'Hassle-Free Claims', description: 'Fast-tracked claims handled with care and integrity.' },
+];
+
+const stats = [
+  { value: '12+', label: 'Insurance Partners' },
+  { value: '234+', label: 'Clients Covered' },
+  { value: '99.7%', label: 'Satisfaction' },
+  { value: '7', label: 'National Awards' },
+];
 
 const categories = [
-  {
-    title: 'Health Insurance',
-    slug: { _type: 'slug', current: 'health-insurance' },
-    icon: 'fas fa-heartbeat',
-    description: 'Comprehensive medical cover for individuals, families and corporates.',
-    bannerImageUrl: U + 'photo-1559757175-5700dde675bc?w=1600&q=80&fm=webp',
-    order: 0,
-  },
-  {
-    title: 'Life Insurance',
-    slug: { _type: 'slug', current: 'life-insurance' },
-    icon: 'fas fa-shield-heart',
-    description: 'Financial security for you and your loved ones.',
-    bannerImageUrl: U + 'photo-1511895426328-dc8714191300?w=1600&q=80&fm=webp',
-    order: 1,
-  },
-  {
-    title: 'Pensions',
-    slug: { _type: 'slug', current: 'pension-insurance' },
-    icon: 'fas fa-piggy-bank',
-    description: 'Retirement planning for a secure future.',
-    bannerImageUrl: U + 'photo-1579621970563-ebec7560ff3e?w=1600&q=80&fm=webp',
-    order: 2,
-  },
-  {
-    title: 'General Insurance',
-    slug: { _type: 'slug', current: 'general-insurance' },
-    icon: 'fas fa-building-shield',
-    description: "Protect your assets against life's uncertainties.",
-    bannerImageUrl: U + 'photo-1560472354-b33ff0c44a43?w=1600&q=80&fm=webp',
-    order: 3,
-  },
+  { title: 'Health Insurance', slug: { _type: 'slug', current: 'health-insurance' }, icon: 'fas fa-heartbeat', description: 'Comprehensive medical cover for individuals, families and corporates.', bannerImageUrl: U + 'photo-1559757175-5700dde675bc?w=1600&q=80&fm=webp', order: 0 },
+  { title: 'Life Insurance', slug: { _type: 'slug', current: 'life-insurance' }, icon: 'fas fa-shield-heart', description: 'Financial security for you and your loved ones.', bannerImageUrl: U + 'photo-1511895426328-dc8714191300?w=1600&q=80&fm=webp', order: 1 },
+  { title: 'Pensions', slug: { _type: 'slug', current: 'pension-insurance' }, icon: 'fas fa-piggy-bank', description: 'Retirement planning for a secure future.', bannerImageUrl: U + 'photo-1579621970563-ebec7560ff3e?w=1600&q=80&fm=webp', order: 2 },
+  { title: 'General Insurance', slug: { _type: 'slug', current: 'general-insurance' }, icon: 'fas fa-building-shield', description: "Protect your assets against life's uncertainties.", bannerImageUrl: U + 'photo-1560472354-b33ff0c44a43?w=1600&q=80&fm=webp', order: 3 },
 ];
 
 const products = [
@@ -200,15 +141,7 @@ const products = [
   { key: 'fidelity-guarantee', title: 'Fidelity Guarantee', desc: 'Protection against employee dishonesty or fraud.', img: 'photo-1560472354-b33ff0c44a43', cat: 'general-insurance', order: 11 },
   { key: 'public-liability', title: 'Public Liability', desc: 'Protection against third-party injury or damage claims.', img: 'photo-1521791136064-7986c2920216', cat: 'general-insurance', order: 12 },
   { key: 'product-liability', title: 'Product Liability', desc: 'Protection against claims from product-related incidents.', img: 'photo-1507003211169-0a1dd7228f2d', cat: 'general-insurance', order: 13 },
-].map((p) => ({
-  _type: 'product',
-  key: p.key,
-  title: p.title,
-  description: p.desc,
-  imageUrl: U + p.img + '?w=800&q=80&fm=webp',
-  order: p.order,
-  categoryKey: p.cat,
-}));
+];
 
 const partners = [
   ['Occidental', 'Partners/occidental.webp?updatedAt=1708028480864'],
@@ -230,19 +163,14 @@ const partners = [
   ['Prudential', 'Partners/prudential.jpg?updatedAt=1726301761707'],
   ['Monarch', 'Partners/Monarch.jpeg?updatedAt=1726301761684'],
   ['Kenindia', 'Partners/kenindia.jpg?updatedAt=1726302515386'],
-].map(([name, file], i) => ({
-  _type: 'partner',
-  name,
-  logoUrl: K + file,
-  order: i,
-}));
+];
 
 const testimonials = [
-  { name: 'Nicholas Ngeli', location: 'Nairobi', quote: 'Great services given expeditiously, honesty policy seems to be the order of the day.', rating: 4, avatar: 'Testimonials/ngeli%20(1).webp?updatedAt=1710755861972' },
-  { name: 'Ruth Mboya', location: 'Nairobi', quote: 'Greatscope thanks for giving us the best group last expense cover after explaining the pros and cons for all in the market.', rating: 4.5, avatar: 'Testimonials/mboya%20(1).webp?updatedAt=1710755862204' },
-  { name: 'Mat Hias', location: 'Nairobi', quote: 'The Insurance agency staff are professional, friendly and care about their customers. Thanks Greatscope for fast tracking my claim.', rating: 4.5, avatar: 'Testimonials/mathias%20(1).webp?updatedAt=1710755861965' },
-  { name: 'Kliss Kinyungu', location: 'Nairobi', quote: 'Simply amazing, your partner in eventualities.', rating: 4.5, avatar: 'Testimonials/kliss%20(1).webp?updatedAt=1710755672770' },
-].map((t, i) => ({ _type: 'testimonial', name: t.name, location: t.location, quote: t.quote, rating: t.rating, avatarUrl: K + t.avatar, order: i }));
+  { name: 'Nicholas Ngeli', location: 'Nairobi', quote: 'Great services given expeditiously, honesty policy seems to be the order of the day.', rating: 4, avatarUrl: K + 'Testimonials/ngeli%20(1).webp?updatedAt=1710755861972' },
+  { name: 'Ruth Mboya', location: 'Nairobi', quote: 'Greatscope thanks for giving us the best group last expense cover after explaining the pros and cons for all in the market.', rating: 4.5, avatarUrl: K + 'Testimonials/mboya%20(1).webp?updatedAt=1710755862204' },
+  { name: 'Mat Hias', location: 'Nairobi', quote: 'The Insurance agency staff are professional, friendly and care about their customers. Thanks Greatscope for fast tracking my claim.', rating: 4.5, avatarUrl: K + 'Testimonials/mathias%20(1).webp?updatedAt=1710755861965' },
+  { name: 'Kliss Kinyungu', location: 'Nairobi', quote: 'Simply amazing, your partner in eventualities.', rating: 4.5, avatarUrl: K + 'Testimonials/kliss%20(1).webp?updatedAt=1710755672770' },
+];
 
 const faqs = [
   ['What types of insurance do you offer?', 'We offer a comprehensive range of insurance plans including health, life, auto, and home insurance. Each plan can be customized to your specific requirements.'],
@@ -251,15 +179,12 @@ const faqs = [
   ['Can I adjust my coverage?', "Yes. Contact us to discuss your changing needs and we'll modify your plan accordingly."],
   ['What payment methods do you accept?', 'We accept Mpesa, credit cards, bank transfers, and cheques with flexible monthly, quarterly, or annual plans.'],
   ['How can I contact customer service?', 'Call, email, or use our website contact form. Our team responds promptly.'],
-].map(([question, answer], i) => ({ _type: 'faq', question, answer, order: i }));
+];
 
-const aboutPage = {
-  _id: 'aboutPage',
-  _type: 'aboutPage',
+const aboutBase = {
   leaderName: 'Francis Muendo AIIK',
   leaderTitle: 'Managing Director',
-  leaderImageUrl:
-    'https://ik.imagekit.io/5zp8ovb7c/Kaiti%20Greening%20Champions/images/Leaders/Francis-Muendo.jpeg',
+  leaderImageUrl: 'https://ik.imagekit.io/5zp8ovb7c/Kaiti%20Greening%20Champions/images/Leaders/Francis-Muendo.jpeg',
   leaderBio: [
     "Francis holds a bachelor's degree in Actuarial Science from Jomo Kenyatta University of Agriculture and Technology and a Diploma in Insurance from the College of Insurance.",
     'With over 8 years of experience in the insurance industry, Francis has worked for various insurance companies, specializing in Insurance Underwriting, Claims Management, and Marketing. He serves as an Executive Council Member at the Insurance Institute of Kenya, contributing to shaping industry policies and standards.',
@@ -270,11 +195,9 @@ const aboutPage = {
     'We are committed to providing our clients with the highest quality of service, backed by expertise, integrity, and unwavering dedication to your protection needs.',
   ],
   visionTitle: 'Our Vision',
-  visionText:
-    'To become the most sought after insurance consultancy and brokerage firm in East Africa.',
+  visionText: 'To become the most sought after insurance consultancy and brokerage firm in East Africa.',
   missionTitle: 'Our Mission',
-  missionText:
-    'To maintain the highest standards of integrity and professionalism in our relationship with our clients. To provide tailor made insurance solutions in a changing insurance market.',
+  missionText: 'To maintain the highest standards of integrity and professionalism in our relationship with our clients. To provide tailor made insurance solutions in a changing insurance market.',
   values: [
     { icon: 'fas fa-eye', title: 'Transparency', description: 'We value open and honest communication in all our interactions and business practices.' },
     { icon: 'fas fa-shield-halved', title: 'Integrity', description: 'We uphold the highest standards of honesty and ethical conduct in all our dealings.' },
@@ -295,19 +218,94 @@ function batches(items, size) {
   return out;
 }
 
+async function uploads(items, fn, concurrency = 5) {
+  const out = new Array(items.length);
+  let i = 0;
+  async function worker() {
+    while (i < items.length) {
+      const idx = i++;
+      out[idx] = await fn(items[idx], idx);
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(concurrency, items.length) }, worker));
+  return out;
+}
+
 async function main() {
   console.log('Resetting managed document types...');
   await mutate([
     { delete: { query: '*[_type in ["productCategory", "product", "partner", "testimonial", "faq"]]' } },
   ]);
 
+  console.log('Uploading images...');
+  const heroWithImages = await uploads(heroSlides, async (s) => ({
+    label: s.label,
+    title: s.title,
+    subtitle: s.subtitle,
+    image: await uploadImage(s.imageUrl, 'hero ' + s.title),
+    exploreHref: s.exploreHref,
+  }));
+  const catWithImages = await uploads(categories, async (c) => ({
+    ...c,
+    banner: await uploadImage(c.bannerImageUrl, 'banner ' + c.title),
+  }));
+  const prodWithImages = await uploads(products, async (p) => ({
+    _type: 'product',
+    key: p.key,
+    title: p.title,
+    description: p.desc,
+    order: p.order,
+    cat: p.cat,
+    image: await uploadImage(U + p.img + '?w=800&q=80&fm=webp', 'product ' + p.title),
+  }));
+  const partnerWithImages = await uploads(partners, async ([name, file], i) => ({
+    _type: 'partner',
+    name,
+    order: i,
+    logo: await uploadImage(K + file, 'partner ' + name),
+  }));
+  const testimonialWithImages = await uploads(testimonials, async (t, i) => ({
+    _type: 'testimonial',
+    name: t.name,
+    location: t.location,
+    quote: t.quote,
+    rating: t.rating,
+    order: i,
+    avatar: await uploadImage(t.avatarUrl, 'avatar ' + t.name),
+  }));
+
+  const homePage = {
+    _id: 'homePage',
+    _type: 'homePage',
+    heroSlides: heroWithImages,
+    services,
+    howItWorks,
+    whyUs,
+    stats,
+  };
+
+  const aboutPage = {
+    _id: 'aboutPage',
+    _type: 'aboutPage',
+    leaderName: aboutBase.leaderName,
+    leaderTitle: aboutBase.leaderTitle,
+    leaderImage: await uploadImage(aboutBase.leaderImageUrl, 'leader'),
+    leaderBio: aboutBase.leaderBio,
+    aboutParagraphs: aboutBase.aboutParagraphs,
+    visionTitle: aboutBase.visionTitle,
+    visionText: aboutBase.visionText,
+    missionTitle: aboutBase.missionTitle,
+    missionText: aboutBase.missionText,
+    values: aboutBase.values,
+    keyNumbers: aboutBase.keyNumbers,
+  };
+
   console.log('Upserting singletons (siteSettings, homePage, aboutPage)...');
   await mutate([{ createOrReplace: siteSettings }, { createOrReplace: homePage }, { createOrReplace: aboutPage }]);
 
-  console.log(`Creating ${categories.length} categories...`);
-  await mutate(categories.map((c) => ({ create: { _type: 'productCategory', ...c } })));
+  console.log(`Creating ${catWithImages.length} categories...`);
+  await mutate(catWithImages.map((c) => ({ create: { _type: 'productCategory', ...c } })));
 
-  // Fetch the created category ids so product references resolve.
   const catRes = await fetch(READ + '?query=' + encodeURIComponent('*[_type == "productCategory"]{_id, "slug": slug.current}'));
   const catJson = await catRes.json();
   const slugToId = {};
@@ -315,30 +313,25 @@ async function main() {
     slugToId[c.slug] = c._id;
   });
 
-  console.log(`Creating ${products.length} products...`);
-  const productDocs = products.map((p) => ({
-    _type: 'product',
-    key: p.key,
-    title: p.title,
-    description: p.description,
-    imageUrl: p.imageUrl,
-    order: p.order,
-    category: { _type: 'reference', _ref: slugToId[p.categoryKey] },
+  console.log(`Creating ${prodWithImages.length} products...`);
+  const productDocs = prodWithImages.map((p) => ({
+    ...p,
+    category: { _type: 'reference', _ref: slugToId[p.cat] },
   }));
   for (const batch of batches(productDocs, 20)) {
     await mutate(batch.map((doc) => ({ create: doc })));
   }
 
-  console.log(`Creating ${partners.length} partners...`);
-  for (const batch of batches(partners, 20)) {
+  console.log(`Creating ${partnerWithImages.length} partners...`);
+  for (const batch of batches(partnerWithImages, 20)) {
     await mutate(batch.map((doc) => ({ create: doc })));
   }
 
-  console.log(`Creating ${testimonials.length} testimonials...`);
-  await mutate(testimonials.map((t) => ({ create: t })));
+  console.log(`Creating ${testimonialWithImages.length} testimonials...`);
+  await mutate(testimonialWithImages.map((t) => ({ create: t })));
 
   console.log(`Creating ${faqs.length} FAQs...`);
-  await mutate(faqs.map((f) => ({ create: f })));
+  await mutate(faqs.map(([question, answer], i) => ({ create: { _type: 'faq', question, answer, order: i } })));
 
   console.log('\nDone. Verify with:');
   console.log('  curl "https://10dparpu.apicdn.sanity.io/v2026-02-01/data/query/production?query=count(*)"');

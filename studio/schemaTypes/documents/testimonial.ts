@@ -17,12 +17,7 @@ export const testimonial = defineType({
       validation: (r) => r.min(0).max(5),
       initialValue: 5,
     }),
-    defineField({
-      name: 'avatarUrl',
-      title: 'Avatar Image URL',
-      type: 'url',
-      validation: (r) => r.uri({ scheme: ['http', 'https'] }),
-    }),
+    defineField({ name: 'avatar', title: 'Avatar image', type: 'image', options: { hotspot: true } }),
     defineField({ name: 'order', title: 'Order', type: 'number', initialValue: 0 }),
   ],
 })

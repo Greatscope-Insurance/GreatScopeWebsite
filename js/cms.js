@@ -37,13 +37,13 @@
 
   var QUERIES = {
     siteSettings: '*[_type == "siteSettings"][0]',
-    homePage: '*[_type == "homePage"][0]',
-    categories: '*[_type == "productCategory"] | order(order asc){ _id, title, "slug": slug.current, icon, description, bannerImageUrl, order }',
-    products: '*[_type == "product"]{ _id, key, title, description, imageUrl, order, "category": category->slug.current }',
-    partners: '*[_type == "partner"] | order(order asc){ name, logoUrl, order }',
-    testimonials: '*[_type == "testimonial"] | order(order asc){ name, location, quote, rating, avatarUrl, order }',
+    homePage: '*[_type == "homePage"][0]{ heroSlides[]{ label, title, subtitle, "imageUrl": image.asset->url, exploreHref }, services, howItWorks, whyUs, stats }',
+    categories: '*[_type == "productCategory"] | order(order asc){ _id, title, "slug": slug.current, icon, description, "bannerImageUrl": banner.asset->url, order }',
+    products: '*[_type == "product"]{ _id, key, title, description, "imageUrl": image.asset->url, order, "category": category->slug.current }',
+    partners: '*[_type == "partner"] | order(order asc){ name, "logoUrl": logo.asset->url, order }',
+    testimonials: '*[_type == "testimonial"] | order(order asc){ name, location, quote, rating, "avatarUrl": avatar.asset->url, order }',
     faqs: '*[_type == "faq"] | order(order asc){ question, answer, order }',
-    about: '*[_type == "aboutPage"][0]'
+    about: '*[_type == "aboutPage"][0]{ ..., "leaderImageUrl": leaderImage.asset->url }'
   };
 
   function renderHero(slides) {
