@@ -1,1 +1,5 @@
 node_modules/
+
+# Sanity Studio build artifacts
+studio/dist/
+studio/.sanity/
