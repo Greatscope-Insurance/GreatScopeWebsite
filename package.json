@@ -3,8 +3,9 @@
   "private": true,
   "scripts": {
     "build:css": "npx tailwindcss -i ./src/input.css -o ./css/tailwind.css --minify",
-    "minify:js": "terser js/script.js -c -m -o js/script.min.js",
-    "build": "npm run build:css && npm run minify:js",
+    "minify:js": "terser js/script.js -c -m -o js/script.min.js && terser js/cms.js -c -m -o js/cms.min.js",
+    "sanity:config": "node scripts/build-sanity-config.js",
+    "build": "npm run sanity:config && npm run build:css && npm run minify:js",
     "serve": "python3 -m http.server 8080"
   },
   "devDependencies": {

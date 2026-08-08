@@ -102,12 +102,14 @@
   });
 
   /* ---------------- Scroll reveal ---------------- */
-  var revealEls = document.querySelectorAll('.reveal');
-  if (prefersReducedMotion) {
-    revealEls.forEach(function (el) {
-      el.classList.add('visible');
-    });
-  } else {
+  function initReveal() {
+    var revealEls = document.querySelectorAll('.reveal');
+    if (prefersReducedMotion) {
+      revealEls.forEach(function (el) {
+        el.classList.add('visible');
+      });
+      return;
+    }
     var revealObserver = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
@@ -123,45 +125,50 @@
 
   /* ---------------- Hero slider ---------------- */
   var hero = document.querySelector('.hero-slides');
-  if (hero) {
-    var slides = hero.querySelectorAll('.hero-slide');
+  var heroTimer;
+  var heroSlides = [];
+  var heroDots = [];
+  var heroIndex = 0;
+
+  function heroGo(i) {
+    if (!heroSlides.length) return;
+    heroIndex = (i + heroSlides.length) % heroSlides.length;
+    heroSlides.forEach(function (s, j) {
+      var active = j === heroIndex;
+      s.classList.toggle('active', active);
+      s.setAttribute('aria-hidden', active ? 'false' : 'true');
+    });
+    heroDots.forEach(function (d, j) {
+      d.classList.toggle('active', j === heroIndex);
+      d.setAttribute('aria-selected', j === heroIndex ? 'true' : 'false');
+    });
+  }
+
+  function heroNext() {
+    heroGo(heroIndex + 1);
+  }
+  function heroPrev() {
+    heroGo(heroIndex - 1);
+  }
+  function heroStart() {
+    clearInterval(heroTimer);
+    if (!prefersReducedMotion && heroSlides.length > 1) {
+      heroTimer = setInterval(heroNext, 5000);
+    }
+  }
+  function heroStop() {
+    clearInterval(heroTimer);
+  }
+
+  function initHeroSlider() {
+    if (!hero) return;
+    heroStop();
+    heroSlides = Array.prototype.slice.call(hero.querySelectorAll('.hero-slide'));
     var dotsWrap = hero.querySelector('.hero-dots');
-    var dots = [];
-    var heroIndex = 0;
-    var heroTimer;
-
-    function heroGo(i) {
-      if (!slides.length) return;
-      heroIndex = (i + slides.length) % slides.length;
-      slides.forEach(function (s, j) {
-        var active = j === heroIndex;
-        s.classList.toggle('active', active);
-        s.setAttribute('aria-hidden', active ? 'false' : 'true');
-      });
-      dots.forEach(function (d, j) {
-        d.classList.toggle('active', j === heroIndex);
-        d.setAttribute('aria-selected', j === heroIndex ? 'true' : 'false');
-      });
-    }
-
-    function heroNext() {
-      heroGo(heroIndex + 1);
-    }
-    function heroPrev() {
-      heroGo(heroIndex - 1);
-    }
-    function heroStart() {
-      clearInterval(heroTimer);
-      if (!prefersReducedMotion && slides.length > 1) {
-        heroTimer = setInterval(heroNext, 5000);
-      }
-    }
-    function heroStop() {
-      clearInterval(heroTimer);
-    }
-
+    if (dotsWrap) dotsWrap.innerHTML = '';
+    heroDots = [];
     if (dotsWrap) {
-      slides.forEach(function (s, i) {
+      heroSlides.forEach(function (s, i) {
         var d = document.createElement('button');
         d.className = 'slider-dot' + (i === 0 ? ' active' : '');
         d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
@@ -173,10 +180,15 @@
           heroStart();
         });
         dotsWrap.appendChild(d);
-        dots.push(d);
+        heroDots.push(d);
       });
     }
+    heroIndex = 0;
+    heroGo(0);
+    heroStart();
+  }
 
+  if (hero) {
     hero.querySelectorAll('.hero-nav-btn').forEach(function (b) {
       b.addEventListener('click', function () {
         if (parseInt(b.getAttribute('data-dir'), 10) < 0) heroPrev();
@@ -185,42 +197,40 @@
         heroStart();
       });
     });
-
     hero.addEventListener('mouseenter', heroStop);
     hero.addEventListener('mouseleave', function () {
       if (!prefersReducedMotion) heroStart();
     });
-
-    heroStart();
+    initHeroSlider();
   }
 
   /* ---------------- Testimonial slider ---------------- */
-  var items = document.querySelectorAll('.testimonial-item');
-  var prevBtn = document.getElementById('prev-testimonial');
-  var nextBtn = document.getElementById('next-testimonial');
+  var tItems = [];
+  var tPrevBtn = document.getElementById('prev-testimonial');
+  var tNextBtn = document.getElementById('next-testimonial');
   var tDotsWrap = document.getElementById('testimonial-dots');
-  var current = 0;
+  var tCurrent = 0;
   var tTimer;
 
   function showTestimonial(index) {
-    if (!items.length) return;
-    current = (index + items.length) % items.length;
-    items.forEach(function (el, i) {
-      el.classList.toggle('hidden', i !== current);
+    if (!tItems.length) return;
+    tCurrent = (index + tItems.length) % tItems.length;
+    tItems.forEach(function (el, i) {
+      el.classList.toggle('hidden', i !== tCurrent);
     });
     if (tDotsWrap) {
       tDotsWrap.querySelectorAll('.slider-dot').forEach(function (d, i) {
-        d.classList.toggle('active', i === current);
-        d.setAttribute('aria-selected', i === current ? 'true' : 'false');
+        d.classList.toggle('active', i === tCurrent);
+        d.setAttribute('aria-selected', i === tCurrent ? 'true' : 'false');
       });
     }
   }
 
   function tStart() {
     clearInterval(tTimer);
-    if (!prefersReducedMotion && items.length > 1) {
+    if (!prefersReducedMotion && tItems.length > 1) {
       tTimer = setInterval(function () {
-        showTestimonial(current + 1);
+        showTestimonial(tCurrent + 1);
       }, 6000);
     }
   }
@@ -228,20 +238,16 @@
     clearInterval(tTimer);
   }
 
-  if (prevBtn && nextBtn && items.length) {
-    prevBtn.addEventListener('click', function () {
-      showTestimonial(current - 1);
-      tStop();
-      tStart();
-    });
-    nextBtn.addEventListener('click', function () {
-      showTestimonial(current + 1);
-      tStop();
-      tStart();
-    });
-
+  function initTestimonials() {
+    tStop();
+    tItems = Array.prototype.slice.call(document.querySelectorAll('.testimonial-item'));
+    tPrevBtn = document.getElementById('prev-testimonial');
+    tNextBtn = document.getElementById('next-testimonial');
+    tDotsWrap = document.getElementById('testimonial-dots');
+    if (!tItems.length) return;
+    if (tDotsWrap) tDotsWrap.innerHTML = '';
     if (tDotsWrap) {
-      items.forEach(function (s, i) {
+      tItems.forEach(function (s, i) {
         var d = document.createElement('button');
         d.className = 'slider-dot' + (i === 0 ? ' active' : '');
         d.setAttribute('aria-label', 'Show testimonial ' + (i + 1));
@@ -255,43 +261,62 @@
         tDotsWrap.appendChild(d);
       });
     }
-
-    var tSlider = document.querySelector('.testimonial-slider');
-    if (tSlider) {
-      tSlider.addEventListener('mouseenter', tStop);
-      tSlider.addEventListener('mouseleave', function () {
-        if (!prefersReducedMotion) tStart();
-      });
-    }
-
+    tCurrent = 0;
+    showTestimonial(0);
     tStart();
   }
 
+  if (tPrevBtn && tNextBtn) {
+    tPrevBtn.addEventListener('click', function () {
+      showTestimonial(tCurrent - 1);
+      tStop();
+      tStart();
+    });
+    tNextBtn.addEventListener('click', function () {
+      showTestimonial(tCurrent + 1);
+      tStop();
+      tStart();
+    });
+  }
+  var tSlider = document.querySelector('.testimonial-slider');
+  if (tSlider) {
+    tSlider.addEventListener('mouseenter', tStop);
+    tSlider.addEventListener('mouseleave', function () {
+      if (!prefersReducedMotion) tStart();
+    });
+  }
+  initTestimonials();
+
   /* ---------------- FAQ accordion ---------------- */
-  document.querySelectorAll('.faq').forEach(function (faq) {
-    var question = faq.querySelector('.question');
-    var answer = faq.querySelector('.answer');
-    var icon = faq.querySelector('.fa-chevron-down');
-    if (!answer || !question) return;
+  function initFaq() {
+    document.querySelectorAll('.faq').forEach(function (faq) {
+      var question = faq.querySelector('.question');
+      var answer = faq.querySelector('.answer');
+      var icon = faq.querySelector('.fa-chevron-down');
+      if (!answer || !question) return;
+      if (question.getAttribute('data-faq-bound') === '1') return;
+      question.setAttribute('data-faq-bound', '1');
 
-    function setOpen(open) {
-      answer.style.maxHeight = open ? answer.scrollHeight + 'px' : '0px';
-      if (icon) icon.style.transform = open ? 'rotate(180deg)' : 'rotate(0deg)';
-      question.setAttribute('aria-expanded', open ? 'true' : 'false');
-    }
-
-    question.addEventListener('click', function () {
-      var open = answer.style.maxHeight && answer.style.maxHeight !== '0px';
-      setOpen(!open);
-    });
-
-    question.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        question.click();
+      function setOpen(open) {
+        answer.style.maxHeight = open ? answer.scrollHeight + 'px' : '0px';
+        if (icon) icon.style.transform = open ? 'rotate(180deg)' : 'rotate(0deg)';
+        question.setAttribute('aria-expanded', open ? 'true' : 'false');
       }
+
+      question.addEventListener('click', function () {
+        var open = answer.style.maxHeight && answer.style.maxHeight !== '0px';
+        setOpen(!open);
+      });
+
+      question.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          question.click();
+        }
+      });
     });
-  });
+  }
+  initFaq();
 
   /* ---------------- Contact widget (About page) ---------------- */
   var contactWidget = document.getElementById('contact-widget');
@@ -387,7 +412,7 @@
   /* ---------------- Dynamic content (About page) ---------------- */
   function renderDynamicContent() {
     var valuesSection = document.querySelector('#values-grid');
-    if (valuesSection) {
+    if (valuesSection && !valuesSection.hasAttribute('data-cms-rendered')) {
       var valuesData = [
         { icon: 'fas fa-eye', title: 'Transparency', desc: 'We value open and honest communication in all our interactions and business practices.' },
         { icon: 'fas fa-shield-halved', title: 'Integrity', desc: 'We uphold the highest standards of honesty and ethical conduct in all our dealings.' },
@@ -407,7 +432,7 @@
     }
 
     var keyNumbersSection = document.querySelector('#key-numbers-grid');
-    if (keyNumbersSection) {
+    if (keyNumbersSection && !keyNumbersSection.hasAttribute('data-cms-rendered')) {
       var keyNumbersData = [
         { value: '12+', label: 'Insurance Partners' },
         { value: '99.7%', label: 'Customer Satisfaction' },
@@ -427,9 +452,20 @@
     }
   }
 
+  /* ---------------- Init ---------------- */
+  initReveal();
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', renderDynamicContent);
   } else {
     renderDynamicContent();
   }
+
+  window.GS = {
+    hero: initHeroSlider,
+    testimonials: initTestimonials,
+    faq: initFaq,
+    reveal: initReveal,
+    renderDynamic: renderDynamicContent
+  };
 })();
