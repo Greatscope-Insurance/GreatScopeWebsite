@@ -3,7 +3,8 @@
   publish = "."
 
 [build.environment]
-  NODE_VERSION = "22"
+  NODE_VERSION = "22.x"
+  AWS_LAMBDA_JS_RUNTIME = "nodejs22.x"
 
 [[redirects]]
   from = "/insurance-details"
