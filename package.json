@@ -11,5 +11,8 @@
   "devDependencies": {
     "tailwindcss": "^3.4.0",
     "terser": "^5.49.2"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   }
 }

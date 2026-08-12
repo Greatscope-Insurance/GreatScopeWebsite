@@ -2,6 +2,9 @@
   command = "npm run build"
   publish = "."
 
+[build.environment]
+  NODE_VERSION = "22"
+
 [[redirects]]
   from = "/insurance-details"
   to = "/insurance.html"
